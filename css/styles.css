@@ -220,16 +220,18 @@ a { color: inherit; text-decoration: none; }
 
 /* Bottom grid: about/testimonials/blog/cta */
 .bottom-grid { background: var(--color-bg); }
-.bottom-grid-inner { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 22px; align-items: start; }
+.bottom-grid-inner { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 22px; align-items: stretch; }
 .bottom-grid h3 { font-size: 1.1rem; }
 .bottom-grid .col {
+  display: flex;
+  flex-direction: column;
   border-radius: 14px;
   padding: 26px 22px;
 }
 
 .about-us { background: #ffffff; border: 1px solid var(--color-border); }
 .testimonials { background: var(--color-green-pale); border: 1px solid #cfd8b4; }
-.blog-teaser { background: #e9eef2; border: 1px solid #d9e1e8; }
+.blog-teaser { background: #f1eadf; border: 1px solid #e3dbc9; }
 
 .team-grid { display: flex; gap: 14px; margin-bottom: 16px; }
 .team-card {
@@ -378,7 +380,12 @@ a { color: inherit; text-decoration: none; }
   .signup-inner { grid-template-columns: 1fr; }
 }
 
-.about-us .btn-small { display: block; width: fit-content; margin: 0 auto; }
+.about-us .btn-small { display: block; width: fit-content; margin: 16px auto 0 auto; margin-top: auto; }
+.bottom-grid .col > h3 { margin-top: 0; }
+.blog-teaser .link-arrow,
+.testimonials .testimonial-dots,
+.cta-box .btn-navy { margin-top: auto; }
+.bottom-grid .col > *:last-child { margin-bottom: 0; }
 
 /* Footer */
 .site-footer { background: var(--color-navy); color: #fff; padding: 22px 0; }
