@@ -155,6 +155,8 @@ a { color: inherit; text-decoration: none; }
 /* Features */
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .feature-card {
+  display: flex;
+  flex-direction: column;
   background: transparent;
   border: 1px solid var(--color-border);
   border-radius: 14px;
@@ -173,7 +175,7 @@ a { color: inherit; text-decoration: none; }
 .feature-card h3 { font-size: 1.05rem; text-transform: uppercase; letter-spacing: 0.03em; }
 .feature-sub { font-size: 0.88rem; color: var(--color-navy-light); }
 .feature-note { font-size: 0.88rem; color: var(--color-green-dark); font-weight: 500; }
-.feature-more { display: block; margin-top: 14px; font-size: 0.8rem; font-weight: 600; color: var(--color-navy); }
+.feature-more { display: block; margin-top: auto; padding-top: 14px; font-size: 0.8rem; font-weight: 600; color: var(--color-navy); }
 
 .feature-details {
   margin-top: 24px;
