@@ -127,11 +127,9 @@ a { color: inherit; text-decoration: none; }
   font-size: 2.8rem;
   line-height: 1.15;
   letter-spacing: 0.01em;
-  margin-bottom: 6px;
+  margin-bottom: 36px;
 }
-.hero-brand .hl { color: var(--color-green-dark); font-style: italic; font-weight: 600; }
 .hero-text h1.hero-subtitle { font-size: 1.9rem; line-height: 1.2; margin-bottom: 16px; color: var(--color-navy-light); }
-.tagline { font-family: var(--font-serif); font-style: italic; color: var(--color-green-dark); font-size: 1.15rem; margin-bottom: 18px; }
 .tagline { font-family: var(--font-serif); font-style: italic; color: var(--color-green-dark); font-size: 1.15rem; margin-bottom: 18px; }
 .hero-desc { max-width: 480px; color: #555; }
 .hero-actions { display: flex; gap: 14px; margin-top: 20px; flex-wrap: wrap; }
