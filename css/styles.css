@@ -90,11 +90,11 @@ a { color: inherit; text-decoration: none; }
   margin-right: auto;
 }
 
-.logo-mark { width: 46px; height: 46px; object-fit: contain; border-radius: 50%; }
+.logo-mark { width: 64px; height: 64px; object-fit: contain; border-radius: 50%; }
 
 .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
-.logo-line1 { font-family: var(--font-serif); font-weight: 700; color: var(--color-navy); font-size: 1rem; letter-spacing: 0.02em; }
-.logo-line2 { font-family: var(--font-script); color: var(--color-green-dark); font-size: 1.05rem; }
+.logo-line1 { font-family: var(--font-serif); font-weight: 700; color: var(--color-navy); font-size: 1.3rem; letter-spacing: 0.02em; }
+.logo-line2 { font-family: var(--font-script); color: var(--color-green-dark); font-size: 1.4rem; }
 
 .main-nav { display: flex; gap: 26px; font-size: 0.92rem; font-weight: 500; }
 .main-nav a:hover { color: var(--color-green-dark); }
