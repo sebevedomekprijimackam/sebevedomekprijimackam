@@ -70,6 +70,31 @@ featureCards.forEach((card) => {
   });
 });
 
+// Cookie / privacy notice banner
+(function () {
+  const STORAGE_KEY = 'cookie-notice-dismissed';
+  if (localStorage.getItem(STORAGE_KEY)) return;
+
+  const logoLink = document.querySelector('.logo');
+  const basePath = logoLink ? logoLink.getAttribute('href').replace('index.html', '') : '';
+  const policyHref = basePath + 'ochrana-osobnich-udaju.html';
+
+  const banner = document.createElement('div');
+  banner.className = 'cookie-banner';
+  banner.innerHTML =
+    '<p>Web ukládá jen technicky nutná data, žádné marketingové ani analytické cookies. Více v <a href="' +
+    policyHref +
+    '">zásadách ochrany osobních údajů</a>.</p>' +
+    '<button type="button">Rozumím</button>';
+
+  document.body.appendChild(banner);
+
+  banner.querySelector('button').addEventListener('click', () => {
+    localStorage.setItem(STORAGE_KEY, '1');
+    banner.remove();
+  });
+})();
+
 // Signup form submission via Web3Forms
 const signupForm = document.getElementById('signup-form');
 const signupStatus = document.getElementById('signup-status');
