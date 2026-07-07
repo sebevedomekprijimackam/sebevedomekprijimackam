@@ -207,6 +207,15 @@ a { color: inherit; text-decoration: none; }
 .how-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 22px; }
 .how-list li { display: flex; gap: 16px; align-items: flex-start; }
 .how-icon { width: 44px; height: 44px; flex-shrink: 0; }
+.how-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #efe8da;
+  color: var(--color-navy);
+}
+.how-icon-circle svg { width: 22px; height: 22px; }
 .how-list h4 { margin-bottom: 4px; font-size: 1.05rem; }
 .how-list p { color: #666; font-size: 0.92rem; margin: 0; }
 
