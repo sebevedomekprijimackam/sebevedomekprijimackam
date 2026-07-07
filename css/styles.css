@@ -94,7 +94,7 @@ a { color: inherit; text-decoration: none; }
 
 .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
 .logo-line1 { font-family: var(--font-serif); font-weight: 700; color: var(--color-navy); font-size: 1.3rem; letter-spacing: 0.02em; }
-.logo-line2 { font-family: var(--font-script); color: var(--color-green-dark); font-size: 1.4rem; }
+.logo-line2 { font-family: var(--font-serif); font-style: italic; font-weight: 600; color: var(--color-green-dark); font-size: 1.05rem; }
 
 .main-nav { display: flex; gap: 26px; font-size: 0.92rem; font-weight: 500; }
 .main-nav a:hover { color: var(--color-green-dark); }
