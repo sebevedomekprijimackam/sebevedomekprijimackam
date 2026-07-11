@@ -118,7 +118,7 @@
     <div class="container signup-inner">
       <div class="signup-intro">
         <h1 class="section-title">Přihlásit dítě do programu</h1>
-        <p>Vyplňte formulář a ozveme se vám s dalšími kroky. Na výběr je čeština, matematika, talenty a silné stránky i pomoc s výběrem střední školy.</p>
+        <p>Vyplňte formulář a ozveme se vám s dalšími kroky. Kurz je určen pro žáky 9. tříd, probíhá prezenčně. Na výběr je čeština, matematika, talenty a silné stránky i pomoc s výběrem střední školy.</p>
       </div>
 
       <form class="signup-form" id="signup-form">
@@ -131,17 +131,13 @@
         </div>
 
         <div class="form-row">
-          <label for="f-name">Jak Vás máme oslovovat? *</label>
-          <input type="text" id="f-name" name="Oslovení" required>
+          <label for="f-name">Jméno a příjmení zákonného zástupce *</label>
+          <input type="text" id="f-name" name="Zákonný zástupce" required>
         </div>
 
         <div class="form-row">
-          <label>Do které třídy dítě příští školní rok nastupuje? *</label>
-          <div class="form-choices">
-            <label class="choice"><input type="radio" name="Třída" value="5. třída" required> 5. třída</label>
-            <label class="choice"><input type="radio" name="Třída" value="7. třída"> 7. třída</label>
-            <label class="choice"><input type="radio" name="Třída" value="9. třída"> 9. třída</label>
-          </div>
+          <label for="f-child-name">Jméno dítěte *</label>
+          <input type="text" id="f-child-name" name="Jméno dítěte" required>
         </div>
 
         <div class="form-row">
@@ -155,10 +151,22 @@
         </div>
 
         <div class="form-row">
-          <label>Preferovaná forma *</label>
+          <label>Preferovaný čas – Český jazyk (čtvrtek)</label>
           <div class="form-choices">
-            <label class="choice"><input type="radio" name="Forma" value="Prezenčně" required> Prezenčně</label>
-            <label class="choice"><input type="radio" name="Forma" value="Online"> Online</label>
+            <label class="choice"><input type="radio" name="Čas čeština" value="čtvrtek 14:15–15:15"> čtvrtek 14:15–15:15</label>
+            <label class="choice"><input type="radio" name="Čas čeština" value="čtvrtek 15:20–16:20"> čtvrtek 15:20–16:20</label>
+            <label class="choice"><input type="radio" name="Čas čeština" value="čtvrtek 16:25–17:25"> čtvrtek 16:25–17:25</label>
+            <label class="choice"><input type="radio" name="Čas čeština" value="čtvrtek 17:30–18:30"> čtvrtek 17:30–18:30</label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <label>Preferovaný čas – Matematika (úterý)</label>
+          <div class="form-choices">
+            <label class="choice"><input type="radio" name="Čas matematika" value="úterý 14:15–15:15"> úterý 14:15–15:15</label>
+            <label class="choice"><input type="radio" name="Čas matematika" value="úterý 15:20–16:20"> úterý 15:20–16:20</label>
+            <label class="choice"><input type="radio" name="Čas matematika" value="úterý 16:25–17:25"> úterý 16:25–17:25</label>
+            <label class="choice"><input type="radio" name="Čas matematika" value="úterý 17:30–18:30"> úterý 17:30–18:30</label>
           </div>
         </div>
 
