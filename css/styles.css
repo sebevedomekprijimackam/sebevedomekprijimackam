@@ -316,6 +316,30 @@ a { color: inherit; text-decoration: none; }
 .cta-box p { color: #eef0e6; font-size: 0.88rem; }
 .cta-box .btn-navy { background: #0b2946; }
 
+/* Course calendar */
+.course-calendar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-bottom: 36px;
+}
+.course-calendar-item {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-accent);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+.course-calendar-item h3 { margin-bottom: 8px; font-size: 1.05rem; }
+.course-calendar-dates { color: var(--color-text); font-weight: 600; margin-bottom: 6px; }
+.course-calendar-times { color: #666; font-size: 0.88rem; margin: 0; }
+.course-calendar-cesky { border-left-color: var(--color-green-dark); }
+.course-calendar-cesky h3 { color: var(--color-green-dark); }
+.course-calendar-matematika { border-left-color: var(--color-navy); }
+.course-calendar-matematika h3 { color: var(--color-navy); }
+.course-calendar-seberozvoj { border-left-color: var(--color-accent); }
+.course-calendar-seberozvoj h3 { color: #8a8f2a; }
+
 /* Pricing */
 .pricing-intro { text-align: center; max-width: 640px; margin: 0 auto 28px; color: #555; }
 .pricing-intro-large { max-width: 100%; font-size: 1.25rem; line-height: 1.5; color: var(--color-navy); margin-top: 8px; }
