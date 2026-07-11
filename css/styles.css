@@ -331,6 +331,7 @@ a { color: inherit; text-decoration: none; }
   padding: 18px 20px;
 }
 .course-calendar-item h3 { margin-bottom: 8px; font-size: 1.05rem; }
+.course-calendar-day { font-weight: 700; margin-bottom: 2px; }
 .course-calendar-dates { color: var(--color-text); font-weight: 600; margin-bottom: 6px; }
 .course-calendar-times { color: #666; font-size: 0.88rem; margin: 0; }
 .course-calendar-cesky { border-left-color: var(--color-green-dark); }
