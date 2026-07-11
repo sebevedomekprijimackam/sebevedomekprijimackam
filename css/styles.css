@@ -318,6 +318,7 @@ a { color: inherit; text-decoration: none; }
 
 /* Pricing */
 .pricing-intro { text-align: center; max-width: 640px; margin: 0 auto 28px; color: #555; }
+.pricing-intro-large { max-width: 100%; font-size: 1.25rem; line-height: 1.5; color: var(--color-navy); margin-top: 8px; }
 .pricing-intro-box {
   background: var(--color-green-pale);
   border: 1px solid #cfd8b4;
