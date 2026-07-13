@@ -727,24 +727,45 @@ a { color: inherit; text-decoration: none; }
 .signup-note strong { color: var(--color-green-dark); }
 
 /* Reference */
-.reference-section { margin-top: 40px; }
-.reference-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 16px; }
-.reference-card {
-  background: #fff;
+.reference-intro { font-style: italic; color: #555; }
+.reference-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 28px; }
+.reference-col {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--color-border);
   border-radius: 14px;
-  padding: 20px 22px;
+  padding: 26px 18px;
+}
+.reference-col-icon { width: 56px; height: 56px; margin: 0 auto 14px; display: block; }
+.reference-col-title {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.02rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--color-navy);
+  margin: 0 0 18px;
+}
+.reference-quote {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 14px 16px;
   font-style: italic;
   color: #555;
-  line-height: 1.7;
-  margin: 0;
+  line-height: 1.6;
+  font-size: 0.9rem;
+  margin: 0 0 12px;
 }
-.reference-card cite {
+.reference-quote:last-child { margin-bottom: 0; }
+.reference-quote cite {
   display: block;
-  margin-top: 12px;
+  margin-top: 8px;
   font-style: normal;
   font-weight: 600;
   color: var(--color-navy);
-  font-size: 0.9rem;
+  font-size: 0.82rem;
 }
-.reference-empty { color: #888; font-style: italic; margin-top: 14px; }
+.reference-empty { color: #888; font-style: italic; font-size: 0.9rem; text-align: center; }
+@media (max-width: 700px) { .reference-cols { grid-template-columns: 1fr; } }
