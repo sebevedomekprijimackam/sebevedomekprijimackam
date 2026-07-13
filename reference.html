@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=34">
+<link rel="stylesheet" href="css/styles.css?v=35">
 </head>
 <body>
 
@@ -50,12 +50,18 @@
           <p class="reference-col-title">Český jazyk</p>
 
           <blockquote class="reference-quote">
+            <div class="reference-quote-body">
             <p>Jana je prostě skvělá! Doučuje češtinu naše dítě, teď v septimě na gymplu, a jsme za ni fakt vděční. Všechno umí vysvětlit v klidu, srozumitelně a hlavně v pohodové atmosféře. Dítě si s ní skvěle sedlo a je vidět posun nejen ve známkách, ale i v sebejistotě. Čeština už není strašák. A jako bonus – je to naše kamarádka, se kterou je radost spolupracovat. Díky, Jani!</p>
+            </div>
+            <button class="reference-more" type="button">Číst více</button>
             <cite>Katka B.</cite>
           </blockquote>
 
           <blockquote class="reference-quote">
+            <div class="reference-quote-body">
             <p>Chtěli bychom vyzdvihnout skvělou přípravu s Janou na přijímací zkoušky našich obou kluků z deváté a sedmé třídy. Kluci se na hodiny doučování moc těšili, chválili Janin způsob vysvětlování a dokázala spolu s nimi vytvořit jejich strategii vyplňování CERMAT testů k získání co nejvíce bodů. To kluci oceňují zpětně nejvíce. Oba po této přípravě úspěšně složili přijímací zkoušky na své školy. Děkujeme moc!</p>
+            </div>
+            <button class="reference-more" type="button">Číst více</button>
             <cite>Markéta N.</cite>
           </blockquote>
         </div>
@@ -71,18 +77,24 @@
           <p class="reference-col-title">Seberozvoj</p>
 
           <blockquote class="reference-quote">
+            <div class="reference-quote-body">
             <p>Konzultace výsledků testu talentů StrengthsExplorer s Katkou byla moc příjemná. Na Katce je vidět, že ji tato práce baví a dává jí smysl. Nešlo jen o suché přečtení výsledků; Katka pro nás měla připravené otázky (a úkoly!), které jsme zodpovídali předem, aby pak výsledky testu mohla lépe zasadit do kontextu.</p>
             <p>Z konzultace se tak stala zajímavá sonda nejen do hlubšího poznání osobnosti mého syna (13 let), ale i té mojí (!) a našeho vzájemného vztahu (!!!). To jsem popravdě vůbec nečekala a myslím, že některé věci jsme si se synem řekli poprvé v životě – i když jsou vlastně zásadní. Konkrétní dotazy tu nebudu prozrazovat :-)</p>
             <p>I když jsme s Katkou nakonec strávili přes 2 hodiny, syn nebyl ke konci unavený, spíš naopak – když zjistil, že se o něj někdo zajímá a že může vyjádřit svůj názor, zapojoval se dle mého ochotněji a ochotněji. Katka jeho odpovědi dokázala vždy ocenit, poukázat na důležité body, kterých by si možná sám nevšiml, a jen tak mimochodem říct nějakou zásadní pravdu, kterých si často nejsme vědomi ani my dospělí – třeba že je úplně v pořádku, že každý jsme dobrý v něčem a že to není důvod k tomu si závidět, ale spíš využít svých silných stránek a spolupracovat.</p>
             <p>Test i konzultaci rozhodně doporučuji – pokud chcete svým dětem pomoci poznat jejich talenty (které vás možná překvapí, jako se to stalo mně) – lépe pak pochopíte i jejich reakce v určitých situacích, které vás teď možná rozčilují, ale když uvidíte, PROČ tak reagují, zjistíte, že je to třeba rys jejich osobnosti a že jen stačí mírně upravit pravidla společného fungování.</p>
             <p>Já už teď vidím, že jsme k sobě se synem mnohem otevřenější a schopní se domluvit i na dříve ožehavých tématech.</p>
+            </div>
+            <button class="reference-more" type="button">Číst více</button>
             <cite>Lucie Koukolová<span>lektorka</span></cite>
           </blockquote>
 
           <blockquote class="reference-quote">
+            <div class="reference-quote-body">
             <p>Bylo to dlouhé, činorodé a podnětné setkání, kde jsme si všichni tři – náš budoucí „poslanec Evropského parlamentu“, budoucí studentka prestižního gymnázia s jazykovým zaměřením i já sama – uvědomili spoustu nových věcí o sobě samotných, i o sobě navzájem. A tohle poznání pomalu rozvíjíme dál.</p>
             <p>Katka si svým empatickým přístupem, nasazením a nadšením pro věc děti doslova otočila kolem prstu. A nejen děti. Workshop byl pro mě znovu připomínkou, jak důležité je mít odvahu objevovat, hledat své silné stránky a využívat je k osobnímu růstu.</p>
             <p>V Katčině práci vidím obrovský smysl – pomáhá lidem, mladým i dospělým, objevit svůj potenciál a dodává jim odvahu posouvat se dál. Když to zvládnou, roste nejen jejich spokojenost, ale i schopnost dávat víc dobrého těm okolo.</p>
+            </div>
+            <button class="reference-more" type="button">Číst více</button>
             <cite>Anna Javorková<span>návrhy zahrad, zahradní koučink a poradenství</span></cite>
           </blockquote>
         </div>
@@ -137,5 +149,23 @@
 </footer>
 
 <script src="js/script.js?v=3"></script>
+<script>
+(function(){
+  document.querySelectorAll('.reference-quote').forEach(function(q){
+    var body=q.querySelector('.reference-quote-body');
+    var btn=q.querySelector('.reference-more');
+    if(!body||!btn) return;
+    if(body.scrollHeight<=body.clientHeight+4){
+      q.classList.add('is-short');
+      btn.style.display='none';
+      return;
+    }
+    btn.addEventListener('click',function(){
+      var exp=q.classList.toggle('is-expanded');
+      btn.textContent=exp?'Skrýt':'Číst více';
+    });
+  });
+})();
+</script>
 </body>
 </html>
