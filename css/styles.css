@@ -724,3 +724,26 @@ a { color: inherit; text-decoration: none; }
   color: var(--color-navy);
 }
 .signup-note strong { color: var(--color-green-dark); }
+
+/* Reference */
+.reference-section { margin-top: 40px; }
+.reference-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 16px; }
+.reference-card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 20px 22px;
+  font-style: italic;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+.reference-card cite {
+  display: block;
+  margin-top: 12px;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-navy);
+  font-size: 0.9rem;
+}
+.reference-empty { color: #888; font-style: italic; margin-top: 14px; }
