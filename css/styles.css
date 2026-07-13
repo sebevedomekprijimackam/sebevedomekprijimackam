@@ -427,7 +427,8 @@ a { color: inherit; text-decoration: none; }
 .form-choices { display: flex; flex-wrap: wrap; gap: 10px 20px; }
 .choice { display: flex; align-items: center; gap: 7px; font-size: 0.88rem; font-weight: 400; color: var(--color-text); cursor: pointer; }
 .choice input { accent-color: var(--color-green-dark); width: 16px; height: 16px; flex-shrink: 0; }
-.form-row-checkbox .choice { font-size: 0.85rem; }
+.form-row-checkbox .choice { font-size: 0.85rem; align-items: flex-start; line-height: 1.5; }
+.form-row-checkbox .choice input { margin-top: 2px; }
 .form-consent-link { color: var(--color-green-dark); text-decoration: underline; }
 
 .signup-submit { align-self: flex-start; border: none; cursor: pointer; }
