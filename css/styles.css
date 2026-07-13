@@ -444,6 +444,7 @@ a { color: inherit; text-decoration: none; }
 .blog-teaser .link-arrow,
 .testimonials .testimonial-dots,
 .cta-box .btn-navy { margin-top: auto; }
+.testimonials .link-arrow { margin-top: 16px; }
 .bottom-grid .col > *:last-child { margin-bottom: 0; }
 
 /* Footer */
