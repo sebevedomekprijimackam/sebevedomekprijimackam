@@ -821,3 +821,17 @@ a { color: inherit; text-decoration: none; }
 }
 .reference-more:hover { text-decoration: underline; }
 @media (max-width: 700px) { .reference-cols { grid-template-columns: 1fr; } }
+
+/* References block on lektorka detail pages */
+.team-references {
+  margin-top: 44px;
+  padding: 34px 30px;
+  background: #edf1e4;
+  border: 1px solid var(--color-green-pale);
+  border-radius: 18px;
+}
+.team-references-head { text-align: center; margin-bottom: 26px; }
+.team-references-quote-icon { width: 40px; height: 40px; color: var(--color-green); margin: 0 auto 10px; display: block; }
+.team-references h2 { margin: 0 0 8px; }
+.team-references-intro { font-style: italic; color: #5f6b4d; max-width: 540px; margin: 0 auto; line-height: 1.6; }
+@media (max-width: 700px) { .team-references { padding: 26px 18px; } }
