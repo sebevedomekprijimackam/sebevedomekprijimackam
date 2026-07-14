@@ -608,7 +608,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* Kontakt */
-.contact-address-box h4 { margin: 20px 0 10px; }
+.contact-address-box h4 { margin: 4px 0 14px; font-size: 1.4rem; }
 .contact-map {
   border-radius: 12px;
   overflow: hidden;
