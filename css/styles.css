@@ -835,3 +835,38 @@ a { color: inherit; text-decoration: none; }
 .team-references h2 { margin: 0 0 8px; }
 .team-references-intro { font-style: italic; color: #5f6b4d; max-width: 540px; margin: 0 auto; line-height: 1.6; }
 @media (max-width: 700px) { .team-references { padding: 26px 18px; } }
+
+/* Anonymous pupil observations from workshops */
+.pupil-notes {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin: 0 0 16px;
+}
+.pupil-notes-title {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  color: var(--color-navy);
+  font-size: 0.98rem;
+  margin: 0 0 14px;
+}
+.pupil-notes-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.pupil-notes-list li {
+  position: relative;
+  padding-left: 26px;
+  font-style: italic;
+  color: #555;
+  line-height: 1.55;
+  font-size: 0.9rem;
+}
+.pupil-notes-list li::before {
+  content: "„";
+  position: absolute;
+  left: 2px;
+  top: 4px;
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  line-height: 0;
+  color: var(--color-green);
+}
