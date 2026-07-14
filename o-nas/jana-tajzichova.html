@@ -67,6 +67,32 @@
 
       <p>Na závěr si dovolím mé celoživotní moto: <strong><em>„Kdo chce, hledá způsob, kdo nechce, hledá důvod.“</em></strong></p>
 
+      <h2>Reference od rodičů a dětí</h2>
+
+      <blockquote class="reference-quote">
+        <div class="reference-quote-body">
+        <p>Jana je prostě skvělá! Doučuje češtinu naše dítě, teď v septimě na gymplu, a jsme za ni fakt vděční. Všechno umí vysvětlit v klidu, srozumitelně a hlavně v pohodové atmosféře. Dítě si s ní skvěle sedlo a je vidět posun nejen ve známkách, ale i v sebejistotě. Čeština už není strašák. A jako bonus – je to naše kamarádka, se kterou je radost spolupracovat. Díky, Jani!</p>
+        </div>
+        <button class="reference-more" type="button">Číst více</button>
+        <cite>Katka B.</cite>
+      </blockquote>
+
+      <blockquote class="reference-quote">
+        <div class="reference-quote-body">
+        <p>Chtěli bychom vyzdvihnout skvělou přípravu s Janou na přijímací zkoušky našich obou kluků z deváté a sedmé třídy. Kluci se na hodiny doučování moc těšili, chválili Janin způsob vysvětlování a dokázala spolu s nimi vytvořit jejich strategii vyplňování CERMAT testů k získání co nejvíce bodů. To kluci oceňují zpětně nejvíce. Oba po této přípravě úspěšně složili přijímací zkoušky na své školy. Děkujeme moc!</p>
+        </div>
+        <button class="reference-more" type="button">Číst více</button>
+        <cite>Markéta Němcová</cite>
+      </blockquote>
+
+      <blockquote class="reference-quote">
+        <div class="reference-quote-body">
+        <p>Paní učitelko, připravila jste nás na přijímačky podle mě moc dobře, protože z češtiny jsem neměla žádný stres a nemusela jsem se díky Vám učit doma. Stačila mi příprava s Vámi ve škole. Už od podzimu jste nám dávala cvičné testy, protože jste se nás, jak jste sama říkala, snažila naučit hlavně ten princip jednotlivých cvičení, což je na celých přijímačky nejtěžší. Snažila jste se nás motivovat tím, že jste si zapisovala naše výsledky a my mohli sledovat postupné zlepšení. Látku jste nám vysvětlovala podrobně a hodně jsme procvičovali. Vždy jste byla plná energie a moc hodná.</p>
+        </div>
+        <button class="reference-more" type="button">Číst více</button>
+        <cite>Zuzka Hájková<span>studentka</span></cite>
+      </blockquote>
+
       <div class="blog-post-cta">
         <a href="../prihlasit.html" class="btn btn-navy">Přihlásit dítě</a>
       </div>
@@ -118,5 +144,23 @@
 </footer>
 
 <script src="../js/script.js?v=3"></script>
+<script>
+(function(){
+  document.querySelectorAll('.reference-quote').forEach(function(q){
+    var body=q.querySelector('.reference-quote-body');
+    var btn=q.querySelector('.reference-more');
+    if(!body||!btn) return;
+    if(body.scrollHeight<=body.clientHeight+4){
+      q.classList.add('is-short');
+      btn.style.display='none';
+      return;
+    }
+    btn.addEventListener('click',function(){
+      var exp=q.classList.toggle('is-expanded');
+      btn.textContent=exp?'Skrýt':'Číst více';
+    });
+  });
+})();
+</script>
 </body>
 </html>
