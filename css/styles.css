@@ -494,10 +494,10 @@ a { color: inherit; text-decoration: none; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; }
 
 .footer-brand { display: flex; align-items: center; gap: 10px; }
-.logo-mark-footer { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
+.logo-mark-footer { width: 44px; height: 44px; border-radius: 50%; object-fit: contain; background: #fff; }
 .footer-brand-text { display: flex; flex-direction: column; line-height: 1.2; }
 .footer-brand-line1 { font-family: var(--font-serif); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; }
-.footer-brand-line2 { font-family: var(--font-script); color: var(--color-green-pale); font-size: 1rem; }
+.footer-brand-line2 { font-family: var(--font-serif); font-style: italic; font-weight: 600; color: var(--color-green-pale); font-size: 1rem; }
 
 .footer-claim {
   font-family: var(--font-serif);
