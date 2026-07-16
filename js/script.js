@@ -47,37 +47,43 @@ const featureCards = document.querySelectorAll('.feature-card');
 const featureDetails = document.getElementById('feature-details');
 let activeFeatureCard = null;
 
+function openFeatureCard(card, smooth) {
+  const key = card.dataset.detail;
+  featureCards.forEach((c) => {
+    c.classList.remove('active');
+    c.setAttribute('aria-expanded', 'false');
+  });
+  featureDetails.querySelectorAll('.feature-detail-panel').forEach((panel) => {
+    panel.classList.toggle('active', panel.dataset.panel === key);
+  });
+  card.classList.add('active');
+  card.setAttribute('aria-expanded', 'true');
+  featureDetails.hidden = false;
+  activeFeatureCard = card;
+  scrollWithHeaderOffset(featureDetails, smooth);
+}
+
 featureCards.forEach((card) => {
   card.addEventListener('click', () => {
-    const key = card.dataset.detail;
     const isActive = card.classList.contains('active');
-
-    featureCards.forEach((c) => {
-      c.classList.remove('active');
-      c.setAttribute('aria-expanded', 'false');
-    });
-    featureDetails.querySelectorAll('.feature-detail-panel').forEach((panel) => {
-      panel.classList.toggle('active', panel.dataset.panel === key);
-    });
-
     if (isActive) {
+      featureCards.forEach((c) => {
+        c.classList.remove('active');
+        c.setAttribute('aria-expanded', 'false');
+      });
       featureDetails.hidden = true;
       activeFeatureCard = null;
     } else {
-      card.classList.add('active');
-      card.setAttribute('aria-expanded', 'true');
-      featureDetails.hidden = false;
-      activeFeatureCard = card;
-      scrollWithHeaderOffset(featureDetails);
+      openFeatureCard(card, true);
     }
   });
 });
 
-function scrollWithHeaderOffset(el) {
+function scrollWithHeaderOffset(el, smooth) {
   const header = document.querySelector('.site-header');
   const headerH = header ? header.offsetHeight : 0;
   const y = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
-  window.scrollTo({ top: y, behavior: 'smooth' });
+  window.scrollTo({ top: y, behavior: smooth ? 'smooth' : 'auto' });
 }
 
 const featureBack = document.getElementById('feature-back');
@@ -90,18 +96,25 @@ if (featureBack) {
     });
     featureDetails.hidden = true;
     activeFeatureCard = null;
-    if (targetCard) scrollWithHeaderOffset(targetCard);
+    if (targetCard) scrollWithHeaderOffset(targetCard, true);
   });
 }
 
 // Deep link into a feature detail panel, e.g. index.html#priprava-cesky
-if (featureCards.length) {
-  window.addEventListener('load', () => {
-    const key = window.location.hash.replace('#priprava-', '');
-    if (!key) return;
-    const targetCard = Array.from(featureCards).find((c) => c.dataset.detail === key);
-    if (targetCard) targetCard.click();
-  });
+if (featureCards.length && window.location.hash.indexOf('#priprava-') === 0) {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+  const key = window.location.hash.replace('#priprava-', '');
+  const targetCard = Array.from(featureCards).find((c) => c.dataset.detail === key);
+  if (targetCard) {
+    window.addEventListener('load', () => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          openFeatureCard(targetCard, false);
+        });
+      });
+    });
+  }
 }
 
 // Cookie / privacy notice banner
