@@ -65,10 +65,30 @@ featureCards.forEach((card) => {
       card.classList.add('active');
       card.setAttribute('aria-expanded', 'true');
       featureDetails.hidden = false;
-      featureDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      scrollWithHeaderOffset(featureDetails);
     }
   });
 });
+
+function scrollWithHeaderOffset(el) {
+  const header = document.querySelector('.site-header');
+  const headerH = header ? header.offsetHeight : 0;
+  const y = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
+  window.scrollTo({ top: y, behavior: 'smooth' });
+}
+
+const featureBack = document.getElementById('feature-back');
+if (featureBack) {
+  featureBack.addEventListener('click', () => {
+    featureCards.forEach((c) => {
+      c.classList.remove('active');
+      c.setAttribute('aria-expanded', 'false');
+    });
+    featureDetails.hidden = true;
+    const grid = document.querySelector('.feature-grid');
+    if (grid) scrollWithHeaderOffset(grid);
+  });
+}
 
 // Cookie / privacy notice banner
 (function () {
