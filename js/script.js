@@ -45,6 +45,7 @@ if (slides.length) {
 // Feature cards with expandable detail panel
 const featureCards = document.querySelectorAll('.feature-card');
 const featureDetails = document.getElementById('feature-details');
+let activeFeatureCard = null;
 
 featureCards.forEach((card) => {
   card.addEventListener('click', () => {
@@ -61,10 +62,12 @@ featureCards.forEach((card) => {
 
     if (isActive) {
       featureDetails.hidden = true;
+      activeFeatureCard = null;
     } else {
       card.classList.add('active');
       card.setAttribute('aria-expanded', 'true');
       featureDetails.hidden = false;
+      activeFeatureCard = card;
       scrollWithHeaderOffset(featureDetails);
     }
   });
@@ -80,13 +83,14 @@ function scrollWithHeaderOffset(el) {
 const featureBack = document.getElementById('feature-back');
 if (featureBack) {
   featureBack.addEventListener('click', () => {
+    const targetCard = activeFeatureCard || document.querySelector('.feature-grid');
     featureCards.forEach((c) => {
       c.classList.remove('active');
       c.setAttribute('aria-expanded', 'false');
     });
     featureDetails.hidden = true;
-    const grid = document.querySelector('.feature-grid');
-    if (grid) scrollWithHeaderOffset(grid);
+    activeFeatureCard = null;
+    if (targetCard) scrollWithHeaderOffset(targetCard);
   });
 }
 
