@@ -94,6 +94,16 @@ if (featureBack) {
   });
 }
 
+// Deep link into a feature detail panel, e.g. index.html#priprava-cesky
+if (featureCards.length) {
+  window.addEventListener('load', () => {
+    const key = window.location.hash.replace('#priprava-', '');
+    if (!key) return;
+    const targetCard = Array.from(featureCards).find((c) => c.dataset.detail === key);
+    if (targetCard) targetCard.click();
+  });
+}
+
 // Cookie / privacy notice banner
 (function () {
   const STORAGE_KEY = 'cookie-notice-dismissed';
