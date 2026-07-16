@@ -83,7 +83,7 @@ function scrollWithHeaderOffset(el, smooth) {
   const header = document.querySelector('.site-header');
   const headerH = header ? header.offsetHeight : 0;
   const y = el.getBoundingClientRect().top + window.scrollY - headerH - 12;
-  window.scrollTo({ top: y, behavior: smooth ? 'smooth' : 'auto' });
+  window.scrollTo({ top: y, behavior: smooth ? 'smooth' : 'instant' });
 }
 
 const featureBack = document.getElementById('feature-back');
@@ -108,11 +108,9 @@ if (featureCards.length && window.location.hash.indexOf('#priprava-') === 0) {
   const targetCard = Array.from(featureCards).find((c) => c.dataset.detail === key);
   if (targetCard) {
     const runDeepLink = () => {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-          openFeatureCard(targetCard, false);
-        });
-      });
+      setTimeout(() => {
+        openFeatureCard(targetCard, false);
+      }, 100);
     };
     if (document.readyState === 'complete') {
       runDeepLink();
