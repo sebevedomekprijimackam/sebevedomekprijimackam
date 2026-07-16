@@ -391,7 +391,7 @@ a { color: inherit; text-decoration: none; }
 .pricing-block-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; margin: 0 0 32px; }
 .pricing-block-col h3 { text-align: center; color: var(--color-navy); font-size: 1.05rem; margin-bottom: 10px; }
 .pricing-block-tables .pricing-table { font-size: 0.78rem; margin-bottom: 0; box-shadow: 0 8px 22px rgba(11, 41, 70, 0.08); }
-.pricing-block-tables .pricing-table th { font-size: 0.66rem; padding: 9px 10px; }
+.pricing-block-tables .pricing-table th { font-size: 0.66rem; padding: 9px 10px; white-space: nowrap; }
 .pricing-block-tables .pricing-table td { padding: 9px 10px; }
 .pricing-block-tables .pricing-table tfoot td { font-size: 0.82rem; padding: 11px 10px; }
 .pricing-block-tables .pricing-table tfoot td strong { font-size: 0.92rem; }
