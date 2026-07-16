@@ -107,13 +107,18 @@ if (featureCards.length && window.location.hash.indexOf('#priprava-') === 0) {
   const key = window.location.hash.replace('#priprava-', '');
   const targetCard = Array.from(featureCards).find((c) => c.dataset.detail === key);
   if (targetCard) {
-    window.addEventListener('load', () => {
+    const runDeepLink = () => {
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           openFeatureCard(targetCard, false);
         });
       });
-    });
+    };
+    if (document.readyState === 'complete') {
+      runDeepLink();
+    } else {
+      window.addEventListener('load', runDeepLink);
+    }
   }
 }
 
