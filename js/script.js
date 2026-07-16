@@ -65,7 +65,7 @@ featureCards.forEach((card) => {
       card.classList.add('active');
       card.setAttribute('aria-expanded', 'true');
       featureDetails.hidden = false;
-      featureDetails.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      featureDetails.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });
