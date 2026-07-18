@@ -494,6 +494,7 @@ a { color: inherit; text-decoration: none; }
 }
 .form-row { display: flex; flex-direction: column; gap: 8px; }
 .form-row label { font-size: 0.88rem; font-weight: 600; color: var(--color-navy); }
+.signup-times-title { font-size: 0.88rem; font-weight: 600; color: var(--color-navy); margin: 0; }
 .form-row input[type="email"],
 .form-row input[type="text"],
 .form-row input[type="tel"],
