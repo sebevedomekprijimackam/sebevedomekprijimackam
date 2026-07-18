@@ -556,6 +556,8 @@ a { color: inherit; text-decoration: none; }
 .footer-contact a { display: flex; align-items: center; gap: 8px; }
 .footer-contact a:hover { color: var(--color-green-pale); }
 .footer-contact svg { width: 15px; height: 15px; flex-shrink: 0; }
+.footer-contact a:has(svg circle) { align-items: flex-start; max-width: 260px; }
+.footer-contact a:has(svg circle) svg { margin-top: 1px; }
 
 .footer-social { display: flex; gap: 14px; }
 .footer-social a { display: flex; }
@@ -689,6 +691,9 @@ a { color: inherit; text-decoration: none; }
 
 /* Kontakt */
 .contact-address-box h4 { margin: 4px 0 14px; font-size: 1.4rem; }
+.contact-address-text { margin-bottom: 18px; }
+.contact-address-text p { margin: 0 0 10px; color: #555; line-height: 1.7; }
+.contact-address-text ul { margin: 0 0 10px; padding-left: 20px; color: #555; line-height: 1.7; }
 .contact-map {
   border-radius: 12px;
   overflow: hidden;
