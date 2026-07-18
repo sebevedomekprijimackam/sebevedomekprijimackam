@@ -145,20 +145,21 @@ if (featureCards.length && window.location.hash.indexOf('#priprava-') === 0) {
   });
 })();
 
-// Signup form submission via Web3Forms
-const signupForm = document.getElementById('signup-form');
-const signupStatus = document.getElementById('signup-status');
+// Form submission via Web3Forms
+function setupWeb3Form(formId, statusId, submitSelector, successMsg) {
+  const form = document.getElementById(formId);
+  const status = document.getElementById(statusId);
+  if (!form) return;
 
-if (signupForm) {
-  signupForm.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const submitBtn = signupForm.querySelector('.signup-submit');
+    const submitBtn = form.querySelector(submitSelector);
     submitBtn.disabled = true;
-    signupStatus.textContent = 'Odesílám…';
-    signupStatus.className = 'signup-status';
+    status.textContent = 'Odesílám…';
+    status.className = 'signup-status';
 
     try {
-      const formData = new FormData(signupForm);
+      const formData = new FormData(form);
       const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { Accept: 'application/json' },
@@ -167,18 +168,21 @@ if (signupForm) {
       const result = await response.json();
 
       if (result.success) {
-        signupStatus.textContent = 'Děkujeme! Přihláška byla odeslána, brzy se ozveme.';
-        signupStatus.classList.add('success');
-        signupForm.reset();
+        status.textContent = successMsg;
+        status.classList.add('success');
+        form.reset();
       } else {
-        signupStatus.textContent = 'Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na e-mail.';
-        signupStatus.classList.add('error');
+        status.textContent = 'Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na e-mail.';
+        status.classList.add('error');
       }
     } catch (err) {
-      signupStatus.textContent = 'Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na e-mail.';
-      signupStatus.classList.add('error');
+      status.textContent = 'Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na e-mail.';
+      status.classList.add('error');
     } finally {
       submitBtn.disabled = false;
     }
   });
 }
+
+setupWeb3Form('signup-form', 'signup-status', '.signup-submit', 'Děkujeme! Přihláška byla odeslána, brzy se ozveme.');
+setupWeb3Form('withdrawal-form', 'withdrawal-status', '.withdrawal-submit', 'Odstoupení od smlouvy bylo odesláno, brzy se ozveme.');

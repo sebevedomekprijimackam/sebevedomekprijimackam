@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=66">
+<link rel="stylesheet" href="css/styles.css?v=67">
 </head>
 <body>
 
@@ -344,7 +344,7 @@
       </ol>
 
       <h2 id="odstoupeni-od-smlouvy">Formulář pro odstoupení od smlouvy</h2>
-      <p><em>(vyplňte tento formulář a pošlete jej zpět pouze v případě, že chcete odstoupit od smlouvy)</em></p>
+      <p><em>(vyplňte tento formulář a odešlete jej pouze v případě, že chcete odstoupit od smlouvy)</em></p>
       <div class="withdrawal-form">
         <p><strong>Odstoupení od smlouvy</strong></p>
         <p>Adresát:<br>
@@ -353,14 +353,41 @@
         708 00 Ostrava-Poruba<br>
         <a href="mailto:info@katerinakucova.cz">info@katerinakucova.cz</a></p>
         <p>Oznamuji, že tímto odstupuji od smlouvy o poskytnutí těchto služeb / o koupi tohoto produktu:</p>
-        <p>Datum objednání / číslo objednávky: __________________________</p>
-        <p>Číslo faktury: __________________________</p>
-        <p>Jméno a příjmení spotřebitele: __________________________</p>
-        <p>Adresa spotřebitele: __________________________</p>
-        <p>Číslo bankovního účtu pro vrácení peněz: __________________________</p>
-        <p>Datum: __________________________</p>
-        <p>Podpis spotřebitele: __________________________<br>
-        <em>(pouze pokud je tento formulář zasílán na listině)</em></p>
+
+        <form class="withdrawal-form-fields" id="withdrawal-form">
+          <input type="hidden" name="access_key" value="766f9e2e-e6cd-4fdd-998b-a4ead77f97af">
+          <input type="hidden" name="subject" value="Odstoupení od smlouvy – Sebevědomě k přijímačkám">
+
+          <div class="form-row">
+            <label for="w-order">Datum objednání / číslo objednávky</label>
+            <input type="text" id="w-order" name="Datum objednání / číslo objednávky">
+          </div>
+          <div class="form-row">
+            <label for="w-invoice">Číslo faktury</label>
+            <input type="text" id="w-invoice" name="Číslo faktury">
+          </div>
+          <div class="form-row">
+            <label for="w-name">Jméno a příjmení spotřebitele *</label>
+            <input type="text" id="w-name" name="Jméno a příjmení spotřebitele" required>
+          </div>
+          <div class="form-row">
+            <label for="w-email">E-mail spotřebitele *</label>
+            <input type="email" id="w-email" name="E-mail" required>
+          </div>
+          <div class="form-row">
+            <label for="w-address">Adresa spotřebitele *</label>
+            <input type="text" id="w-address" name="Adresa spotřebitele" required>
+          </div>
+          <div class="form-row">
+            <label for="w-account">Číslo bankovního účtu pro vrácení peněz</label>
+            <input type="text" id="w-account" name="Číslo bankovního účtu pro vrácení peněz">
+          </div>
+
+          <button type="submit" class="btn btn-navy withdrawal-submit">Odeslat odstoupení od smlouvy</button>
+          <p class="signup-status" id="withdrawal-status" role="status"></p>
+        </form>
+
+        <p class="withdrawal-form-note">Formulář můžete místo odeslání z webu také vytisknout, vyplnit ručně (vč. podpisu) a zaslat poštou nebo e-mailem na adresu uvedenou výše.</p>
       </div>
     </div>
   </article>
@@ -413,6 +440,6 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=11"></script>
+<script src="js/script.js?v=12"></script>
 </body>
 </html>
