@@ -416,6 +416,7 @@ a { color: inherit; text-decoration: none; }
 .pricing-blocks { text-align: center; color: var(--color-navy); font-size: 1.1rem; line-height: 1.6; margin: 0 auto 18px; }
 .pricing-blocks p { margin: 2px 0; }
 .pricing-intro-small { max-width: 640px; color: var(--color-navy); font-size: 1rem; margin: 0 auto 24px; }
+.pricing-intro-full { max-width: 100%; }
 .pricing-block-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; margin: 0 0 32px; }
 .pricing-block-col h3 { text-align: center; color: var(--color-navy); font-size: 1.05rem; margin-bottom: 10px; }
 .pricing-block-tables .pricing-table { font-size: 0.78rem; margin-bottom: 0; box-shadow: 0 8px 22px rgba(11, 41, 70, 0.08); }
