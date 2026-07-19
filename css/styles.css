@@ -121,7 +121,7 @@ a { color: inherit; text-decoration: none; }
 .hero-start-circle {
   position: absolute;
   top: 55px;
-  left: -29%;
+  left: clamp(-157px, calc(199px - 30.17vw), -31px);
   transform: translate(-50%, -50%);
   z-index: 3;
   width: 128px;
