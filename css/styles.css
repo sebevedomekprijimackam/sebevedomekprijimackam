@@ -505,6 +505,93 @@ a { color: inherit; text-decoration: none; }
 
 .pricing-cta { margin-top: 8px; }
 
+/* Bonusy / dárky */
+.pricing-perks {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-left: 4px solid var(--color-green);
+  border-radius: 14px;
+  padding: 28px 30px;
+  margin-bottom: 24px;
+}
+.pricing-perks-gift { border-left-color: var(--color-accent); }
+.pricing-perks-head { display: flex; align-items: center; gap: 14px; }
+.pricing-perks-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: var(--color-green-pale);
+  color: var(--color-green-deep);
+}
+.pricing-perks-gift .pricing-perks-icon { background: #f4f1de; color: var(--color-navy); }
+.pricing-perks-icon svg { width: 24px; height: 24px; }
+.pricing-perks-head h3 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--color-navy);
+  margin: 0;
+}
+.pricing-perks-note { margin: 10px 0 0; font-size: 0.88rem; color: var(--color-green-dark); font-weight: 600; }
+.pricing-perks-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 20px;
+}
+.pricing-perk { background: var(--color-bg); border-radius: 10px; padding: 16px 18px; }
+.pricing-perk-title { margin: 0 0 4px; font-size: 1.05rem; font-weight: 700; color: var(--color-navy); }
+.pricing-perk-title strong { font-size: 1.3rem; color: var(--color-green-dark); }
+.pricing-perks-gift .pricing-perk-title strong { color: var(--color-navy); }
+.pricing-perk-sub { margin: 0; font-size: 0.9rem; color: #555; }
+.pricing-perk-detail { margin: 6px 0 0; font-size: 0.85rem; color: #777; }
+
+.pricing-workshops { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; }
+.pricing-workshop { border: 1px solid var(--color-border); border-radius: 10px; padding: 0 18px; background: #fff; }
+.pricing-workshop summary {
+  cursor: pointer;
+  list-style: none;
+  padding: 14px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+.pricing-workshop summary::-webkit-details-marker { display: none; }
+.pricing-workshop summary::after {
+  content: "Zjistit více →";
+  margin-left: auto;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-green-dark);
+}
+.pricing-workshop[open] summary::after { content: "Skrýt ↑"; }
+.pricing-workshop-text { flex: 1 1 auto; }
+.pricing-workshop-block {
+  flex-shrink: 0;
+  background: var(--color-navy);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+.pricing-workshop p { margin: 0; padding-bottom: 16px; color: #555; font-size: 0.9rem; line-height: 1.6; }
+
+@media (max-width: 700px) {
+  .pricing-perks { padding: 22px 20px; }
+  .pricing-perks-grid { grid-template-columns: 1fr; }
+  .pricing-workshop summary { flex-wrap: wrap; }
+  .pricing-workshop summary::after { margin-left: 58px; }
+}
+
 @media (max-width: 700px) {
   .pricing-table, .pricing-table thead { font-size: 0.82rem; }
   .pricing-table th, .pricing-table td { padding: 10px; }
