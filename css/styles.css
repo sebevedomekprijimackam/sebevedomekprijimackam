@@ -519,6 +519,19 @@ a { color: inherit; text-decoration: none; }
 .pricing-table tfoot td { border-bottom: none; background: var(--color-green-pale); font-weight: 700; color: var(--color-navy); font-size: 1.02rem; padding-top: 18px; padding-bottom: 18px; }
 .pricing-table tfoot td:last-child { white-space: nowrap; }
 .pricing-table tfoot td strong { font-size: 1.18rem; color: var(--color-green-deep); }
+
+.pricing-table-full tbody tr.row-white { background: #fff; }
+.pricing-table-full tbody tr.row-tan { background: #f1eadf; }
+.pricing-table-full tbody tr.row-green-pale { background: var(--color-green-pale); }
+.pricing-table-full tbody tr.row-green-dark { background: var(--color-green-dark); }
+.pricing-table-full tbody tr.row-green-dark td { color: #fff; border-bottom-color: rgba(255, 255, 255, 0.2); }
+.pricing-table-full tbody tr.row-green-dark td:last-child { color: #fff; }
+.pricing-table-full tbody tr.row-white:hover,
+.pricing-table-full tbody tr.row-tan:hover,
+.pricing-table-full tbody tr.row-green-pale:hover { background: var(--color-green-pale); }
+.pricing-table-full tbody tr.row-green-dark:hover { background: var(--color-green-dark); }
+.pricing-table-full tfoot tr.row-navy td { background: var(--color-navy); color: #fff; }
+.pricing-table-full tfoot tr.row-navy td strong { color: #fff; }
 .pricing-when { display: block; font-size: 0.78rem; color: #777; font-weight: 400; }
 
 .pricing-includes, .pricing-installments {
