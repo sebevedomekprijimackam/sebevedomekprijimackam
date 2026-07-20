@@ -537,29 +537,6 @@ a { color: inherit; text-decoration: none; }
 }
 .pricing-perks-note { margin: 10px 0 0; font-size: 0.88rem; color: var(--color-green-dark); font-weight: 600; }
 
-.pricing-workshops { display: flex; flex-direction: column; gap: 10px; margin-top: 22px; }
-.pricing-workshop { border: 1px solid var(--color-border); border-radius: 10px; padding: 0 18px; background: #fff; }
-.pricing-workshop summary {
-  cursor: pointer;
-  list-style: none;
-  padding: 14px 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: 600;
-  color: var(--color-navy);
-}
-.pricing-workshop summary::-webkit-details-marker { display: none; }
-.pricing-workshop summary::after {
-  content: "Zjistit více →";
-  margin-left: auto;
-  flex-shrink: 0;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-green-dark);
-}
-.pricing-workshop[open] summary::after { content: "Skrýt ↑"; }
-.pricing-workshop-text { flex: 1 1 auto; }
 .pricing-workshop-block {
   flex-shrink: 0;
   background: var(--color-navy);
@@ -571,11 +548,8 @@ a { color: inherit; text-decoration: none; }
   padding: 4px 10px;
   border-radius: 999px;
 }
-.pricing-workshop p { margin: 0; padding-bottom: 16px; color: #555; font-size: 0.9rem; line-height: 1.6; }
 
-.bonus-grid, .gift-grid { display: grid; gap: 16px; margin-top: 20px; }
-.bonus-grid { grid-template-columns: repeat(3, 1fr); }
-.gift-grid { grid-template-columns: repeat(4, 1fr); }
+.bonus-grid, .gift-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
 .perk-card {
   display: flex;
   flex-direction: column;
@@ -611,14 +585,53 @@ a { color: inherit; text-decoration: none; }
 .perk-card-dark .perk-card-icon { background: rgba(255, 255, 255, 0.15); color: #fff; }
 .perk-card-dark .perk-card-title strong { color: #fff; }
 
+.perk-card-workshop { align-items: stretch; }
+.perk-card-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 4px;
+  cursor: pointer;
+  list-style: none;
+}
+.perk-card-summary::-webkit-details-marker { display: none; }
+.perk-card-summary::marker { content: ""; }
+.perk-card-summary-text { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.perk-card-summary::after {
+  content: "Zjistit více →";
+  margin-top: 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-green-dark);
+}
+.perk-card-workshop[open] .perk-card-summary::after { content: "Skrýt ↑"; margin-top: 0; margin-left: auto; flex-shrink: 0; }
+.perk-card-workshop[open] { grid-column: 1 / -1; }
+.perk-card-workshop[open] .perk-card-summary {
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  gap: 16px;
+}
+.perk-card-workshop[open] .perk-card-icon { margin-bottom: 0; }
+.perk-card-workshop[open] .perk-card-summary-text { flex: 1 1 auto; align-items: flex-start; }
+.perk-card-workshop-text {
+  margin: 16px 0 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(11, 41, 70, 0.1);
+  text-align: left;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #555;
+}
+
 @media (max-width: 900px) {
   .gift-grid, .bonus-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 700px) {
   .pricing-perks { padding: 22px 20px; }
-  .pricing-workshop summary { flex-wrap: wrap; }
-  .pricing-workshop summary::after { margin-left: 58px; }
+  .perk-card-workshop[open] .perk-card-summary { flex-wrap: wrap; }
 }
 
 @media (max-width: 500px) {
