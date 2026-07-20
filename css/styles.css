@@ -585,11 +585,54 @@ a { color: inherit; text-decoration: none; }
 }
 .pricing-workshop p { margin: 0; padding-bottom: 16px; color: #555; font-size: 0.9rem; line-height: 1.6; }
 
+.gift-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
+.gift-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-radius: 14px;
+  padding: 22px 16px;
+  color: var(--color-navy);
+}
+.gift-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  color: var(--color-navy);
+}
+.gift-card-icon svg { width: 20px; height: 20px; }
+.gift-card-title { margin: 0 0 6px; font-size: 1rem; font-weight: 700; }
+.gift-card-title strong { font-size: 1.2rem; color: var(--color-green-dark); }
+.gift-card-sub { margin: 0; font-size: 0.85rem; opacity: 0.85; }
+.gift-card-detail { margin: 8px 0 0; font-size: 0.78rem; opacity: 0.7; }
+
+.gift-card-1 { background: #fff; border: 1px solid var(--color-border); }
+.gift-card-2 { background: var(--color-green-pale); border: 1px solid #cfd8b4; }
+.gift-card-2 .gift-card-icon { background: #fff; }
+.gift-card-3 { background: #f1eadf; border: 1px solid #e3dbc9; }
+.gift-card-3 .gift-card-icon { background: #fff; }
+.gift-card-4 { background: var(--color-green-dark); border: 1px solid var(--color-green-dark); color: #fff; }
+.gift-card-4 .gift-card-icon { background: rgba(255, 255, 255, 0.15); color: #fff; }
+.gift-card-4 .gift-card-title strong { color: #fff; }
+
+@media (max-width: 900px) {
+  .gift-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (max-width: 700px) {
   .pricing-perks { padding: 22px 20px; }
   .pricing-perks-grid { grid-template-columns: 1fr; }
   .pricing-workshop summary { flex-wrap: wrap; }
   .pricing-workshop summary::after { margin-left: 58px; }
+}
+
+@media (max-width: 500px) {
+  .gift-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 700px) {
