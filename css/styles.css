@@ -515,6 +515,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 24px;
 }
 .pricing-perks-gift { border-left-color: var(--color-accent); }
+.pricing-perks-includes { border-left-color: var(--color-navy); }
 .pricing-perks-head { display: flex; align-items: center; gap: 14px; }
 .pricing-perks-icon {
   display: flex;
@@ -527,6 +528,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--color-green-deep);
 }
 .pricing-perks-gift .pricing-perks-icon { background: #f4f1de; color: var(--color-navy); }
+.pricing-perks-includes .pricing-perks-icon { background: #eae8d9; color: var(--color-navy); }
 .pricing-perks-icon svg { width: 24px; height: 24px; }
 .pricing-perks-head h3 {
   font-family: var(--font-serif);
@@ -538,6 +540,9 @@ a { color: inherit; text-decoration: none; }
 .pricing-perks-note { margin: 10px 0 0; font-size: 0.88rem; color: var(--color-green-dark); font-weight: 600; }
 
 .bonus-grid, .gift-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
+.includes-grid { display: grid; gap: 16px; margin-top: 20px; }
+.includes-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.includes-grid-2 { grid-template-columns: repeat(2, 1fr); }
 .perk-card {
   display: flex;
   flex-direction: column;
@@ -614,7 +619,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 900px) {
-  .gift-grid, .bonus-grid { grid-template-columns: repeat(2, 1fr); }
+  .gift-grid, .bonus-grid, .includes-grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 700px) {
@@ -623,7 +628,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 500px) {
-  .gift-grid, .bonus-grid { grid-template-columns: 1fr; }
+  .gift-grid, .bonus-grid, .includes-grid-3, .includes-grid-2 { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 700px) {
