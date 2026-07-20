@@ -204,6 +204,7 @@ a { color: inherit; text-decoration: none; }
 .section-title .hl { color: var(--color-green-dark); font-style: italic; }
 
 /* Features */
+.features-intro { text-align: center; max-width: 640px; margin: -12px auto 40px; color: #555; }
 .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .feature-card {
   display: flex;
