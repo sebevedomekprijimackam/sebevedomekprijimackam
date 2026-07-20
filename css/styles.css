@@ -409,37 +409,19 @@ a { color: inherit; text-decoration: none; }
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 12px;
-  counter-reset: seberozvoj;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 .seberozvoj-sessions li {
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-radius: 10px;
-  padding: 12px 14px 12px 40px;
-  position: relative;
+  color: #666;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #cfd8b4;
 }
-.seberozvoj-sessions li::before {
-  counter-increment: seberozvoj;
-  content: counter(seberozvoj);
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: var(--color-accent);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.seberozvoj-session-name { display: block; font-weight: 700; color: var(--color-text); margin-bottom: 4px; }
-.seberozvoj-session-slots { display: block; color: #666; font-size: 0.85rem; line-height: 1.55; }
+.seberozvoj-sessions li:last-child { border-bottom: none; padding-bottom: 0; }
+.seberozvoj-sessions li strong { color: var(--color-text); font-weight: 700; }
 
 /* Pricing */
 .pricing-intro { text-align: center; max-width: 640px; margin: 0 auto 28px; color: #555; }
