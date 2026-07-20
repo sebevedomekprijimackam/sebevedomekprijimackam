@@ -10,8 +10,8 @@
 
   var DATA = [
     {
-      predmet: "Český jazyk",
-      den: "čtvrtky",
+      predmet: "Matematika",
+      den: "úterky",
       skupiny: [
         { label: "14:30–15:30", volno: 10 },
         { label: "15:40–16:40", volno: 10 },
@@ -19,8 +19,8 @@
       ]
     },
     {
-      predmet: "Matematika",
-      den: "úterky",
+      predmet: "Český jazyk",
+      den: "čtvrtky",
       skupiny: [
         { label: "14:30–15:30", volno: 10 },
         { label: "15:40–16:40", volno: 10 },
