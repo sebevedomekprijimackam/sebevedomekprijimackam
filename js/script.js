@@ -100,6 +100,16 @@ if (featureBack) {
   });
 }
 
+// Schedule details (harmonogram + volná místa) hide button
+const scheduleDetails = document.getElementById('harmonogram');
+const scheduleHide = document.getElementById('schedule-hide');
+if (scheduleDetails && scheduleHide) {
+  scheduleHide.addEventListener('click', () => {
+    scheduleDetails.open = false;
+    scrollWithHeaderOffset(scheduleDetails, true);
+  });
+}
+
 // Deep link into a feature detail panel, e.g. index.html#priprava-cesky
 if (featureCards.length && window.location.hash.indexOf('#priprava-') === 0) {
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
