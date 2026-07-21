@@ -1105,6 +1105,7 @@ a { color: inherit; text-decoration: none; }
   color: var(--color-navy);
 }
 .signup-note strong { color: var(--color-green-dark); }
+.signup-note a { color: var(--color-green-dark); text-decoration: underline; }
 
 .guarantee-badge {
   background: var(--color-green-pale);
