@@ -380,6 +380,33 @@ a { color: inherit; text-decoration: none; }
   margin: 56px 0 40px;
 }
 
+/* Schedule toggle (harmonogram + volná místa) */
+.schedule-toggle { margin-top: 40px; }
+.schedule-details {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  padding: 22px 28px;
+}
+.schedule-summary {
+  cursor: pointer;
+  list-style: none;
+  text-align: center;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+.schedule-summary::-webkit-details-marker { display: none; }
+.schedule-summary::marker { content: ""; }
+.schedule-summary-here { color: var(--color-green-dark); text-decoration: underline; }
+.schedule-details[open] .schedule-summary { margin-bottom: 24px; }
+.schedule-details-content { text-align: left; }
+@media (max-width: 700px) {
+  .schedule-details { padding: 20px 18px; }
+}
+
 /* Course calendar */
 .course-calendar {
   display: grid;
@@ -935,6 +962,7 @@ a { color: inherit; text-decoration: none; }
 .contact-card-links { display: flex; flex-direction: column; gap: 4px; font-size: 0.88rem; }
 .contact-card-links a { color: var(--color-navy); }
 .contact-card-links a:hover { color: var(--color-green-dark); }
+.contact-card-ico { margin: 8px 0 0; font-size: 0.78rem; color: #777; line-height: 1.4; }
 
 /* Team overview page (o-nas.html) */
 .team-index-intro { text-align: center; color: #555; max-width: 480px; margin: -12px auto 40px; }
