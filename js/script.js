@@ -130,6 +130,23 @@ if (featureCards.length && window.location.hash.indexOf('#priprava-') === 0) {
   }
 }
 
+// Deep link into the harmonogram, e.g. cenik.html links to index.html#harmonogram
+if (scheduleDetails && window.location.hash === '#harmonogram') {
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+  const runScheduleDeepLink = () => {
+    setTimeout(() => {
+      scheduleDetails.open = true;
+      scrollWithHeaderOffset(scheduleDetails, false);
+    }, 100);
+  };
+  if (document.readyState === 'complete') {
+    runScheduleDeepLink();
+  } else {
+    window.addEventListener('load', runScheduleDeepLink);
+  }
+}
+
 // Cookie / privacy notice banner
 (function () {
   const STORAGE_KEY = 'cookie-notice-dismissed';
