@@ -486,8 +486,11 @@ a { color: inherit; text-decoration: none; }
 .month-calendar-arrow:hover:not(:disabled) { background: var(--color-green-pale); }
 .month-calendar-arrow:disabled { opacity: 0.3; cursor: default; }
 
-.month-calendar-legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin: 16px 0 24px; font-size: 0.85rem; color: var(--color-text); }
-.month-calendar-legend-item { display: flex; align-items: center; gap: 6px; }
+.month-calendar-legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 22px; margin: 16px 0 24px; font-size: 1rem; }
+.month-calendar-legend-item { display: flex; align-items: center; gap: 7px; font-weight: 700; }
+.legend-mat { color: var(--color-navy); }
+.legend-cesky { color: #b5502e; }
+.legend-sebe { color: var(--color-green-dark); }
 
 .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 .dot-mat, .mc-chip-mat { background: var(--color-navy); }
@@ -501,7 +504,7 @@ a { color: inherit; text-decoration: none; }
 
 .month-calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
 .month-calendar-day {
-  position: relative; min-height: 64px; border: 1px solid var(--color-border); border-radius: 10px;
+  position: relative; min-height: 78px; border: 1px solid var(--color-border); border-radius: 10px;
   background: var(--color-bg); font-family: inherit; color: var(--color-text);
   display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 6px 3px;
 }
@@ -509,10 +512,10 @@ a { color: inherit; text-decoration: none; }
 .month-calendar-day.has-lessons { background: #fff; border-color: #c7ccd3; font-weight: 600; cursor: pointer; }
 .month-calendar-day.has-lessons:hover { background: var(--color-bg); }
 .month-calendar-daynum { font-size: 0.9rem; }
-.month-calendar-chips { display: flex; flex-direction: column; align-items: stretch; gap: 2px; width: 100%; }
+.month-calendar-chips { display: flex; flex-direction: column; align-items: stretch; gap: 3px; width: 100%; }
 .mc-chip {
-  display: block; color: #fff; font-weight: 600; font-size: 0.62rem; line-height: 1.5;
-  border-radius: 5px; padding: 0 3px; white-space: nowrap;
+  display: block; color: #fff; font-weight: 600; font-size: 0.66rem; line-height: 1.25;
+  border-radius: 5px; padding: 1px 2px; white-space: normal; word-break: keep-all;
 }
 .mc-chip-muted { background: transparent !important; color: #888; border: 1px dashed #c7ccd3; font-style: italic; }
 
@@ -523,11 +526,11 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 560px) {
   .month-calendar { padding: 22px 14px; }
   .month-calendar-label { font-size: 1.1rem; min-width: 150px; }
-  .month-calendar-day { border-radius: 8px; min-height: 56px; }
+  .month-calendar-day { border-radius: 8px; min-height: 74px; }
   .month-calendar-daynum { font-size: 0.72rem; }
-  .mc-chip { font-size: 0.52rem; line-height: 1.4; }
+  .mc-chip { font-size: 0.56rem; line-height: 1.25; }
   .month-calendar-weekdays { font-size: 0.62rem; }
-  .month-calendar-legend { gap: 12px; font-size: 0.78rem; }
+  .month-calendar-legend { gap: 12px; font-size: 0.85rem; }
 }
 .seberozvoj-sessions {
   list-style: none;

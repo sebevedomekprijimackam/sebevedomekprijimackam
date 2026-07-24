@@ -15,38 +15,52 @@
     { y: 2027, m: 1 }, { y: 2027, m: 2 }, { y: 2027, m: 3 }, { y: 2027, m: 4 }
   ];
 
-  // Každý řádek = jedna pravidelná lekce (předmět + čas) a seznam dat, kdy proběhne.
-  // "short" je krátký čas, který se zobrazí rovnou v kalendáři.
+  // Každý řádek = jedna konkrétní nabízená skupina (předmět + přesný čas) a seznam dat, kdy proběhne.
+  // "short" je celé časové rozpětí, které se zobrazí rovnou v kalendáři.
+  // Tam, kde má den na výběr víc časů (např. úterky u matematiky), je to rozepsané na dva řádky,
+  // takže se v kalendáři objeví obě nabízené možnosti.
   var RANGES = [
-    { subject: "mat", short: "14:30", label: "Matematika · pondělí 14:30–15:30", dates: ["14.9.2026", "21.9.2026", "5.10.2026", "12.10.2026", "19.10.2026", "2.11.2026", "9.11.2026", "16.11.2026", "23.11.2026", "30.11.2026"] },
-    { subject: "mat", short: "14:30", label: "Matematika · úterý 14:30–15:30 nebo 16:50–17:50", dates: ["15.9.2026", "22.9.2026", "29.9.2026", "6.10.2026", "13.10.2026", "20.10.2026", "3.11.2026", "10.11.2026", "24.11.2026", "1.12.2026"] },
-    { subject: "cesky", short: "15:40", label: "Český jazyk · úterý 15:40–16:40", dates: ["15.9.2026", "22.9.2026", "29.9.2026", "6.10.2026", "13.10.2026", "20.10.2026", "3.11.2026", "10.11.2026", "24.11.2026", "1.12.2026"] },
-    { subject: "cesky", short: "14:30", label: "Český jazyk · čtvrtek 14:30–15:30 nebo 15:40–16:40", dates: ["17.9.2026", "24.9.2026", "1.10.2026", "8.10.2026", "15.10.2026", "22.10.2026", "5.11.2026", "12.11.2026", "19.11.2026", "26.11.2026"] },
-    { subject: "sebe", short: "14:30", label: "Seberozvoj: Silné stránky – 1. část · pátek 14:30–16:30 nebo 16:45–18:45", dates: ["18.9.2026"] },
-    { subject: "sebe", short: "10:00", label: "Seberozvoj: Silné stránky – 1. část · sobota 10:00–12:00", dates: ["19.9.2026"] },
-    { subject: "sebe", short: "14:30", label: "Seberozvoj: Silné stránky – 2. část · pátek 14:30–16:30 nebo 16:45–18:45", dates: ["9.10.2026"] },
-    { subject: "sebe", short: "10:00", label: "Seberozvoj: Silné stránky – 2. část · sobota 10:00–12:00", dates: ["10.10.2026"] },
-    { subject: "sebe", short: "14:30", label: "Seberozvoj: Vize a kariérní přesvědčení – 1. část · pátek 14:30–16:30 nebo 16:45–18:45", dates: ["6.11.2026"] },
-    { subject: "sebe", short: "10:00", label: "Seberozvoj: Vize a kariérní přesvědčení – 1. část · sobota 10:00–12:00", dates: ["7.11.2026"] },
-    { subject: "sebe", short: "14:30", label: "Seberozvoj: Vize a kariérní přesvědčení – 2. část · pátek 14:30–16:30 nebo 16:45–18:45", dates: ["27.11.2026"] },
-    { subject: "sebe", short: "10:00", label: "Seberozvoj: Vize a kariérní přesvědčení – 2. část · sobota 10:00–12:00", dates: ["28.11.2026"] },
+    { subject: "mat", short: "14:30–15:30", label: "Matematika · pondělí 14:30–15:30", dates: ["14.9.2026", "21.9.2026", "5.10.2026", "12.10.2026", "19.10.2026", "2.11.2026", "9.11.2026", "16.11.2026", "23.11.2026", "30.11.2026"] },
+    { subject: "mat", short: "14:30–15:30", label: "Matematika · úterý 14:30–15:30", dates: ["15.9.2026", "22.9.2026", "29.9.2026", "6.10.2026", "13.10.2026", "20.10.2026", "3.11.2026", "10.11.2026", "24.11.2026", "1.12.2026"] },
+    { subject: "mat", short: "16:50–17:50", label: "Matematika · úterý 16:50–17:50", dates: ["15.9.2026", "22.9.2026", "29.9.2026", "6.10.2026", "13.10.2026", "20.10.2026", "3.11.2026", "10.11.2026", "24.11.2026", "1.12.2026"] },
+    { subject: "cesky", short: "15:40–16:40", label: "Český jazyk · úterý 15:40–16:40", dates: ["15.9.2026", "22.9.2026", "29.9.2026", "6.10.2026", "13.10.2026", "20.10.2026", "3.11.2026", "10.11.2026", "24.11.2026", "1.12.2026"] },
+    { subject: "cesky", short: "14:30–15:30", label: "Český jazyk · čtvrtek 14:30–15:30", dates: ["17.9.2026", "24.9.2026", "1.10.2026", "8.10.2026", "15.10.2026", "22.10.2026", "5.11.2026", "12.11.2026", "19.11.2026", "26.11.2026"] },
+    { subject: "cesky", short: "15:40–16:40", label: "Český jazyk · čtvrtek 15:40–16:40", dates: ["17.9.2026", "24.9.2026", "1.10.2026", "8.10.2026", "15.10.2026", "22.10.2026", "5.11.2026", "12.11.2026", "19.11.2026", "26.11.2026"] },
+    { subject: "sebe", short: "14:30–16:30", label: "Seberozvoj: Silné stránky – 1. část · pátek 14:30–16:30", dates: ["18.9.2026"] },
+    { subject: "sebe", short: "16:45–18:45", label: "Seberozvoj: Silné stránky – 1. část · pátek 16:45–18:45", dates: ["18.9.2026"] },
+    { subject: "sebe", short: "10:00–12:00", label: "Seberozvoj: Silné stránky – 1. část · sobota 10:00–12:00", dates: ["19.9.2026"] },
+    { subject: "sebe", short: "14:30–16:30", label: "Seberozvoj: Silné stránky – 2. část · pátek 14:30–16:30", dates: ["9.10.2026"] },
+    { subject: "sebe", short: "16:45–18:45", label: "Seberozvoj: Silné stránky – 2. část · pátek 16:45–18:45", dates: ["9.10.2026"] },
+    { subject: "sebe", short: "10:00–12:00", label: "Seberozvoj: Silné stránky – 2. část · sobota 10:00–12:00", dates: ["10.10.2026"] },
+    { subject: "sebe", short: "14:30–16:30", label: "Seberozvoj: Vize a kariérní přesvědčení – 1. část · pátek 14:30–16:30", dates: ["6.11.2026"] },
+    { subject: "sebe", short: "16:45–18:45", label: "Seberozvoj: Vize a kariérní přesvědčení – 1. část · pátek 16:45–18:45", dates: ["6.11.2026"] },
+    { subject: "sebe", short: "10:00–12:00", label: "Seberozvoj: Vize a kariérní přesvědčení – 1. část · sobota 10:00–12:00", dates: ["7.11.2026"] },
+    { subject: "sebe", short: "14:30–16:30", label: "Seberozvoj: Vize a kariérní přesvědčení – 2. část · pátek 14:30–16:30", dates: ["27.11.2026"] },
+    { subject: "sebe", short: "16:45–18:45", label: "Seberozvoj: Vize a kariérní přesvědčení – 2. část · pátek 16:45–18:45", dates: ["27.11.2026"] },
+    { subject: "sebe", short: "10:00–12:00", label: "Seberozvoj: Vize a kariérní přesvědčení – 2. část · sobota 10:00–12:00", dates: ["28.11.2026"] },
 
-    { subject: "mat", short: "14:30", label: "Matematika · pondělí 14:30–15:30", dates: ["11.1.2027", "18.1.2027", "1.2.2027", "8.2.2027", "22.2.2027", "1.3.2027", "8.3.2027", "15.3.2027", "29.3.2027"] },
+    { subject: "mat", short: "14:30–15:30", label: "Matematika · pondělí 14:30–15:30", dates: ["11.1.2027", "18.1.2027", "1.2.2027", "8.2.2027", "22.2.2027", "1.3.2027", "8.3.2027", "15.3.2027", "29.3.2027"] },
     { subject: "mat", short: "test", label: "Matematika · pondělí — bez společné lekce, cvičný test v Classroomu", dates: ["5.4.2027"] },
-    { subject: "mat", short: "14:30", label: "Matematika · úterý 14:30–15:30 nebo 16:50–17:50", dates: ["12.1.2027", "19.1.2027", "2.2.2027", "9.2.2027", "23.2.2027", "2.3.2027", "9.3.2027", "16.3.2027", "30.3.2027"] },
+    { subject: "mat", short: "14:30–15:30", label: "Matematika · úterý 14:30–15:30", dates: ["12.1.2027", "19.1.2027", "2.2.2027", "9.2.2027", "23.2.2027", "2.3.2027", "9.3.2027", "16.3.2027", "30.3.2027"] },
+    { subject: "mat", short: "16:50–17:50", label: "Matematika · úterý 16:50–17:50", dates: ["12.1.2027", "19.1.2027", "2.2.2027", "9.2.2027", "23.2.2027", "2.3.2027", "9.3.2027", "16.3.2027", "30.3.2027"] },
     { subject: "mat", short: "test", label: "Matematika · úterý — bez společné lekce, cvičný test v Classroomu", dates: ["6.4.2027"] },
-    { subject: "cesky", short: "15:40", label: "Český jazyk · úterý 15:40–16:40", dates: ["12.1.2027", "19.1.2027", "2.2.2027", "9.2.2027", "23.2.2027", "2.3.2027", "9.3.2027", "16.3.2027", "30.3.2027"] },
+    { subject: "cesky", short: "15:40–16:40", label: "Český jazyk · úterý 15:40–16:40", dates: ["12.1.2027", "19.1.2027", "2.2.2027", "9.2.2027", "23.2.2027", "2.3.2027", "9.3.2027", "16.3.2027", "30.3.2027"] },
     { subject: "cesky", short: "test", label: "Český jazyk · úterý — bez společné lekce, cvičný test v Classroomu", dates: ["6.4.2027"] },
-    { subject: "cesky", short: "14:30", label: "Český jazyk · čtvrtek 14:30–15:30 nebo 15:40–16:40", dates: ["14.1.2027", "21.1.2027", "4.2.2027", "11.2.2027", "25.2.2027", "4.3.2027", "11.3.2027", "18.3.2027", "1.4.2027"] },
+    { subject: "cesky", short: "14:30–15:30", label: "Český jazyk · čtvrtek 14:30–15:30", dates: ["14.1.2027", "21.1.2027", "4.2.2027", "11.2.2027", "25.2.2027", "4.3.2027", "11.3.2027", "18.3.2027", "1.4.2027"] },
+    { subject: "cesky", short: "15:40–16:40", label: "Český jazyk · čtvrtek 15:40–16:40", dates: ["14.1.2027", "21.1.2027", "4.2.2027", "11.2.2027", "25.2.2027", "4.3.2027", "11.3.2027", "18.3.2027", "1.4.2027"] },
     { subject: "cesky", short: "test", label: "Český jazyk · čtvrtek — bez společné lekce, cvičný test v Classroomu", dates: ["8.4.2027"] },
-    { subject: "sebe", short: "14:30", label: "Seberozvoj: Emoce – 1. část · pátek 14:30–16:30 nebo 16:45–18:45", dates: ["8.1.2027"] },
-    { subject: "sebe", short: "10:00", label: "Seberozvoj: Emoce – 1. část · sobota 10:00–12:00", dates: ["9.1.2027"] },
-    { subject: "sebe", short: "14:30", label: "Seberozvoj: Emoce – 2. část · pátek 14:30–16:30 nebo 16:45–18:45", dates: ["5.2.2027"] },
-    { subject: "sebe", short: "10:00", label: "Seberozvoj: Emoce – 2. část · sobota 10:00–12:00", dates: ["6.2.2027"] },
-    { subject: "sebe", short: "14:30", label: "Seberozvoj: Vnitřní přesvědčení – 1. část · pátek 14:30–16:30 nebo 16:45–18:45", dates: ["5.3.2027"] },
-    { subject: "sebe", short: "10:00", label: "Seberozvoj: Vnitřní přesvědčení – 1. část · sobota 10:00–12:00", dates: ["6.3.2027"] },
-    { subject: "sebe", short: "14:30", label: "Seberozvoj: Vnitřní přesvědčení – 2. část · pátek 14:30–16:30 nebo 16:45–18:45", dates: ["2.4.2027"] },
-    { subject: "sebe", short: "10:00", label: "Seberozvoj: Vnitřní přesvědčení – 2. část · sobota 10:00–12:00", dates: ["3.4.2027"] }
+    { subject: "sebe", short: "14:30–16:30", label: "Seberozvoj: Emoce – 1. část · pátek 14:30–16:30", dates: ["8.1.2027"] },
+    { subject: "sebe", short: "16:45–18:45", label: "Seberozvoj: Emoce – 1. část · pátek 16:45–18:45", dates: ["8.1.2027"] },
+    { subject: "sebe", short: "10:00–12:00", label: "Seberozvoj: Emoce – 1. část · sobota 10:00–12:00", dates: ["9.1.2027"] },
+    { subject: "sebe", short: "14:30–16:30", label: "Seberozvoj: Emoce – 2. část · pátek 14:30–16:30", dates: ["5.2.2027"] },
+    { subject: "sebe", short: "16:45–18:45", label: "Seberozvoj: Emoce – 2. část · pátek 16:45–18:45", dates: ["5.2.2027"] },
+    { subject: "sebe", short: "10:00–12:00", label: "Seberozvoj: Emoce – 2. část · sobota 10:00–12:00", dates: ["6.2.2027"] },
+    { subject: "sebe", short: "14:30–16:30", label: "Seberozvoj: Vnitřní přesvědčení – 1. část · pátek 14:30–16:30", dates: ["5.3.2027"] },
+    { subject: "sebe", short: "16:45–18:45", label: "Seberozvoj: Vnitřní přesvědčení – 1. část · pátek 16:45–18:45", dates: ["5.3.2027"] },
+    { subject: "sebe", short: "10:00–12:00", label: "Seberozvoj: Vnitřní přesvědčení – 1. část · sobota 10:00–12:00", dates: ["6.3.2027"] },
+    { subject: "sebe", short: "14:30–16:30", label: "Seberozvoj: Vnitřní přesvědčení – 2. část · pátek 14:30–16:30", dates: ["2.4.2027"] },
+    { subject: "sebe", short: "16:45–18:45", label: "Seberozvoj: Vnitřní přesvědčení – 2. část · pátek 16:45–18:45", dates: ["2.4.2027"] },
+    { subject: "sebe", short: "10:00–12:00", label: "Seberozvoj: Vnitřní přesvědčení – 2. část · sobota 10:00–12:00", dates: ["3.4.2027"] }
   ];
 
   function dateKey(d, m, y) {
