@@ -310,6 +310,12 @@ a { color: inherit; text-decoration: none; }
 .trust-item svg { width: 32px; height: 32px; flex-shrink: 0; color: var(--color-accent); stroke-width: 1.4; }
 .trust-item p { margin: 0; font-size: 1rem; line-height: 1.35; }
 
+/* Stats strip (informational, non-interactive) */
+.stats-strip { background: var(--color-navy); color: #fff; padding: 30px 0; }
+.stats-strip-inner { display: flex; justify-content: center; align-items: center; gap: 40px; flex-wrap: wrap; text-align: center; }
+.stats-item { font-size: 1.05rem; }
+.stats-item strong { color: var(--color-accent); font-size: 1.5rem; }
+
 /* Bottom grid: about/testimonials/blog/cta */
 .bottom-grid { background: var(--color-bg); }
 .bottom-grid-inner { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 22px; align-items: stretch; }
@@ -659,6 +665,7 @@ a { color: inherit; text-decoration: none; }
 }
 .pricing-perks-gift { border-left-color: var(--color-accent); }
 .pricing-perks-includes { border-left-color: var(--color-navy); }
+.pricing-perks-support { border-left-color: var(--color-accent); background: linear-gradient(135deg, #fff 0%, #f4f1de 100%); box-shadow: 0 12px 34px rgba(179, 195, 74, 0.16); }
 .pricing-perks-head { display: flex; align-items: center; gap: 14px; }
 .pricing-perks-icon {
   display: flex;
@@ -672,6 +679,21 @@ a { color: inherit; text-decoration: none; }
 }
 .pricing-perks-gift .pricing-perks-icon { background: #f4f1de; color: var(--color-navy); }
 .pricing-perks-includes .pricing-perks-icon { background: #eae8d9; color: var(--color-navy); }
+.pricing-perks-support .pricing-perks-icon { background: var(--color-accent); color: var(--color-navy); }
+.pricing-perks-support-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+.pricing-perks-support-badge {
+  display: inline-block;
+  padding: 5px 14px;
+  border-radius: 999px;
+  background: var(--color-accent);
+  color: var(--color-navy);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.pricing-perks-support-intro { margin: 16px 0 0; font-size: 0.98rem; line-height: 1.7; color: var(--color-text); }
+.pricing-perks-support-intro strong { color: var(--color-navy); }
 .pricing-perks-icon svg { width: 24px; height: 24px; }
 .pricing-perks-head h3 {
   font-family: var(--font-serif);
@@ -682,7 +704,7 @@ a { color: inherit; text-decoration: none; }
 }
 .pricing-perks-note { margin: 10px 0 0; font-size: 0.88rem; color: var(--color-green-dark); font-weight: 600; }
 
-.bonus-grid, .gift-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
+.bonus-grid, .gift-grid, .support-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
 .includes-grid { display: grid; gap: 16px; margin-top: 20px; }
 .includes-grid-3 { grid-template-columns: repeat(3, 1fr); }
 .includes-grid-2 { grid-template-columns: repeat(2, 1fr); }
@@ -717,6 +739,8 @@ a { color: inherit; text-decoration: none; }
 .perk-card-green .perk-card-icon { background: #fff; }
 .perk-card-tan { background: #f1eadf; border: 1px solid #e3dbc9; }
 .perk-card-tan .perk-card-icon { background: #fff; }
+.perk-card-bg { background: var(--color-bg); border: 1px solid var(--color-border); }
+.perk-card-bg .perk-card-icon { background: #fff; }
 .perk-card-dark { background: var(--color-green); border: 1px solid var(--color-green); color: #fff; }
 .perk-card-dark .perk-card-icon { background: rgba(255, 255, 255, 0.15); color: #fff; }
 .perk-card-dark .perk-card-title strong { color: #fff; }
@@ -767,7 +791,7 @@ a { color: inherit; text-decoration: none; }
 .perk-card-workshop-text p:last-child, .perk-card-workshop-text ul:last-child { margin-bottom: 0; }
 
 @media (max-width: 900px) {
-  .gift-grid, .bonus-grid, .includes-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .gift-grid, .bonus-grid, .support-grid, .includes-grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 700px) {
@@ -776,7 +800,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 500px) {
-  .gift-grid, .bonus-grid, .includes-grid-3, .includes-grid-2 { grid-template-columns: 1fr; }
+  .gift-grid, .bonus-grid, .support-grid, .includes-grid-3, .includes-grid-2 { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 700px) {
