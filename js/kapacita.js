@@ -11,7 +11,7 @@
   var DATA = [
     {
       predmet: "Matematika",
-      den: "pondělky a úterky",
+      den: "pondělky nebo úterky",
       skupiny: [
         { label: "pondělky 14:30–15:30", volno: 10 },
         { label: "úterky 14:30–15:30", volno: 10 },
@@ -20,7 +20,7 @@
     },
     {
       predmet: "Český jazyk",
-      den: "úterky a čtvrtky",
+      den: "úterky nebo čtvrtky",
       skupiny: [
         { label: "úterky 15:40–16:40", volno: 10 },
         { label: "čtvrtky 14:30–15:30", volno: 10 },
