@@ -483,6 +483,9 @@ a { color: inherit; text-decoration: none; }
 .detail-label-workshop { color: #7c5295; }
 .detail-label-webinar { color: #2f7d9c; }
 .workshop-title-line { white-space: nowrap; }
+@media (max-width: 560px) {
+  .workshop-title-line { white-space: normal; }
+}
 
 .month-calendar-weekdays {
   display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 6px;
@@ -902,6 +905,10 @@ a { color: inherit; text-decoration: none; }
   font-style: italic;
   color: #777;
   background: var(--color-bg);
+}
+@media (max-width: 480px) {
+  .signup-variant-table th, .signup-variant-table td { padding: 6px 4px; }
+  .variant-cell { flex-direction: column; gap: 4px; padding: 10px 4px; white-space: nowrap; }
 }
 
 .signup-submit { align-self: flex-start; border: none; cursor: pointer; }
