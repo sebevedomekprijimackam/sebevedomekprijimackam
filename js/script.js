@@ -100,8 +100,8 @@ if (featureBack) {
   });
 }
 
-// Schedule details (harmonogram + volná místa) hide button
-const scheduleDetails = document.getElementById('harmonogram');
+// Schedule details (rozvrh + volná místa) hide button
+const scheduleDetails = document.getElementById('rozvrh');
 const scheduleHide = document.getElementById('schedule-hide');
 if (scheduleDetails && scheduleHide) {
   scheduleHide.addEventListener('click', () => {
@@ -130,8 +130,8 @@ if (featureCards.length && window.location.hash.indexOf('#priprava-') === 0) {
   }
 }
 
-// Deep link into the harmonogram, e.g. cenik.html links to index.html#harmonogram
-if (scheduleDetails && window.location.hash === '#harmonogram') {
+// Deep link into the rozvrh, e.g. cenik.html links to index.html#rozvrh
+if (scheduleDetails && window.location.hash === '#rozvrh') {
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   window.scrollTo(0, 0);
   const runScheduleDeepLink = () => {

@@ -382,7 +382,7 @@ a { color: inherit; text-decoration: none; }
   margin: 56px 0 40px;
 }
 
-/* Schedule toggle (harmonogram + volná místa) */
+/* Schedule toggle (rozvrh + volná místa) */
 .schedule-toggle { margin-top: 40px; scroll-margin-top: 100px; }
 .schedule-details {
   background: var(--color-green-pale);
@@ -471,6 +471,58 @@ a { color: inherit; text-decoration: none; }
 .course-calendar-classic .course-calendar-seberozvoj { border-left-color: var(--color-accent); }
 .course-calendar-classic .course-calendar-seberozvoj h3 { color: #8a8f2a; }
 .course-calendar-classic .course-calendar-seberozvoj-full { grid-column: 1 / -1; }
+
+/* Vizuální kalendář (rozvrh) */
+.month-calendar { background: #fff; border: 1px solid var(--color-border); border-radius: 16px; padding: 28px clamp(16px, 4vw, 32px); margin: 0 0 40px; }
+.month-calendar-nav { display: flex; align-items: center; justify-content: center; gap: 20px; }
+.month-calendar-label { font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-navy); min-width: 190px; text-align: center; margin: 0; }
+.month-calendar-arrow {
+  width: 36px; height: 36px; border-radius: 50%;
+  border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-navy);
+  font-size: 1.1rem; line-height: 1; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.15s ease;
+}
+.month-calendar-arrow:hover:not(:disabled) { background: var(--color-green-pale); }
+.month-calendar-arrow:disabled { opacity: 0.3; cursor: default; }
+
+.month-calendar-legend { display: flex; justify-content: center; flex-wrap: wrap; gap: 18px; margin: 16px 0 24px; font-size: 0.85rem; color: var(--color-text); }
+.month-calendar-legend-item { display: flex; align-items: center; gap: 6px; }
+
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.dot-mat { background: var(--color-navy); }
+.dot-cesky { background: var(--color-green-dark); }
+.dot-sebe { background: var(--color-accent); }
+
+.month-calendar-weekdays {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 6px;
+  text-align: center; font-size: 0.76rem; font-weight: 700; color: #999; text-transform: uppercase; letter-spacing: 0.03em;
+}
+
+.month-calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; }
+.month-calendar-day {
+  position: relative; aspect-ratio: 1; border: 1px solid var(--color-border); border-radius: 10px;
+  background: var(--color-bg); font-family: inherit; color: var(--color-text);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 4px;
+}
+.month-calendar-day-empty { visibility: hidden; border: none; background: none; }
+.month-calendar-day.has-lessons { background: #fff; border-color: var(--color-green); font-weight: 600; cursor: pointer; }
+.month-calendar-day.has-lessons:hover { background: var(--color-green-pale); }
+.month-calendar-daynum { font-size: 0.9rem; }
+.month-calendar-dots { display: flex; gap: 3px; }
+
+.month-calendar-detail { margin-top: 20px; padding: 16px 20px; background: var(--color-green-pale); border-radius: 12px; }
+.month-calendar-detail-date { font-weight: 700; color: var(--color-navy); margin: 0 0 8px; }
+.month-calendar-detail-item { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 0.9rem; }
+
+@media (max-width: 560px) {
+  .month-calendar { padding: 22px 14px; }
+  .month-calendar-label { font-size: 1.1rem; min-width: 150px; }
+  .month-calendar-day { border-radius: 8px; }
+  .month-calendar-daynum { font-size: 0.78rem; }
+  .month-calendar-weekdays { font-size: 0.66rem; }
+  .month-calendar-legend { gap: 12px; font-size: 0.78rem; }
+}
 .seberozvoj-sessions {
   list-style: none;
   margin: 0;
