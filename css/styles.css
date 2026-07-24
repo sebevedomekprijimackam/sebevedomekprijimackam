@@ -471,6 +471,7 @@ a { color: inherit; text-decoration: none; }
 .legend-sebe { color: var(--color-green-dark); }
 .legend-domaci { color: #a87c17; }
 .legend-workshop { color: #7c5295; }
+.legend-webinar { color: #2f7d9c; }
 
 .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
 .dot-mat, .mc-chip-mat { background: var(--color-navy); }
@@ -478,7 +479,9 @@ a { color: inherit; text-decoration: none; }
 .dot-sebe, .mc-chip-sebe { background: var(--color-green-dark); }
 .dot-domaci, .mc-chip-domaci { background: #d4a017; }
 .dot-workshop, .mc-chip-workshop { background: #7c5295; }
+.dot-webinar, .mc-chip-webinar { background: #2f7d9c; }
 .detail-label-workshop { color: #7c5295; }
+.detail-label-webinar { color: #2f7d9c; }
 .workshop-title-line { white-space: nowrap; }
 
 .month-calendar-weekdays {

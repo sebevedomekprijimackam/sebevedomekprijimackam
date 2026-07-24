@@ -40,6 +40,7 @@
     { subject: "sebe", short: "16:45–18:45", label: "Seberozvoj: Vize a kariérní přesvědčení – 2. část · pátek 16:45–18:45", dates: ["27.11.2026"] },
     { subject: "sebe", short: "10:00–12:00", label: "Seberozvoj: Vize a kariérní přesvědčení – 2. část · sobota 10:00–12:00", dates: ["28.11.2026"] },
     { subject: "workshop", short: "17:00–18:30", label: "<span class='workshop-title-line'><span class='detail-label-workshop'>Workshop pro rodiče</span>: <strong>Osobní rozvoj dětí</strong></span> · 17:00–18:30, Vzdělávací a seberozvojové centrum ANTALA, Ostrava-Poruba. Workshopem vás provede Kateřina Kučová, lektorka a talentová konzultantka. Odpovíme si na otázku, proč je nyní tak náročné připravit děti na budoucnost – na co se zaměřit, čeho si všímat a co v dětech rozvíjet, aby se v dnešním turbulentním světě neztratily a vyrostly v sebevědomé mladé lidi, kteří si vždy vědí rady, ale zároveň v sobě mají vypěstovaný zdravý respekt a úctu k ostatním. A jako rodiče jistě najdete přínosy této akce i sami pro sebe, pro uvědomění si svých talentů a své vlastní jedinečnosti.", dates: ["30.9.2026"] },
+    { subject: "webinar", short: "17:00–17:30", label: "<span class='workshop-title-line'><span class='detail-label-webinar'>Webinář</span>: <strong>Kolik potřebuju bodů</strong></span> · 17:00–17:30, online, pro děti i rodiče. Na stránkách CERMATu je k dispozici velmi obsáhlá tabulka, ze které lze zjistit kapacity, počty přihlášek a výsledky z minulých školních let na jednotlivých školách. Dále lze zjistit, kolik bodů z matematiky a českého jazyka získali v průměru žáci přijatí na dané školy. Na webináři si ukážeme, kde tabulku najdete a jak s ní pracovat a vyhledat potřebné informace.", dates: ["23.9.2026"] },
 
     { subject: "mat", short: "14:30–15:30", label: "Matematika · pondělí 14:30–15:30", dates: ["11.1.2027", "18.1.2027", "1.2.2027", "8.2.2027", "22.2.2027", "1.3.2027", "8.3.2027", "15.3.2027", "22.3.2027"] },
     { subject: "mat", short: "test", label: "Matematika · pondělí — bez společné lekce, cvičný test v Classroomu", dates: ["5.4.2027"] },
@@ -154,8 +155,8 @@
       gridEl.querySelectorAll(".has-lessons").forEach(function (cell) {
         cell.addEventListener("click", function () {
           var lessons = lessonsByDate[cell.dataset.key];
-          var hasWorkshop = lessons.some(function (l) { return l.subject === "workshop"; });
-          var toShow = hasWorkshop ? lessons.filter(function (l) { return l.subject === "workshop"; }) : lessons;
+          var hasWorkshop = lessons.some(function (l) { return l.subject === "workshop" || l.subject === "webinar"; });
+          var toShow = hasWorkshop ? lessons.filter(function (l) { return l.subject === "workshop" || l.subject === "webinar"; }) : lessons;
           showDetail(cell.dataset.key, toShow);
         });
       });
