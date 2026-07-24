@@ -145,6 +145,37 @@ if (featureCards.length && window.location.hash.indexOf('#priprava-') === 0) {
   });
 })();
 
+// Vyskakovací okno s potvrzením po odeslání formuláře
+function showFormModal(message, isError) {
+  let overlay = document.getElementById('form-modal-overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'form-modal-overlay';
+    overlay.className = 'form-modal-overlay';
+    overlay.innerHTML = `
+      <div class="form-modal" role="alertdialog" aria-live="assertive">
+        <button type="button" class="form-modal-close" aria-label="Zavřít">&times;</button>
+        <div class="form-modal-icon"></div>
+        <p class="form-modal-text"></p>
+        <button type="button" class="btn btn-navy form-modal-ok">Rozumím</button>
+      </div>
+    `;
+    document.body.appendChild(overlay);
+    const close = () => overlay.classList.remove('open');
+    overlay.querySelector('.form-modal-close').addEventListener('click', close);
+    overlay.querySelector('.form-modal-ok').addEventListener('click', close);
+    overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+  }
+
+  const modal = overlay.querySelector('.form-modal');
+  modal.classList.toggle('form-modal-error', !!isError);
+  overlay.querySelector('.form-modal-icon').innerHTML = isError
+    ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M12 7v6M12 16.5v.1"/></svg>'
+    : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>';
+  overlay.querySelector('.form-modal-text').textContent = message;
+  overlay.classList.add('open');
+}
+
 // Form submission via Web3Forms
 function setupWeb3Form(formId, statusId, submitSelector, successMsg) {
   const form = document.getElementById(formId);
@@ -171,13 +202,18 @@ function setupWeb3Form(formId, statusId, submitSelector, successMsg) {
         status.textContent = successMsg;
         status.classList.add('success');
         form.reset();
+        showFormModal(successMsg, false);
       } else {
-        status.textContent = 'Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na e-mail.';
+        const errorMsg = 'Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na e-mail.';
+        status.textContent = errorMsg;
         status.classList.add('error');
+        showFormModal(errorMsg, true);
       }
     } catch (err) {
-      status.textContent = 'Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na e-mail.';
+      const errorMsg = 'Něco se nepovedlo. Zkuste to prosím znovu, nebo nám napište na e-mail.';
+      status.textContent = errorMsg;
       status.classList.add('error');
+      showFormModal(errorMsg, true);
     } finally {
       submitBtn.disabled = false;
     }
