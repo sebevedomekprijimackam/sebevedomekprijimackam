@@ -212,30 +212,4 @@ function setupWeb3Form(formId, statusId, submitSelector, successMsg) {
 }
 
 setupWeb3Form('signup-form', 'signup-status', '.signup-submit', 'Děkujeme! Přihláška byla odeslána, brzy se ozveme.');
-
-// Přihláška: zobrazit správnou volbu způsobu platby podle vybraného bloku
-(() => {
-  const blokRadios = document.querySelectorAll('input[name="Přihláška do bloku"]');
-  const paymentGroups = {
-    'Celý kurz (24 800 Kč)': document.getElementById('payment-cely'),
-    '1. blok (12 400 Kč)': document.getElementById('payment-1'),
-  };
-  if (!blokRadios.length) return;
-
-  const updatePaymentGroups = (selectedValue) => {
-    Object.entries(paymentGroups).forEach(([value, group]) => {
-      if (!group) return;
-      const isActive = value === selectedValue;
-      group.hidden = !isActive;
-      group.querySelectorAll('input[type="radio"]').forEach((input) => {
-        input.required = isActive;
-        if (!isActive) input.checked = false;
-      });
-    });
-  };
-
-  blokRadios.forEach((radio) => {
-    radio.addEventListener('change', () => updatePaymentGroups(radio.value));
-  });
-})();
 setupWeb3Form('withdrawal-form', 'withdrawal-status', '.withdrawal-submit', 'Odstoupení od smlouvy bylo odesláno, brzy se ozveme.');

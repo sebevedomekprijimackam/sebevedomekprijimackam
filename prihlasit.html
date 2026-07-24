@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=113">
+<link rel="stylesheet" href="css/styles.css?v=114">
 </head>
 <body>
 
@@ -85,26 +85,52 @@
         </div>
 
         <div class="form-row">
-          <label>Přihlašuji dítě do *</label>
-          <div class="form-choices">
-            <label class="choice"><input type="radio" id="f-blok-cely" name="Přihláška do bloku" value="Celý kurz (24 800 Kč)" required> Celý kurz – 24 800 Kč</label>
-            <label class="choice"><input type="radio" id="f-blok-1" name="Přihláška do bloku" value="1. blok (12 400 Kč)"> 1. blok – 12 400 Kč</label>
-          </div>
-        </div>
-
-        <div class="form-row" id="payment-cely" hidden>
-          <label>Způsob platby *</label>
-          <div class="form-choices">
-            <label class="choice"><input type="radio" name="Způsob platby – celý kurz" value="Najednou (24 800 Kč)"> Najednou – 24 800 Kč</label>
-            <label class="choice"><input type="radio" name="Způsob platby – celý kurz" value="Na splátky (8× 3 100 Kč)"> Na splátky – 8× 3 100 Kč</label>
-          </div>
-        </div>
-
-        <div class="form-row" id="payment-1" hidden>
-          <label>Způsob platby *</label>
-          <div class="form-choices">
-            <label class="choice"><input type="radio" name="Způsob platby – 1. blok" value="Najednou (12 400 Kč)"> Najednou – 12 400 Kč</label>
-            <label class="choice"><input type="radio" name="Způsob platby – 1. blok" value="Na splátky (4× 3 100 Kč)"> Na splátky – 4× 3 100 Kč</label>
+          <label id="f-variant-label">Přihlašuji dítě do a způsob platby *</label>
+          <div class="signup-variant-wrap">
+            <table class="signup-variant-table" aria-labelledby="f-variant-label">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Celý kurz</th>
+                  <th scope="col">1. blok</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Najednou</th>
+                  <td>
+                    <label class="variant-cell">
+                      <input type="radio" name="Přihláška do bloku" value="Celý kurz – najednou (24 800 Kč)" required>
+                      <span>24 800 Kč</span>
+                    </label>
+                  </td>
+                  <td>
+                    <label class="variant-cell">
+                      <input type="radio" name="Přihláška do bloku" value="1. blok – najednou (12 400 Kč)">
+                      <span>12 400 Kč</span>
+                    </label>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Na splátky</th>
+                  <td>
+                    <label class="variant-cell">
+                      <input type="radio" name="Přihláška do bloku" value="Celý kurz – na splátky (8× 3 100 Kč)">
+                      <span>8× 3 100 Kč</span>
+                    </label>
+                  </td>
+                  <td>
+                    <label class="variant-cell">
+                      <input type="radio" name="Přihláška do bloku" value="1. blok – na splátky (4× 3 100 Kč)">
+                      <span>4× 3 100 Kč</span>
+                    </label>
+                  </td>
+                </tr>
+                <tr class="variant-note-row">
+                  <td colspan="3">Odesláním objednávky se zavazujete zaplatit všechny splátky.</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
 
@@ -151,8 +177,6 @@
         <div class="form-row form-row-checkbox">
           <label class="choice"><input type="checkbox" name="Souhlas s nabídkami" value="Ano"> Chci dostávat tipy, materiály a nabídky.</label>
         </div>
-
-        <p class="signup-installments-note">Odesláním objednávky se zavazujete zaplatit všechny splátky.</p>
 
         <button type="submit" class="btn btn-navy signup-submit">Odeslat závaznou přihlášku</button>
         <p class="signup-status" id="signup-status" role="status"></p>
@@ -217,7 +241,7 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=15"></script>
+<script src="js/script.js?v=16"></script>
 <script src="js/kapacita.js?v=5"></script>
 </body>
 </html>

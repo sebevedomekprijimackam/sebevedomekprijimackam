@@ -787,7 +787,61 @@ a { color: inherit; text-decoration: none; }
 .form-row-checkbox .choice input { margin-top: 2px; }
 .form-consent-link { color: var(--color-green-dark); text-decoration: underline; }
 
-.signup-installments-note { font-size: 0.8rem; color: #666; margin: -8px 0 0; }
+.signup-variant-wrap { overflow-x: auto; }
+.signup-variant-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  overflow: hidden;
+  font-size: 0.88rem;
+}
+.signup-variant-table th, .signup-variant-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  text-align: center;
+}
+.signup-variant-table th:last-child, .signup-variant-table td:last-child { border-right: none; }
+.signup-variant-table tbody tr:last-child th, .signup-variant-table tbody tr:last-child td { border-bottom: none; }
+.signup-variant-table thead th {
+  background: var(--color-navy);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+.signup-variant-table thead th:first-child { background: var(--color-navy); }
+.signup-variant-table tbody th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-navy);
+  background: var(--color-bg);
+  white-space: nowrap;
+}
+.signup-variant-table tbody td { padding: 0; }
+.variant-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--color-navy);
+}
+.variant-cell input { margin: 0; accent-color: var(--color-green-dark); }
+.signup-variant-table td:has(input:checked) { background: var(--color-green-pale); }
+.signup-variant-table td:has(input:checked) .variant-cell { color: var(--color-green-deep); }
+.variant-cell:hover { background: var(--color-green-pale); }
+.signup-variant-table tbody tr.variant-note-row:last-child td {
+  padding: 8px 12px;
+  font-size: 0.76rem;
+  font-style: italic;
+  color: #777;
+  background: var(--color-bg);
+}
+
 .signup-submit { align-self: flex-start; border: none; cursor: pointer; }
 .signup-status { font-size: 0.88rem; margin: 0; }
 .signup-status.success { color: var(--color-green-dark); }
