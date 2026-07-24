@@ -100,16 +100,6 @@ if (featureBack) {
   });
 }
 
-// Schedule details (rozvrh + volná místa) hide button
-const scheduleDetails = document.getElementById('rozvrh');
-const scheduleHide = document.getElementById('schedule-hide');
-if (scheduleDetails && scheduleHide) {
-  scheduleHide.addEventListener('click', () => {
-    scheduleDetails.open = false;
-    scrollWithHeaderOffset(scheduleDetails, true);
-  });
-}
-
 // Deep link into a feature detail panel, e.g. index.html#priprava-cesky
 if (featureCards.length && window.location.hash.indexOf('#priprava-') === 0) {
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
@@ -127,23 +117,6 @@ if (featureCards.length && window.location.hash.indexOf('#priprava-') === 0) {
     } else {
       window.addEventListener('load', runDeepLink);
     }
-  }
-}
-
-// Deep link into the rozvrh, e.g. cenik.html links to index.html#rozvrh
-if (scheduleDetails && window.location.hash === '#rozvrh') {
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-  window.scrollTo(0, 0);
-  const runScheduleDeepLink = () => {
-    setTimeout(() => {
-      scheduleDetails.open = true;
-      scrollWithHeaderOffset(scheduleDetails, false);
-    }, 100);
-  };
-  if (document.readyState === 'complete') {
-    runScheduleDeepLink();
-  } else {
-    window.addEventListener('load', runScheduleDeepLink);
   }
 }
 
