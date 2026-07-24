@@ -77,6 +77,16 @@
     });
   });
 
+  // Seřadit lekce v rámci dne podle začátku času, ať jdou chronologicky (např. v úterý čeština mezi dvě matematiky).
+  function startMinutes(short) {
+    if (!short || short.indexOf(":") === -1) return 9999;
+    var hm = short.split("–")[0].split(":");
+    return parseInt(hm[0], 10) * 60 + parseInt(hm[1], 10);
+  }
+  Object.keys(lessonsByDate).forEach(function (key) {
+    lessonsByDate[key].sort(function (a, b) { return startMinutes(a.short) - startMinutes(b.short); });
+  });
+
   function init() {
     var root = document.getElementById("month-calendar");
     if (!root) return;
