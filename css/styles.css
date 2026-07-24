@@ -501,6 +501,7 @@ a { color: inherit; text-decoration: none; }
 .dot-domaci, .mc-chip-domaci { background: #d4a017; }
 .dot-workshop, .mc-chip-workshop { background: #7c5295; }
 .detail-label-workshop { color: #7c5295; }
+.workshop-title-line { white-space: nowrap; }
 
 .month-calendar-weekdays {
   display: grid; grid-template-columns: repeat(7, 1fr); gap: 6px; margin-bottom: 6px;
@@ -1423,3 +1424,5 @@ a { color: inherit; text-decoration: none; }
 .faq-answer { margin: 0; padding: 0 22px 20px; color: #555; line-height: 1.65; }
 .faq-answer p { margin: 0 0 10px; }
 .faq-answer p:last-child { margin-bottom: 0; }
+.faq-answer a { color: var(--color-green-dark); font-weight: 600; text-decoration: underline; }
+.faq-answer a:hover { color: var(--color-green-deep); }
