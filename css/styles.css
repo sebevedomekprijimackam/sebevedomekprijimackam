@@ -588,14 +588,8 @@ a { color: inherit; text-decoration: none; }
 .pricing-intro-small { max-width: 640px; color: var(--color-navy); font-size: 1rem; margin: 0 auto 24px; }
 .pricing-intro-full { max-width: 100%; }
 .pricing-intro a { color: var(--color-green-dark); font-weight: 600; text-decoration: underline; }
-.pricing-block-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; margin: 0 0 32px; }
-.pricing-block-col h3 { text-align: center; color: var(--color-navy); font-size: 1.05rem; margin-bottom: 10px; }
-.pricing-block-tables .pricing-table { font-size: 0.78rem; margin-bottom: 0; box-shadow: 0 8px 22px rgba(11, 41, 70, 0.08); }
-.pricing-block-tables .pricing-table th { font-size: 0.66rem; padding: 9px 10px; white-space: nowrap; }
-.pricing-block-tables .pricing-table td { padding: 9px 10px; }
-.pricing-block-tables .pricing-table tfoot td { font-size: 0.82rem; padding: 11px 10px; }
-.pricing-block-tables .pricing-table tfoot td strong { font-size: 0.92rem; }
-@media (max-width: 760px) { .pricing-block-tables { grid-template-columns: 1fr; } }
+.pricing-block-heading { text-align: center; color: var(--color-navy); font-size: 1.2rem; margin: 0 0 14px; }
+.pricing-block-heading:not(:first-of-type) { margin-top: 36px; }
 .pricing-intro-box {
   background: var(--color-green-pale);
   border: 1px solid #cfd8b4;
@@ -709,6 +703,7 @@ a { color: inherit; text-decoration: none; }
 
 .bonus-grid, .gift-grid, .support-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
 .includes-grid { display: grid; gap: 16px; margin-top: 20px; }
+.includes-grid-4 { grid-template-columns: repeat(4, 1fr); }
 .includes-grid-3 { grid-template-columns: repeat(3, 1fr); }
 .includes-grid-2 { grid-template-columns: repeat(2, 1fr); }
 .perk-card {
@@ -794,7 +789,7 @@ a { color: inherit; text-decoration: none; }
 .perk-card-workshop-text p:last-child, .perk-card-workshop-text ul:last-child { margin-bottom: 0; }
 
 @media (max-width: 900px) {
-  .gift-grid, .bonus-grid, .support-grid, .includes-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .gift-grid, .bonus-grid, .support-grid, .includes-grid-4, .includes-grid-3 { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 700px) {
@@ -803,7 +798,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 @media (max-width: 500px) {
-  .gift-grid, .bonus-grid, .support-grid, .includes-grid-3, .includes-grid-2 { grid-template-columns: 1fr; }
+  .gift-grid, .bonus-grid, .support-grid, .includes-grid-4, .includes-grid-3, .includes-grid-2 { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 700px) {
