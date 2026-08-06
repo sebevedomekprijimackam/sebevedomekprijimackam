@@ -223,30 +223,50 @@ function setupWeb3Form(formId, statusId, submitSelector, successMsg) {
 setupWeb3Form('signup-form', 'signup-status', '.signup-submit', 'Děkujeme! Přihláška byla odeslána, brzy se ozveme.');
 setupWeb3Form('withdrawal-form', 'withdrawal-status', '.withdrawal-submit', 'Odstoupení od smlouvy bylo odesláno, brzy se ozveme.');
 
-// Lightbox – zvětšení fotky po kliknutí (galerie na kontaktu)
+// Lightbox – zvětšení fotky po kliknutí, procházení šipkami (galerie na kontaktu)
 (function () {
-  const galleryImages = document.querySelectorAll('.contact-gallery img');
+  const galleryImages = Array.from(document.querySelectorAll('.contact-gallery img'));
   if (!galleryImages.length) return;
 
   let overlay;
-  function openLightbox(src, alt) {
+  let currentIndex = 0;
+
+  function showImage(index) {
+    currentIndex = (index + galleryImages.length) % galleryImages.length;
+    const img = galleryImages[currentIndex];
+    const overlayImg = overlay.querySelector('img');
+    overlayImg.src = img.src;
+    overlayImg.alt = img.alt || '';
+  }
+
+  function openLightbox(index) {
     if (!overlay) {
       overlay = document.createElement('div');
       overlay.className = 'lightbox-overlay';
-      overlay.innerHTML = '<button type="button" class="lightbox-close" aria-label="Zavřít">&times;</button><img alt="">';
+      overlay.innerHTML = `
+        <button type="button" class="lightbox-close" aria-label="Zavřít">&times;</button>
+        <button type="button" class="lightbox-arrow lightbox-prev" aria-label="Předchozí fotka">&#10094;</button>
+        <img alt="">
+        <button type="button" class="lightbox-arrow lightbox-next" aria-label="Další fotka">&#10095;</button>
+      `;
       document.body.appendChild(overlay);
       const close = () => overlay.classList.remove('open');
       overlay.querySelector('.lightbox-close').addEventListener('click', close);
+      overlay.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex - 1); });
+      overlay.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); showImage(currentIndex + 1); });
       overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
-      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+      document.addEventListener('keydown', (e) => {
+        if (!overlay.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+        if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+      });
     }
-    const img = overlay.querySelector('img');
-    img.src = src;
-    img.alt = alt || '';
+    showImage(index);
     overlay.classList.add('open');
   }
 
-  galleryImages.forEach((img) => {
-    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  galleryImages.forEach((img, index) => {
+    img.addEventListener('click', () => openLightbox(index));
   });
 })();
