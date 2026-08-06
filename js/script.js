@@ -222,3 +222,31 @@ function setupWeb3Form(formId, statusId, submitSelector, successMsg) {
 
 setupWeb3Form('signup-form', 'signup-status', '.signup-submit', 'Děkujeme! Přihláška byla odeslána, brzy se ozveme.');
 setupWeb3Form('withdrawal-form', 'withdrawal-status', '.withdrawal-submit', 'Odstoupení od smlouvy bylo odesláno, brzy se ozveme.');
+
+// Lightbox – zvětšení fotky po kliknutí (galerie na kontaktu)
+(function () {
+  const galleryImages = document.querySelectorAll('.contact-gallery img');
+  if (!galleryImages.length) return;
+
+  let overlay;
+  function openLightbox(src, alt) {
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'lightbox-overlay';
+      overlay.innerHTML = '<button type="button" class="lightbox-close" aria-label="Zavřít">&times;</button><img alt="">';
+      document.body.appendChild(overlay);
+      const close = () => overlay.classList.remove('open');
+      overlay.querySelector('.lightbox-close').addEventListener('click', close);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    }
+    const img = overlay.querySelector('img');
+    img.src = src;
+    img.alt = alt || '';
+    overlay.classList.add('open');
+  }
+
+  galleryImages.forEach((img) => {
+    img.addEventListener('click', () => openLightbox(img.src, img.alt));
+  });
+})();
