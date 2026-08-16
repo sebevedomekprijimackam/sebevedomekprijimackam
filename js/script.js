@@ -222,9 +222,9 @@ function setupWeb3Form(formId, statusId, submitSelector, successMsg) {
 
 setupWeb3Form('signup-form', 'signup-status', '.signup-submit', 'Děkujeme! Přihláška byla odeslána, brzy se ozveme.');
 setupWeb3Form('withdrawal-form', 'withdrawal-status', '.withdrawal-submit', 'Odstoupení od smlouvy bylo odesláno, brzy se ozveme.');
-setupWeb3Form('event-form', 'event-status', '.event-submit', 'Děkujeme! Přihláška na úvodní hodinu byla odeslána, brzy se ozveme.');
+setupWeb3Form('event-form', 'event-status', '.event-submit', 'Děkujeme! Přihláška na úvodní setkání byla odeslána, brzy se ozveme.');
 
-// Skrytí propagace "Úvodní hodina zdarma" (banner i sekce na hlavní stránce),
+// Skrytí propagace "Úvodní setkání zdarma" (banner i sekce na hlavní stránce),
 // jakmile termíny proběhnou – stačí posunout datum níže.
 (function () {
   var hideAfter = new Date('2026-09-09T00:00:00');
