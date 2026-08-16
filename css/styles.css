@@ -1579,7 +1579,7 @@ a { color: inherit; text-decoration: none; }
   gap: 2px;
 }
 .event-date-day { font-weight: 700; color: var(--color-navy); font-size: 0.95rem; }
-.event-date-time { color: var(--color-navy); font-size: 1.05rem; font-weight: 700; font-family: var(--font-serif); white-space: nowrap; }
+.event-date-time { color: var(--color-navy); font-size: 1.3rem; font-weight: 700; font-family: var(--font-serif); }
 .event-date-format { font-size: 0.8rem; color: #666; }
 .event-date-format-online { color: var(--color-green-dark); font-weight: 600; }
 @media (max-width: 900px) {
