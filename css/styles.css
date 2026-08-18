@@ -1567,9 +1567,10 @@ a { color: inherit; text-decoration: none; }
 .event-banner-text { margin: 0; font-size: 1.15rem; color: #fff; line-height: 1.4; }
 .event-banner-text strong { color: #fff; }
 .event-banner-text::before {
-  content: "📅";
+  content: "🔔";
   display: inline-block;
   margin-right: 8px;
+  transform-origin: top center;
   animation: banner-ring 2.4s ease-in-out infinite;
 }
 .event-banner-btn {
