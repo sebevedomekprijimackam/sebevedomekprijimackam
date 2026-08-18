@@ -1536,7 +1536,24 @@ a { color: inherit; text-decoration: none; }
 .faq-answer a { color: var(--color-green-dark); font-weight: 600; text-decoration: underline; }
 
 /* Event banner – Úvodní hodina zdarma (sitewide, mizí po 8. 9. 2026) */
-.event-banner { background: var(--color-green-dark); }
+.event-banner {
+  background: var(--color-green-dark);
+  position: relative;
+  overflow: hidden;
+  animation: banner-drop 0.5s ease-out;
+}
+.event-banner::before {
+  /* jemný pruh světla, který pomalu propluje přes lištu a upoutá oko */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+  animation: banner-shine 5s ease-in-out infinite;
+  pointer-events: none;
+}
 .event-banner-inner {
   display: flex;
   align-items: center;
@@ -1545,9 +1562,16 @@ a { color: inherit; text-decoration: none; }
   flex-wrap: wrap;
   padding: 18px 0;
   text-align: center;
+  position: relative;
 }
 .event-banner-text { margin: 0; font-size: 1.15rem; color: #fff; line-height: 1.4; }
 .event-banner-text strong { color: #fff; }
+.event-banner-text::before {
+  content: "📅";
+  display: inline-block;
+  margin-right: 8px;
+  animation: banner-ring 2.4s ease-in-out infinite;
+}
 .event-banner-btn {
   flex-shrink: 0;
   background: #fff;
@@ -1558,9 +1582,35 @@ a { color: inherit; text-decoration: none; }
   border-radius: 24px;
   white-space: nowrap;
   transition: background 0.15s ease;
+  animation: banner-btn-pulse 2.4s ease-in-out infinite;
 }
 .event-banner-btn:hover { background: var(--color-green-pale); }
 @media (max-width: 560px) { .event-banner-text { font-size: 0.98rem; } }
+
+@keyframes banner-drop {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+@keyframes banner-shine {
+  0%, 15% { left: -30%; }
+  55%, 100% { left: 130%; }
+}
+@keyframes banner-ring {
+  0%, 100% { transform: rotate(0deg); }
+  8% { transform: rotate(-12deg); }
+  16% { transform: rotate(10deg); }
+  24% { transform: rotate(-8deg); }
+  32% { transform: rotate(0deg); }
+}
+@keyframes banner-btn-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55); }
+  50% { box-shadow: 0 0 0 7px rgba(255, 255, 255, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .event-banner, .event-banner::before, .event-banner-text::before, .event-banner-btn {
+    animation: none;
+  }
+}
 
 /* Event promo – domovská stránka */
 .event-promo { background: var(--color-green-pale); }
