@@ -827,8 +827,6 @@ a { color: inherit; text-decoration: none; }
 .form-row { display: flex; flex-direction: column; gap: 8px; }
 .form-row[hidden] { display: none; }
 .form-row label { font-size: 0.88rem; font-weight: 600; color: var(--color-navy); }
-.form-note-hint { font-size: 0.85rem; color: var(--color-green-dark); margin: -2px 0 0; }
-.form-note-hint strong { color: var(--color-green-dark); }
 .signup-times-title { font-size: 0.88rem; font-weight: 600; color: var(--color-navy); margin: 0; }
 .form-row input[type="email"],
 .form-row input[type="text"],
@@ -1563,11 +1561,6 @@ a { color: inherit; text-decoration: none; }
 }
 .event-banner-btn:hover { background: var(--color-green-pale); }
 @media (max-width: 560px) { .event-banner-text { font-size: 0.98rem; } }
-
-/* Event banner – akce SPOLU (sitewide, do 11. 9. 2026) */
-.event-banner-spolu { background: var(--color-navy); }
-.event-banner-spolu .event-banner-btn { color: var(--color-navy); }
-.event-banner-spolu .event-banner-btn:hover { background: var(--color-green-pale); }
 
 /* Event promo – domovská stránka */
 .event-promo { background: var(--color-green-pale); }
