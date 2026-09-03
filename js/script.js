@@ -280,3 +280,45 @@ setupWeb3Form('event-form', 'event-status', '.event-submit', 'Děkujeme! Přihl�
     img.addEventListener('click', () => openLightbox(index));
   });
 })();
+
+// Automatické přeškrtnutí termínů úvodního setkání, které už proběhly.
+// Každý prvek s data-event-end nese konec termínu (ISO datum) – jakmile je v minulosti,
+// prvek se sám označí jako proběhlý, ať to nikdo nemusí ručně hlídat a upravovat.
+(function () {
+  const now = new Date();
+
+  document.querySelectorAll('[data-event-end]').forEach((el) => {
+    const end = new Date(el.getAttribute('data-event-end'));
+    if (isNaN(end) || now <= end) return;
+
+    if (el.classList.contains('event-banner-date')) {
+      el.innerHTML = '<s>' + el.textContent + '</s>';
+    } else if (el.classList.contains('event-date-card')) {
+      el.classList.add('event-date-card-past');
+      const day = el.querySelector('.event-date-day');
+      if (day) day.innerHTML = '<s>' + day.textContent + '</s>';
+      if (!el.querySelector('.event-date-past-note')) {
+        const note = document.createElement('span');
+        note.className = 'event-date-past-note';
+        note.textContent = 'již proběhlo';
+        el.appendChild(note);
+      }
+    } else if (el.classList.contains('session-option')) {
+      el.classList.add('session-option-past');
+      const input = el.querySelector('input');
+      if (input) { input.disabled = true; input.required = false; }
+      const date = el.querySelector('.session-option-date');
+      if (date) date.innerHTML = '<s>' + date.textContent + '</s>';
+      const format = el.querySelector('.session-option-format');
+      if (format) format.textContent = 'Proběhlo';
+    }
+  });
+
+  // Pokud byl "required" termín deaktivovaný jako proběhlý, přesune se
+  // požadavek na první stále dostupný termín, ať formulář jde dál odeslat.
+  const radiogroup = document.querySelector('[role="radiogroup"]');
+  if (radiogroup && !radiogroup.querySelector('input:required')) {
+    const firstEnabled = radiogroup.querySelector('input:not(:disabled)');
+    if (firstEnabled) firstEnabled.required = true;
+  }
+})();
