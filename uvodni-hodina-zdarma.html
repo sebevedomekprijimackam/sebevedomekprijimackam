@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=150">
+<link rel="stylesheet" href="css/styles.css?v=151">
 </head>
 <body>
 
@@ -84,15 +84,15 @@
         <div class="form-row">
           <label id="e-termin-label">Vyberte termín, kterého se chcete zúčastnit *</label>
           <div class="session-options" role="radiogroup" aria-labelledby="e-termin-label">
-            <label class="session-option">
-              <input type="radio" name="Termin" value="Čtvrtek 3. 9. 2026, 16:00–17:00 – osobně, centrum ANTALA" required>
+            <label class="session-option session-option-past">
+              <input type="radio" name="Termin" value="Čtvrtek 3. 9. 2026, 16:00–17:00 – osobně, centrum ANTALA" disabled>
               <span class="session-option-body">
-                <span class="session-option-date">Čtvrtek 3. 9. 2026, 16:00–17:00</span>
-                <span class="session-option-format">Osobně · centrum ANTALA, Ostrava-Poruba</span>
+                <span class="session-option-date"><s>Čtvrtek 3. 9. 2026, 16:00–17:00</s></span>
+                <span class="session-option-format">Proběhlo</span>
               </span>
             </label>
             <label class="session-option">
-              <input type="radio" name="Termin" value="Pondělí 7. 9. 2026, 18:00–19:00 – online">
+              <input type="radio" name="Termin" value="Pondělí 7. 9. 2026, 18:00–19:00 – online" required>
               <span class="session-option-body">
                 <span class="session-option-date">Pondělí 7. 9. 2026, 18:00–19:00</span>
                 <span class="session-option-format session-option-format-online">Online</span>
