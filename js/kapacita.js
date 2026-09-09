@@ -14,7 +14,7 @@
       den: "pondělky nebo úterky",
       skupiny: [
         { label: "pondělky 14:30–15:30", volno: 10 },
-        { label: "úterky 14:30–15:30", volno: 9 },
+        { label: "úterky 14:30–15:30", volno: 8 },
         { label: "úterky 16:50–17:50", volno: 10 }
       ]
     },
@@ -22,7 +22,7 @@
       predmet: "Český jazyk",
       den: "úterky nebo čtvrtky",
       skupiny: [
-        { label: "úterky 15:40–16:40", volno: 9 },
+        { label: "úterky 15:40–16:40", volno: 8 },
         { label: "čtvrtky 14:30–15:30", volno: 10 },
         { label: "čtvrtky 15:40–16:40", volno: 10 }
       ]
@@ -31,7 +31,7 @@
       predmet: "Seberozvoj",
       den: "pátky nebo soboty",
       skupiny: [
-        { label: "pátky 14:30–16:30", volno: 10 },
+        { label: "pátky 14:30–16:30", volno: 9 },
         { label: "pátky 16:45–18:45", volno: 9 },
         { label: "soboty 10:00–12:00", volno: 10 }
       ]
