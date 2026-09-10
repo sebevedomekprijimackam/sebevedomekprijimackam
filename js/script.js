@@ -227,7 +227,7 @@ setupWeb3Form('event-form', 'event-status', '.event-submit', 'Děkujeme! Přihl�
 // Skrytí propagace "Úvodní setkání zdarma" (banner i sekce na hlavní stránce),
 // jakmile termíny proběhnou – stačí posunout datum níže.
 (function () {
-  var hideAfter = new Date('2026-09-09T00:00:00');
+  var hideAfter = new Date('2026-09-11T00:00:00');
   if (new Date() >= hideAfter) {
     document.querySelectorAll('.event-timed').forEach(function (el) { el.remove(); });
   }
