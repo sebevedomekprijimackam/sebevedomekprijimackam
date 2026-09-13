@@ -31,8 +31,8 @@
       predmet: "Seberozvoj",
       den: "pátky nebo soboty",
       skupiny: [
-        { label: "pátky 14:30–16:30", volno: 9 },
-        { label: "pátky 16:45–18:45", volno: 8 },
+        { label: "pátky 14:30–16:30", volno: 10 },
+        { label: "pátky 16:45–18:45", volno: 7 },
         { label: "soboty 10:00–12:00", volno: 10 }
       ]
     }
