@@ -11,9 +11,8 @@
   var DATA = [
     {
       predmet: "Matematika",
-      den: "pondělky nebo úterky",
+      den: "úterky",
       skupiny: [
-        { label: "pondělky 14:30–15:30", volno: 10 },
         { label: "úterky 14:30–15:30", volno: 7 },
         { label: "úterky 16:50–17:50", volno: 9 }
       ]
@@ -23,17 +22,15 @@
       den: "úterky nebo čtvrtky",
       skupiny: [
         { label: "úterky 15:40–16:40", volno: 7 },
-        { label: "čtvrtky 14:30–15:30", volno: 10 },
         { label: "čtvrtky 15:40–16:40", volno: 9 }
       ]
     },
     {
       predmet: "Seberozvoj",
-      den: "pátky nebo soboty",
+      den: "pátky",
       skupiny: [
         { label: "pátky 14:30–16:30", volno: 10 },
-        { label: "pátky 16:45–18:45", volno: 6 },
-        { label: "soboty 10:00–12:00", volno: 10 }
+        { label: "pátky 16:45–18:45", volno: 6 }
       ]
     }
   ];
