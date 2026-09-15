@@ -224,10 +224,10 @@ setupWeb3Form('signup-form', 'signup-status', '.signup-submit', 'Děkujeme! Při
 setupWeb3Form('withdrawal-form', 'withdrawal-status', '.withdrawal-submit', 'Odstoupení od smlouvy bylo odesláno, brzy se ozveme.');
 setupWeb3Form('event-form', 'event-status', '.event-submit', 'Děkujeme! Přihláška na úvodní setkání byla odeslána, brzy se ozveme.');
 
-// Skrytí propagace "Úvodní setkání zdarma" (banner i sekce na hlavní stránce),
-// jakmile termíny proběhnou – stačí posunout datum níže.
+// Skrytí lišty s prodlouženým termínem přihlašování,
+// jakmile termín proběhne – stačí posunout datum níže.
 (function () {
-  var hideAfter = new Date('2026-09-11T00:00:00');
+  var hideAfter = new Date('2026-10-09T00:00:00');
   if (new Date() >= hideAfter) {
     document.querySelectorAll('.event-timed').forEach(function (el) { el.remove(); });
   }
