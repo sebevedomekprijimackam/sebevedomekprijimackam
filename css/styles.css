@@ -1675,3 +1675,44 @@ a { color: inherit; text-decoration: none; }
 .event-form-note { margin: 4px 0 0; font-size: 0.82rem; color: #777; line-height: 1.5; }
 .event-form-note strong { color: var(--color-navy); }
 .faq-answer a:hover { color: var(--color-green-deep); }
+
+/* --- Homepage: cena a rozvrh v kostce + počítadlo dní (2026-09) --- */
+.price-anchor-box {
+  background: var(--color-navy);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin: 0 auto 24px;
+  max-width: 360px;
+  text-align: center;
+}
+.price-anchor-main { margin: 0; font-size: 1.6rem; font-weight: 700; color: #fff; }
+.price-anchor-sub { margin: 4px 0 0; font-size: 0.95rem; color: #cfd8e6; }
+.price-anchor-sub strong { font-weight: 700; }
+.section-cta-link { text-align: center; margin-top: 24px; }
+
+.quick-facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.quick-facts-col { display: flex; flex-direction: column; }
+.quick-facts-col h3 { text-align: center; font-size: 1.2rem; color: var(--color-navy); margin-bottom: 6px; }
+.quick-facts-intro { text-align: center; color: #555; font-size: 0.95rem; margin: 0 0 20px; }
+.quick-facts-col .section-cta-link { margin-top: auto; padding-top: 24px; }
+@media (max-width: 700px) {
+  .quick-facts-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+.pricing-table-static tbody tr:hover { background: inherit; }
+.pricing-table-static tbody tr:nth-child(even):hover { background: var(--color-green-pale); }
+
+.day-counter {
+  display: inline-flex;
+  flex-direction: column;
+  width: 40px;
+  vertical-align: middle;
+  margin: 0 6px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+.day-counter-band { height: 7px; background: #c0392b; flex-shrink: 0; }
+.day-counter-window { height: 38px; overflow: hidden; background: #fff; }
+.day-counter-strip { display: flex; flex-direction: column; transition: transform 4.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.day-counter-strip span { display: block; height: 38px; line-height: 38px; text-align: center; font-weight: 800; font-size: 1.3rem; color: var(--color-navy); }

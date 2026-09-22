@@ -7,13 +7,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=152">
+<link rel="stylesheet" href="css/styles.css?v=171">
 </head>
 <body>
 
 <div class="event-banner event-timed">
   <div class="container event-banner-inner">
-    <p class="event-banner-text"><strong>Stále je čas se přihlásit!</strong> Termín přihlašování do kurzu jsme prodloužili do 8. 10. 2026.</p>
+    <p class="event-banner-text"><strong>Zbývá už jen <span class="day-counter"><span class="day-counter-band"></span><span class="day-counter-window"><span class="day-counter-strip" id="days-left-strip"></span></span></span> dní na přihlášení!</strong> Termín jsme prodloužili do 8. 10. 2026.</p>
     <a href="prihlasit.html" class="event-banner-btn">Přihlásit se →</a>
   </div>
 </div>
@@ -223,8 +223,61 @@
         <button type="button" class="feature-back" id="feature-back">↑ Zpět nahoru</button>
       </div>
 
-      <div class="schedule-toggle">
-        <a href="rozvrh.html" class="schedule-link">Podrobný rozvrh kurzu a jeho lekcí naleznete <span class="schedule-summary-here">ZDE</span></a>
+    </div>
+  </section>
+
+  <!-- CENA A ROZVRH -->
+  <section class="section quick-facts">
+    <div class="container">
+      <h2 class="section-title center">Cena a rozvrh v kostce</h2>
+      <div class="quick-facts-grid">
+
+        <div class="quick-facts-col">
+          <h3>Kolik kurz stojí?</h3>
+          <p class="quick-facts-intro">Stejná cena za matematiku, český jazyk i seberozvoj.</p>
+          <div class="price-anchor-box">
+            <p class="price-anchor-main">350 Kč za 60 minut</p>
+          </div>
+          <p class="pricing-perks-support-intro">Součástí ceny kurzu <strong>nejsou jen prezenční lekce</strong>. Získáváte také řadu <strong>hodnotných služeb a materiálů</strong>, které jsme do programu zařadili proto, aby děti měly <strong>co nejlepší podmínky pro úspěch</strong> u přijímacích zkoušek a abyste i vy, rodiče, <strong>zůstali v klidu</strong> díky podpůrným workshopům určeným pro vás.</p>
+          <div class="section-cta-link">
+            <a href="cenik.html" class="btn btn-outline-navy">Celý ceník a co je v ceně →</a>
+          </div>
+        </div>
+
+        <div class="quick-facts-col">
+          <h3>Kdy se učí?</h3>
+          <p class="quick-facts-intro">U každého předmětu si vyberete jeden pevný termín, který platí po celou dobu kurzu.</p>
+          <table class="pricing-table pricing-table-static">
+            <thead>
+              <tr>
+                <th>Předmět</th>
+                <th>Den</th>
+                <th>Čas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><i class="dot dot-mat"></i> Matematika</td>
+                <td>Úterý</td>
+                <td>14:30–15:30 nebo 16:50–17:50</td>
+              </tr>
+              <tr>
+                <td><i class="dot dot-cesky"></i> Český jazyk</td>
+                <td>Úterý nebo čtvrtek</td>
+                <td>15:40–16:40</td>
+              </tr>
+              <tr>
+                <td><i class="dot dot-sebe"></i> Seberozvoj</td>
+                <td>Pátek, 1× měsíčně</td>
+                <td>14:30–16:30 nebo 16:45–18:45</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="section-cta-link">
+            <a href="rozvrh.html" class="btn btn-outline-navy">Celý rozvrh a kalendář →</a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -402,7 +455,7 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=25"></script>
+<script src="js/script.js?v=35"></script>
 <script src="js/kapacita.js?v=6"></script>
 </body>
 </html>
