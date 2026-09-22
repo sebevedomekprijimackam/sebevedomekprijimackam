@@ -1716,3 +1716,20 @@ a { color: inherit; text-decoration: none; }
 .day-counter-window { height: 38px; overflow: hidden; background: #fff; }
 .day-counter-strip { display: flex; flex-direction: column; transition: transform 4.5s cubic-bezier(0.16, 1, 0.3, 1); }
 .day-counter-strip span { display: block; height: 38px; line-height: 38px; text-align: center; font-weight: 800; font-size: 1.3rem; color: var(--color-navy); }
+
+/* --- Rozvrh: barevné rozklikávací termíny podle předmětu (2026-09) --- */
+.schedule-detail {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-navy);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+.schedule-detail summary { cursor: pointer; font-weight: 600; color: var(--color-navy); }
+.schedule-detail[open] summary { margin-bottom: 10px; }
+.schedule-detail p { margin: 4px 0; font-size: 0.92rem; color: #555; }
+.schedule-detail-cesky { border-left-color: #b5502e; }
+.schedule-detail-cesky summary { color: #b5502e; }
+.schedule-detail-sebe { border-left-color: var(--color-green-dark); }
+.schedule-detail-sebe summary { color: var(--color-green-dark); }
