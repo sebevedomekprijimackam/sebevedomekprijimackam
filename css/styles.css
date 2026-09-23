@@ -10,7 +10,6 @@
   --color-text: #2b2b28;
   --color-accent: #b3c34a;
 
-  --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Poppins', system-ui, sans-serif;
   --font-script: 'Caveat', cursive;
 
@@ -42,7 +41,7 @@ img { max-width: 100%; display: block; }
 }
 
 h1, h2, h3, h4 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   color: var(--color-navy);
   margin: 0 0 12px;
 }
@@ -98,8 +97,8 @@ a { color: inherit; text-decoration: none; }
 .logo-mark { width: 64px; height: 64px; object-fit: contain; border-radius: 50%; }
 
 .logo-text { display: flex; flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 0 8px; line-height: 1.1; }
-.logo-line1 { font-family: var(--font-serif); font-weight: 700; color: var(--color-navy); font-size: 1.3rem; letter-spacing: 0.02em; }
-.logo-line2 { font-family: var(--font-serif); font-style: italic; font-weight: 600; color: var(--color-green-dark); font-size: 1.05rem; }
+.logo-line1 { font-family: var(--font-sans); font-weight: 700; color: var(--color-navy); font-size: 1.3rem; letter-spacing: 0.02em; }
+.logo-line2 { font-family: var(--font-sans); font-style: italic; font-weight: 600; color: var(--color-green-dark); font-size: 1.05rem; }
 
 .main-nav { display: flex; gap: 26px; font-size: 0.92rem; font-weight: 500; }
 .main-nav a:hover { color: var(--color-green-dark); }
@@ -163,7 +162,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .hero-brand {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   color: var(--color-navy);
   font-size: 2.8rem;
@@ -172,7 +171,7 @@ a { color: inherit; text-decoration: none; }
   margin-bottom: 16px;
 }
 .hero-live-badge {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   color: var(--color-navy);
   font-size: 2rem;
@@ -182,7 +181,7 @@ a { color: inherit; text-decoration: none; }
 }
 .hero-text h1.hero-subtitle { font-size: 1.9rem; line-height: 1.2; margin-bottom: 16px; color: var(--color-navy-light); }
 .hero-live-badge-green { color: var(--color-green-dark); }
-.tagline { font-family: var(--font-serif); font-weight: 700; color: var(--color-navy); font-size: 1.4rem; line-height: 1.3; margin-bottom: 16px; }
+.tagline { font-family: var(--font-sans); font-weight: 700; color: var(--color-navy); font-size: 1.4rem; line-height: 1.3; margin-bottom: 16px; }
 .tagline-green { display: inline-block; margin-top: 10px; color: var(--color-green-dark); }
 .hero-desc { max-width: 480px; font-size: 1rem; margin-top: 16px; color: #555; }
 .hero-actions { display: flex; gap: 14px; margin-top: 20px; flex-wrap: wrap; }
@@ -369,10 +368,10 @@ a { color: inherit; text-decoration: none; }
 .blog-list li { display: flex; align-items: center; gap: 10px; }
 .blog-thumb { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; flex-shrink: 0; }
 .blog-list a:hover { color: var(--color-green-dark); }
-.link-arrow { display: block; text-align: center; font-size: 0.85rem; font-weight: 600; color: var(--color-green-dark); }
+.link-arrow { display: block; text-align: center; font-size: 0.85rem; font-weight: 600; color: var(--color-navy); }
 
 .cta-box {
-  background: var(--color-green-dark);
+  background: var(--color-navy);
   color: #fff;
   border-radius: 14px;
   padding: 26px 22px;
@@ -380,7 +379,6 @@ a { color: inherit; text-decoration: none; }
 }
 .cta-box h3 { color: #fff; font-size: 1.15rem; }
 .cta-box p { color: #eef0e6; font-size: 0.88rem; }
-.cta-box .btn-navy { background: #0b2946; }
 
 .section-divider {
   border: none;
@@ -399,7 +397,7 @@ a { color: inherit; text-decoration: none; }
   padding: 30px 36px;
   text-align: center;
   text-decoration: none;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-size: 1.4rem;
   font-weight: 700;
   color: var(--color-navy);
@@ -453,7 +451,7 @@ a { color: inherit; text-decoration: none; }
 /* Vizuální kalendář (rozvrh) */
 .month-calendar { background: #fff; border: 1px solid var(--color-border); border-radius: 16px; padding: 28px clamp(16px, 4vw, 32px); margin: 0 0 40px; }
 .month-calendar-nav { display: flex; align-items: center; justify-content: center; gap: 20px; }
-.month-calendar-label { font-family: var(--font-serif); font-size: 1.3rem; color: var(--color-navy); min-width: 190px; text-align: center; margin: 0; }
+.month-calendar-label { font-family: var(--font-sans); font-size: 1.3rem; color: var(--color-navy); min-width: 190px; text-align: center; margin: 0; }
 .month-calendar-arrow {
   width: 36px; height: 36px; border-radius: 50%;
   border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-navy);
@@ -589,6 +587,7 @@ a { color: inherit; text-decoration: none; }
 .pricing-blocks { text-align: center; color: var(--color-navy); font-size: 1.1rem; line-height: 1.6; margin: 0 auto 18px; }
 .pricing-blocks p { margin: 2px 0; }
 .pricing-intro-small { max-width: 640px; color: var(--color-navy); font-size: 1rem; margin: 0 auto 24px; }
+.pricing-intro-spaced { margin-top: 32px; }
 .pricing-intro-full { max-width: 100%; }
 .pricing-intro a { color: var(--color-green-dark); font-weight: 600; text-decoration: underline; }
 .pricing-block-heading { text-align: center; color: var(--color-navy); font-size: 1.2rem; margin: 0 0 14px; }
@@ -603,6 +602,46 @@ a { color: inherit; text-decoration: none; }
 }
 .pricing-intro-box h3 { margin-bottom: 6px; }
 .pricing-intro-box p { margin: 0; color: #4a5a37; font-size: 0.92rem; }
+
+.price-anchor-box {
+  background: var(--color-navy);
+  border-radius: 14px;
+  padding: 22px 24px;
+  margin: 0 auto 24px;
+  max-width: 360px;
+  text-align: center;
+}
+.price-anchor-main { margin: 0; font-size: 1.6rem; font-weight: 700; color: #fff; }
+.price-anchor-sub { margin: 4px 0 0; font-size: 0.95rem; color: #cfd8e6; }
+.price-anchor-box-spaced { margin-top: 24px; }
+
+.price-anchor-sub strong { font-weight: 700; }
+.section-cta-link { text-align: center; margin-top: 24px; }
+
+.quick-facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.quick-facts-col { display: flex; flex-direction: column; }
+.quick-facts-col h3 { text-align: center; font-size: 1.2rem; color: var(--color-navy); margin-bottom: 6px; }
+.quick-facts-intro { text-align: center; color: #555; font-size: 0.95rem; margin: 0 0 20px; }
+.quick-facts-col .section-cta-link { margin-top: auto; padding-top: 24px; }
+@media (max-width: 700px) {
+  .quick-facts-grid { grid-template-columns: 1fr; gap: 36px; }
+}
+
+.schedule-detail {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-left: 5px solid var(--color-navy);
+  border-radius: 10px;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+}
+.schedule-detail summary { cursor: pointer; font-weight: 600; color: var(--color-navy); }
+.schedule-detail[open] summary { margin-bottom: 10px; }
+.schedule-detail p { margin: 4px 0; font-size: 0.92rem; color: #555; }
+.schedule-detail-cesky { border-left-color: #b5502e; }
+.schedule-detail-cesky summary { color: #b5502e; }
+.schedule-detail-sebe { border-left-color: var(--color-green-dark); }
+.schedule-detail-sebe summary { color: var(--color-green-dark); }
 
 .pricing-table {
   width: 100%;
@@ -623,6 +662,8 @@ a { color: inherit; text-decoration: none; }
 .pricing-table th { background: var(--color-navy); color: #fff; font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; }
 .pricing-table tbody tr:nth-child(even) { background: var(--color-green-pale); }
 .pricing-table tbody tr:hover { background: var(--color-green-pale); }
+.pricing-table-static tbody tr:hover { background: inherit; }
+.pricing-table-static tbody tr:nth-child(even):hover { background: var(--color-green-pale); }
 .pricing-table tbody td:last-child { font-weight: 700; color: var(--color-navy); white-space: nowrap; }
 .pricing-table tfoot td { border-bottom: none; background: var(--color-green-pale); font-weight: 700; color: var(--color-navy); font-size: 1.02rem; padding-top: 18px; padding-bottom: 18px; }
 .pricing-table tfoot td:last-child { white-space: nowrap; }
@@ -696,7 +737,7 @@ a { color: inherit; text-decoration: none; }
 .pricing-perks-support-intro strong { color: var(--color-navy); }
 .pricing-perks-icon svg { width: 24px; height: 24px; }
 .pricing-perks-head h3 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.4rem;
   color: var(--color-navy);
@@ -717,7 +758,10 @@ a { color: inherit; text-decoration: none; }
   border-radius: 14px;
   padding: 22px 16px;
   color: var(--color-navy);
+  text-decoration: none;
 }
+a.perk-card { transition: transform 0.15s ease; }
+a.perk-card:hover { transform: translateY(-2px); }
 .perk-card-icon {
   display: flex;
   align-items: center;
@@ -968,7 +1012,7 @@ a { color: inherit; text-decoration: none; }
 .bottom-grid .col > h3 { margin-top: 0; }
 .blog-teaser .link-arrow,
 .testimonials .testimonial-dots,
-.cta-box .btn-navy { margin-top: auto; }
+.cta-box .btn-green { margin-top: auto; }
 .testimonials .link-arrow { margin-top: 16px; }
 .bottom-grid .col > *:last-child { margin-bottom: 0; }
 
@@ -979,11 +1023,11 @@ a { color: inherit; text-decoration: none; }
 .footer-brand { display: flex; align-items: center; gap: 10px; }
 .logo-mark-footer { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
 .footer-brand-text { display: flex; flex-direction: column; line-height: 1.2; }
-.footer-brand-line1 { font-family: var(--font-serif); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; }
-.footer-brand-line2 { font-family: var(--font-serif); font-style: italic; font-weight: 600; color: var(--color-green-pale); font-size: 1rem; }
+.footer-brand-line1 { font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; }
+.footer-brand-line2 { font-family: var(--font-sans); font-style: italic; font-weight: 600; color: var(--color-green-pale); font-size: 1rem; }
 
 .footer-claim {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-style: italic;
   font-size: 1.05rem;
   margin: 0;
@@ -1298,7 +1342,7 @@ a { color: inherit; text-decoration: none; }
   padding: 22px 24px;
 }
 .capacity-card-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.3rem;
   color: var(--color-navy);
@@ -1378,7 +1422,7 @@ a { color: inherit; text-decoration: none; }
 .reference-col-icon { width: 56px; height: 56px; margin: 0 auto 14px; display: block; }
 .reference-col-title {
   text-align: center;
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   font-size: 1.02rem;
   text-transform: uppercase;
@@ -1473,7 +1517,7 @@ a { color: inherit; text-decoration: none; }
   margin: 0 0 16px;
 }
 .pupil-notes-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   color: var(--color-navy);
   font-size: 0.98rem;
@@ -1493,7 +1537,7 @@ a { color: inherit; text-decoration: none; }
 .faq-group { margin: 0 0 40px; }
 .faq-group:last-child { margin-bottom: 0; }
 .faq-group-title {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
   font-weight: 700;
   color: var(--color-navy);
   font-size: 1.25rem;
@@ -1566,6 +1610,20 @@ a { color: inherit; text-decoration: none; }
 }
 .event-banner-text { margin: 0; font-size: 1.15rem; color: #fff; line-height: 1.4; }
 .event-banner-text strong { color: #fff; }
+.day-counter {
+  display: inline-flex;
+  flex-direction: column;
+  width: 40px;
+  vertical-align: middle;
+  margin: 0 6px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+.day-counter-band { height: 7px; background: #c0392b; flex-shrink: 0; }
+.day-counter-window { height: 38px; overflow: hidden; background: #fff; }
+.day-counter-strip { display: flex; flex-direction: column; transition: transform 4.5s cubic-bezier(0.16, 1, 0.3, 1); }
+.day-counter-strip span { display: block; height: 38px; line-height: 38px; text-align: center; font-weight: 800; font-size: 1.3rem; color: var(--color-navy); }
 .event-banner-text::before {
   content: "🔔";
   display: inline-block;
@@ -1638,7 +1696,7 @@ a { color: inherit; text-decoration: none; }
   gap: 2px;
 }
 .event-date-day { font-weight: 700; color: var(--color-navy); font-size: 0.95rem; }
-.event-date-time { color: var(--color-navy); font-size: 1.3rem; font-weight: 700; font-family: var(--font-serif); }
+.event-date-time { color: var(--color-navy); font-size: 1.3rem; font-weight: 700; font-family: var(--font-sans); }
 .event-date-format { font-size: 1rem; color: #666; }
 .event-date-format-online { color: var(--color-green-dark); font-weight: 600; }
 .event-date-card-past { opacity: 0.55; }
@@ -1675,61 +1733,3 @@ a { color: inherit; text-decoration: none; }
 .event-form-note { margin: 4px 0 0; font-size: 0.82rem; color: #777; line-height: 1.5; }
 .event-form-note strong { color: var(--color-navy); }
 .faq-answer a:hover { color: var(--color-green-deep); }
-
-/* --- Homepage: cena a rozvrh v kostce + počítadlo dní (2026-09) --- */
-.price-anchor-box {
-  background: var(--color-navy);
-  border-radius: 14px;
-  padding: 22px 24px;
-  margin: 0 auto 24px;
-  max-width: 360px;
-  text-align: center;
-}
-.price-anchor-main { margin: 0; font-size: 1.6rem; font-weight: 700; color: #fff; }
-.price-anchor-sub { margin: 4px 0 0; font-size: 0.95rem; color: #cfd8e6; }
-.price-anchor-sub strong { font-weight: 700; }
-.section-cta-link { text-align: center; margin-top: 24px; }
-
-.quick-facts-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-.quick-facts-col { display: flex; flex-direction: column; }
-.quick-facts-col h3 { text-align: center; font-size: 1.2rem; color: var(--color-navy); margin-bottom: 6px; }
-.quick-facts-intro { text-align: center; color: #555; font-size: 0.95rem; margin: 0 0 20px; }
-.quick-facts-col .section-cta-link { margin-top: auto; padding-top: 24px; }
-@media (max-width: 700px) {
-  .quick-facts-grid { grid-template-columns: 1fr; gap: 36px; }
-}
-
-.pricing-table-static tbody tr:hover { background: inherit; }
-.pricing-table-static tbody tr:nth-child(even):hover { background: var(--color-green-pale); }
-
-.day-counter {
-  display: inline-flex;
-  flex-direction: column;
-  width: 40px;
-  vertical-align: middle;
-  margin: 0 6px;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
-}
-.day-counter-band { height: 7px; background: #c0392b; flex-shrink: 0; }
-.day-counter-window { height: 38px; overflow: hidden; background: #fff; }
-.day-counter-strip { display: flex; flex-direction: column; transition: transform 4.5s cubic-bezier(0.16, 1, 0.3, 1); }
-.day-counter-strip span { display: block; height: 38px; line-height: 38px; text-align: center; font-weight: 800; font-size: 1.3rem; color: var(--color-navy); }
-
-/* --- Rozvrh: barevné rozklikávací termíny podle předmětu (2026-09) --- */
-.schedule-detail {
-  background: #fff;
-  border: 1px solid var(--color-border);
-  border-left: 5px solid var(--color-navy);
-  border-radius: 10px;
-  padding: 14px 18px;
-  margin-bottom: 12px;
-}
-.schedule-detail summary { cursor: pointer; font-weight: 600; color: var(--color-navy); }
-.schedule-detail[open] summary { margin-bottom: 10px; }
-.schedule-detail p { margin: 4px 0; font-size: 0.92rem; color: #555; }
-.schedule-detail-cesky { border-left-color: #b5502e; }
-.schedule-detail-cesky summary { color: #b5502e; }
-.schedule-detail-sebe { border-left-color: var(--color-green-dark); }
-.schedule-detail-sebe summary { color: var(--color-green-dark); }
