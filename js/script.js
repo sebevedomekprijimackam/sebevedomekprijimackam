@@ -1,8 +1,3 @@
-// Po přechodu na jinou stránku (kliknutím na odkaz) se stránka
-// vždy zobrazí odshora – ne tam, kde uživatel skončil na předchozí stránce.
-if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-if (!window.location.hash) window.scrollTo(0, 0);
-
 const navToggle = document.getElementById('nav-toggle');
 const mainNav = document.getElementById('main-nav');
 
@@ -238,32 +233,6 @@ setupWeb3Form('event-form', 'event-status', '.event-submit', 'Děkujeme! Přihl�
   }
 })();
 
-// Počítadlo dní do konce přihlašování (v liště nahoře) –
-// stačí posunout datum, počet dní se dopočítá sám. Čísla se "listují"
-// zezdola nahoru jako na starém kalendáři, než se zastaví na správném čísle.
-(function () {
-  var strip = document.getElementById('days-left-strip');
-  if (!strip) return;
-  var deadline = new Date('2026-10-08T23:59:59');
-  var msLeft = deadline - new Date();
-  var daysLeft = Math.max(0, Math.ceil(msLeft / (1000 * 60 * 60 * 24)));
-
-  var startFrom = Math.max(31, daysLeft);
-  var sequence = [];
-  for (var n = startFrom; n >= daysLeft; n--) sequence.push(n);
-  var stepsBefore = sequence.length - 1;
-
-  strip.innerHTML = sequence.map(function (n) { return '<span>' + n + '</span>'; }).join('');
-  strip.style.transition = 'none';
-  strip.style.transform = 'translateY(0)';
-  void strip.offsetHeight; // vynutí překreslení, aby se animace spustila od nuly
-  strip.style.transition = '';
-
-  setTimeout(function () {
-    strip.style.transform = 'translateY(-' + (stepsBefore * 38) + 'px)';
-  }, 700);
-})();
-
 // Lightbox – zvětšení fotky po kliknutí, procházení šipkami (galerie na kontaktu)
 (function () {
   const galleryImages = Array.from(document.querySelectorAll('.contact-gallery img'));
@@ -352,4 +321,31 @@ setupWeb3Form('event-form', 'event-status', '.event-submit', 'Děkujeme! Přihl�
     const firstEnabled = radiogroup.querySelector('input:not(:disabled)');
     if (firstEnabled) firstEnabled.required = true;
   }
+})();
+
+
+// Počítadlo dní do konce přihlašování (v liště nahoře) –
+// stačí posunout datum, počet dní se dopočítá sám. Čísla se "listují"
+// odshora dolů (začínají na 31) jako na starém kalendáři, než se zastaví na správném čísle.
+(function () {
+  var strip = document.getElementById('days-left-strip');
+  if (!strip) return;
+  var deadline = new Date('2026-10-08T23:59:59');
+  var msLeft = deadline - new Date();
+  var daysLeft = Math.max(0, Math.ceil(msLeft / (1000 * 60 * 60 * 24)));
+
+  var startFrom = Math.max(31, daysLeft);
+  var sequence = [];
+  for (var n = startFrom; n >= daysLeft; n--) sequence.push(n);
+  var stepsBefore = sequence.length - 1;
+
+  strip.innerHTML = sequence.map(function (n) { return '<span>' + n + '</span>'; }).join('');
+  strip.style.transition = 'none';
+  strip.style.transform = 'translateY(0)';
+  void strip.offsetHeight; // vynutí překreslení, aby se animace spustila od nuly
+  strip.style.transition = '';
+
+  setTimeout(function () {
+    strip.style.transform = 'translateY(-' + (stepsBefore * 38) + 'px)';
+  }, 700);
 })();
