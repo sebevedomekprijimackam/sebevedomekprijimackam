@@ -19,10 +19,10 @@
     },
     {
       predmet: "Český jazyk",
-      den: "úterky nebo čtvrtky",
+      den: "úterky",
       skupiny: [
         { label: "úterky 15:40–16:40", volno: 7 },
-        { label: "čtvrtky 15:40–16:40", volno: 9 }
+        { label: "úterky 18:00–19:00", volno: 9 }
       ]
     },
     {
