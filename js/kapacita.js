@@ -13,15 +13,15 @@
       predmet: "Matematika",
       den: "úterky",
       skupiny: [
-        { label: "úterky 14:30–15:30", volno: 7 },
-        { label: "úterky 16:50–17:50", volno: 9 }
+        { label: "úterky 14:30–15:30", volno: 6 },
+        { label: "úterky 16:50–17:50", volno: 8 }
       ]
     },
     {
       predmet: "Český jazyk",
       den: "úterky",
       skupiny: [
-        { label: "úterky 15:40–16:40", volno: 7 },
+        { label: "úterky 15:40–16:40", volno: 5 },
         { label: "úterky 18:00–19:00", volno: 9 }
       ]
     },
@@ -30,7 +30,7 @@
       den: "pátky",
       skupiny: [
         { label: "pátky 14:30–16:30", volno: 10 },
-        { label: "pátky 16:45–18:45", volno: 6 }
+        { label: "pátky 16:45–18:45", volno: 4 }
       ]
     }
   ];
