@@ -86,7 +86,13 @@
     var detailEl = document.getElementById("mc-detail");
     var prevBtn = document.getElementById("mc-prev");
     var nextBtn = document.getElementById("mc-next");
+    // Kalendář se otevře na aktuálním měsíci (před začátkem kurzu na prvním, po konci na posledním).
+    var today = new Date();
+    var todayNum = today.getFullYear() * 12 + today.getMonth() + 1;
     var idx = 0;
+    MONTHS.forEach(function (mo, i) {
+      if (mo.y * 12 + mo.m <= todayNum) idx = i;
+    });
 
     function formatDateHuman(key) {
       var parts = key.split("-");
