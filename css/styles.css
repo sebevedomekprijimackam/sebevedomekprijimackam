@@ -12,7 +12,6 @@
 
   --font-sans: 'Poppins', system-ui, sans-serif;
   --font-script: 'Caveat', cursive;
-  --font-logo: 'Satisfy', cursive;
 
   --max-width: 1180px;
 }
@@ -98,8 +97,8 @@ a { color: inherit; text-decoration: none; }
 .logo-mark { width: 64px; height: 64px; object-fit: contain; border-radius: 50%; }
 
 .logo-text { display: flex; flex-direction: row; align-items: baseline; flex-wrap: wrap; gap: 0 8px; line-height: 1.1; }
-.logo-line1 { font-family: var(--font-sans); font-weight: 500; color: var(--color-navy); font-size: 1.3rem; letter-spacing: 0.07em; }
-.logo-line2 { font-family: var(--font-logo); font-weight: 400; letter-spacing: 0.01em; color: var(--color-green-dark); font-size: 1.45rem; }
+.logo-line1 { font-family: var(--font-sans); font-weight: 700; color: var(--color-navy); font-size: 1.3rem; letter-spacing: 0.02em; }
+.logo-line2 { font-family: var(--font-sans); font-style: italic; font-weight: 600; color: var(--color-green-dark); font-size: 1.05rem; }
 
 .main-nav { display: flex; gap: 26px; font-size: 0.92rem; font-weight: 500; }
 .main-nav a:hover { color: var(--color-green-dark); }
@@ -993,8 +992,8 @@ a { color: inherit; text-decoration: none; }
 .footer-brand { display: flex; align-items: center; gap: 10px; }
 .logo-mark-footer { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; }
 .footer-brand-text { display: flex; flex-direction: column; line-height: 1.2; }
-.footer-brand-line1 { font-family: var(--font-sans); font-weight: 500; font-size: 0.95rem; letter-spacing: 0.07em; }
-.footer-brand-line2 { font-family: var(--font-logo); font-weight: 400; letter-spacing: 0.01em; color: var(--color-green-pale); font-size: 1.3rem; }
+.footer-brand-line1 { font-family: var(--font-sans); font-weight: 700; font-size: 0.95rem; letter-spacing: 0.02em; }
+.footer-brand-line2 { font-family: var(--font-sans); font-style: italic; font-weight: 600; color: var(--color-green-pale); font-size: 1rem; }
 
 .footer-claim {
   font-family: var(--font-sans);
@@ -1108,7 +1107,7 @@ a { color: inherit; text-decoration: none; }
   .header-social svg { width: 18px; height: 18px; }
   .logo-mark { width: 48px; height: 48px; }
   .logo-line1 { font-size: 1.05rem; }
-  .logo-line2 { font-size: 1.15rem; }
+  .logo-line2 { font-size: 0.85rem; }
   .hero-inner { grid-template-columns: 1fr; }
   .hero-media { order: -1; }
   .hero-start-circle { top: auto; left: 50%; bottom: 0; transform: translate(-50%, 50%); }
