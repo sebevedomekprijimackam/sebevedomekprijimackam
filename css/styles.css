@@ -1711,6 +1711,8 @@ a { color: inherit; text-decoration: none; }
 .quick-facts-col h3 { text-align: center; font-size: 1.2rem; color: var(--color-navy); margin-bottom: 6px; }
 .quick-facts-intro { text-align: center; color: #555; font-size: 0.95rem; margin: 0 0 20px; }
 .quick-facts-col .section-cta-link { margin-top: auto; padding-top: 24px; }
+#odkazy .quick-facts-intro { margin-bottom: 12px; }
+#odkazy .quick-facts-col .section-cta-link { margin-top: 0; padding-top: 0; }
 @media (max-width: 700px) {
   .quick-facts-grid { grid-template-columns: 1fr; gap: 36px; }
 }
