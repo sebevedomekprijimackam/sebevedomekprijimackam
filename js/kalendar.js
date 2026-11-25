@@ -10,7 +10,8 @@
   var WEEKDAY_LABELS = ["Po", "Út", "St", "Čt", "Pá", "So", "Ne"];
 
   // Rozsah měsíců, které se dají v kalendáři zobrazit.
-  var MONTHS = [
+  // Stránka jiného kurzu si může nastavit vlastní měsíce a lekce (viz kalendar-intenzivni.js).
+  var MONTHS = window.KALENDAR_MONTHS || [
     { y: 2026, m: 9 }, { y: 2026, m: 10 }, { y: 2026, m: 11 }, { y: 2026, m: 12 },
     { y: 2027, m: 1 }, { y: 2027, m: 2 }, { y: 2027, m: 3 }, { y: 2027, m: 4 }
   ];
@@ -19,7 +20,7 @@
   // "short" je celé časové rozpětí, které se zobrazí rovnou v kalendáři.
   // Tam, kde má den na výběr víc časů (např. úterky u matematiky), je to rozepsané na dva řádky,
   // takže se v kalendáři objeví obě nabízené možnosti.
-  var RANGES = [
+  var RANGES = window.KALENDAR_RANGES || [
     { subject: "mat", short: "14:30–15:30", label: "Matematika · úterý 14:30–15:30", dates: ["15.9.2026", "22.9.2026", "6.10.2026", "13.10.2026", "20.10.2026", "3.11.2026", "10.11.2026", "24.11.2026", "1.12.2026", "8.12.2026"] },
     { subject: "mat", short: "16:50–17:50", label: "Matematika · úterý 16:50–17:50", dates: ["15.9.2026", "22.9.2026", "6.10.2026", "13.10.2026", "20.10.2026", "3.11.2026", "10.11.2026", "24.11.2026", "1.12.2026", "8.12.2026"] },
     { subject: "cesky", short: "15:40–16:40", label: "Český jazyk · úterý 15:40–16:40", dates: ["15.9.2026", "22.9.2026", "6.10.2026", "13.10.2026", "20.10.2026", "3.11.2026", "10.11.2026", "24.11.2026", "1.12.2026", "8.12.2026"] },
@@ -148,7 +149,7 @@
         cell.addEventListener("click", function () {
           var lessons = lessonsByDate[cell.dataset.key];
           var hasWorkshop = lessons.some(function (l) { return l.subject === "workshop" || l.subject === "webinar"; });
-          var toShow = hasWorkshop ? lessons.filter(function (l) { return l.subject === "workshop" || l.subject === "webinar"; }) : lessons;
+          var toShow = hasWorkshop ? lessons.filter(function (l) { return l.subject !== "domaci"; }) : lessons;
           showDetail(cell.dataset.key, toShow);
         });
       });

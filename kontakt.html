@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=178">
+<link rel="stylesheet" href="css/styles.css?v=214">
 </head>
 <body>
 
@@ -25,13 +25,18 @@
     </a>
 
     <nav class="main-nav" id="main-nav">
-      <a href="index.html#o-projektu">O kurzu</a>
-      <a href="o-nas.html">O nás</a>
-      <a href="cenik.html">Ceník</a>
-      <a href="rozvrh.html">Rozvrh</a>
+      <a href="index.html">Domů</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Kurzy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="kurz-komplexni.html">Komplexní</a>
+          <a href="kurz-intenzivni.html">Intenzivní</a>
+          <a href="kurz-vikendovy.html">Víkendový</a>
+        </div>
+      </div>
+      <a href="odkazy.html">Odkazy</a>
       <a href="faq.html">FAQ</a>
-      <a href="index.html#odkazy">Odkazy</a>
-      <a href="kontakt.html" class="active-link">Kontakt</a>
+      <a href="kontakt.html" class="active-link">Kontakty</a>
     </nav>
 
     <div class="header-social">
@@ -116,6 +121,7 @@
               <a href="mailto:zuzana.moravkova@email.cz">zuzana.moravkova@email.cz</a>
             </div>
             <p class="contact-card-ico">Zapsaná v živnostenském rejstříku (příslušným úřadem je Městský úřad Frenštát pod Radhoštěm)<br>IČO: 22045767</p>
+            <a href="o-nas/zuzana-moravkova.html" class="link-arrow contact-card-more">Zjistit více →</a>
           </div>
 
           <div class="team-index-card contact-card">
@@ -127,6 +133,7 @@
               <a href="mailto:jana.tajzichova@seznam.cz">jana.tajzichova@seznam.cz</a>
             </div>
             <p class="contact-card-ico">Zapsaná v živnostenském rejstříku (příslušným úřadem je Magistrát města Ostravy)<br>IČO: 22125663</p>
+            <a href="o-nas/jana-tajzichova.html" class="link-arrow contact-card-more">Zjistit více →</a>
           </div>
 
           <div class="team-index-card contact-card">
@@ -138,6 +145,7 @@
               <a href="mailto:info@katerinakucova.cz">info@katerinakucova.cz</a>
             </div>
             <p class="contact-card-ico">Zapsaná v živnostenském rejstříku (příslušným úřadem je Magistrát města Ostravy)<br>IČO: 04698380</p>
+            <a href="o-nas/katerina-kucova.html" class="link-arrow contact-card-more">Zjistit více →</a>
           </div>
         </div>
       </div>
@@ -189,7 +197,7 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=25"></script>
+<script src="js/script.js?v=37"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59c64e8c221041169a8c36f78ec50ab4"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

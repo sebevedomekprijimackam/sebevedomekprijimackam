@@ -7,16 +7,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=178">
+<link rel="stylesheet" href="css/styles.css?v=214">
 </head>
 <body>
-
-<div class="event-banner event-timed">
-  <div class="container event-banner-inner">
-    <p class="event-banner-text"><strong>Stále je čas se přihlásit!</strong> Termín přihlašování do kurzu jsme prodloužili do 8. 10. 2026.</p>
-    <a href="prihlasit.html" class="event-banner-btn">Přihlásit se →</a>
-  </div>
-</div>
 
 <header class="site-header">
   <div class="container header-inner">
@@ -25,13 +18,18 @@
     </a>
 
     <nav class="main-nav" id="main-nav">
-      <a href="index.html#o-projektu">O kurzu</a>
-      <a href="o-nas.html">O nás</a>
-      <a href="cenik.html">Ceník</a>
-      <a href="rozvrh.html">Rozvrh</a>
+      <a href="index.html">Domů</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Kurzy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="kurz-komplexni.html">Komplexní</a>
+          <a href="kurz-intenzivni.html">Intenzivní</a>
+          <a href="kurz-vikendovy.html">Víkendový</a>
+        </div>
+      </div>
+      <a href="odkazy.html">Odkazy</a>
       <a href="faq.html">FAQ</a>
-      <a href="index.html#odkazy">Odkazy</a>
-      <a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html">Kontakty</a>
     </nav>
 
     <div class="header-social">
@@ -51,149 +49,27 @@
   </div>
 </header>
 
-<main>
-  <!-- PŘIHLÁSIT DÍTĚ / FORMULÁŘ -->
-  <section class="section signup">
-    <div class="container signup-inner">
-      <div class="signup-intro">
-        <h1 class="section-title">Přihlásit dítě do kurzu</h1>
-        <p class="signup-note">Vyplněním následujícího formuláře závazně přihlašujete své dítě do <strong>prezenčního kurzu SEBEVĚDOMĚ K PŘIJÍMAČKÁM</strong> v Ostravě-Porubě. Kurz probíhá od 14. 9. 2026 do 12. 4. 2027.<br><br>Doporučujeme podívat se na <strong>rozvrh a ceník</strong> kurzu (odkazy níže), kde najdete všechny potřebné informace.<br><br>V případě dotazů nás neváhejte kontaktovat na e-mail <a href="mailto:sebevedomekprijimackam@gmail.com">sebevedomekprijimackam@gmail.com</a>.</p>
-        <p class="guarantee-badge"><strong>Prodlužujeme termín přihlašování do 8. 10. 2026.</strong> V případě pozdějšího nástupu vašeho dítěte do kurzu se odečte cena za lekce, které vaše dítě neabsolvovalo.</p>
-        <p><a href="cenik.html" class="btn btn-outline-green">Podrobný ceník kurzu najdete zde →</a></p>
-        <p><a href="rozvrh.html" class="btn btn-outline-green">Rozvrh kurzu najdete zde →</a></p>
-
-        <p class="guarantee-badge"><strong>14denní garance vrácení peněz.</strong> Pokud s kurzem nebudete spokojeni, do 14 dnů od začátku kurzu vám vrátíme peníze za lekce, které do té doby ještě neproběhly.</p>
-        <p><a href="obchodni-podminky.html#odstoupeni-od-smlouvy" class="btn btn-outline-green guarantee-withdraw-btn">Odstoupit od smlouvy</a></p>
-      </div>
-
-      <form class="signup-form" id="signup-form">
-        <input type="hidden" name="access_key" value="766f9e2e-e6cd-4fdd-998b-a4ead77f97af">
-        <input type="hidden" name="subject" value="Nová přihláška – Sebevědomě k přijímačkám">
-
-        <div class="form-row">
-          <label for="f-name">Jméno a příjmení zákonného zástupce *</label>
-          <input type="text" id="f-name" name="Zakonny zastupce" required>
-        </div>
-
-        <div class="form-row">
-          <label for="f-email">E-mail zákonného zástupce *</label>
-          <input type="email" id="f-email" name="E-mail" required>
-        </div>
-
-        <div class="form-row">
-          <label for="f-phone">Telefon na zákonného zástupce *</label>
-          <input type="tel" id="f-phone" name="Telefon" required>
-        </div>
-
-        <div class="form-row">
-          <label for="f-child-name">Jméno dítěte *</label>
-          <input type="text" id="f-child-name" name="Jmeno ditete" required>
-        </div>
-
-        <div class="form-row">
-          <label id="f-variant-label">Přihlašuji dítě do a způsob platby *</label>
-          <div class="signup-variant-wrap">
-            <table class="signup-variant-table" aria-labelledby="f-variant-label">
-              <thead>
-                <tr>
-                  <th scope="col"></th>
-                  <th scope="col">Celý kurz</th>
-                  <th scope="col">1. blok</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">Najednou</th>
-                  <td>
-                    <label class="variant-cell">
-                      <input type="radio" name="Prihlaska do bloku" value="Celý kurz – najednou (24 800 Kč)" required>
-                      <span>24 800 Kč</span>
-                    </label>
-                  </td>
-                  <td>
-                    <label class="variant-cell">
-                      <input type="radio" name="Prihlaska do bloku" value="1. blok – najednou (12 400 Kč)">
-                      <span>12 400 Kč</span>
-                    </label>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">Na splátky</th>
-                  <td>
-                    <label class="variant-cell">
-                      <input type="radio" name="Prihlaska do bloku" value="Celý kurz – na splátky (8× 3 100 Kč)">
-                      <span>8× 3 100 Kč</span>
-                    </label>
-                  </td>
-                  <td>
-                    <label class="variant-cell">
-                      <input type="radio" name="Prihlaska do bloku" value="1. blok – na splátky (4× 3 100 Kč)">
-                      <span>4× 3 100 Kč</span>
-                    </label>
-                  </td>
-                </tr>
-                <tr class="variant-note-row">
-                  <td colspan="3">Odesláním objednávky se zavazujete zaplatit všechny splátky.</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <p class="withdrawal-form-note">V případě pozdějšího nástupu vašeho dítěte do kurzu vám odečteme cenu za lekce, které vaše dítě neabsolvovalo.</p>
-        </div>
-
-        <p class="signup-times-title">Vyberte preferovaný čas</p>
-
-        <div class="form-row">
-          <label>Matematika *</label>
-          <div class="form-choices">
-            <label class="choice"><input type="radio" name="Cas matematika" value="úterky 14:30–15:30" required> úterky 14:30–15:30</label>
-            <label class="choice"><input type="radio" name="Cas matematika" value="úterky 16:50–17:50"> úterky 16:50–17:50</label>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label>Český jazyk *</label>
-          <div class="form-choices">
-            <label class="choice"><input type="radio" name="Cas cestina" value="úterky 15:40–16:40" required> úterky 15:40–16:40</label>
-            <label class="choice"><input type="radio" name="Cas cestina" value="úterky 18:00–19:00"> úterky 18:00–19:00</label>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label>Seberozvoj *</label>
-          <div class="form-choices">
-            <label class="choice"><input type="radio" name="Cas seberozvoj" value="pátky 14:30–16:30" required> pátky 14:30–16:30</label>
-            <label class="choice"><input type="radio" name="Cas seberozvoj" value="pátky 16:45–18:45"> pátky 16:45–18:45</label>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label for="f-note">Prostor pro vaše dotazy, poznámky</label>
-          <textarea id="f-note" name="Poznamka" rows="3"></textarea>
-        </div>
-
-        <div class="form-row form-row-checkbox">
-          <label class="choice"><input type="checkbox" name="Souhlas se zpracovanim udaju" value="Ano" required> <span>Souhlasím se <a href="ochrana-osobnich-udaju.html" target="_blank" rel="noopener" class="form-consent-link"><strong>zpracováním osobních údajů</strong></a>. *</span></label>
-        </div>
-        <div class="form-row form-row-checkbox">
-          <label class="choice"><input type="checkbox" name="Souhlas s obchodnimi podminkami" value="Ano" required> <span>Souhlasím s <a href="obchodni-podminky.html" target="_blank" rel="noopener" class="form-consent-link"><strong>obchodními podmínkami</strong></a>. *</span></label>
-        </div>
-        <div class="form-row form-row-checkbox">
-          <label class="choice"><input type="checkbox" name="Souhlas s nabidkami" value="Ano"> Chci dostávat tipy, materiály a nabídky.</label>
-        </div>
-
-        <button type="submit" class="btn btn-navy signup-submit">Odeslat závaznou přihlášku</button>
-        <p class="signup-status" id="signup-status" role="status"></p>
-      </form>
-    </div>
-  </section>
-
-  <!-- VOLNÁ MÍSTA -->
-  <section class="section pricing">
+<main data-od-zacatku>
+  <!-- VÝBĚR KURZU -->
+  <section class="section pricing course-placeholder">
     <div class="container">
-      <h2 class="section-title center">Volná místa ve skupinách</h2>
-      <p class="pricing-intro">U každého předmětu si vybíráte čas zvlášť – tady vidíte, kde je ještě volno.</p>
-      <div data-kapacita></div>
+      <h1 class="section-title center">Přihlásit dítě do kurzu</h1>
+      <p class="pricing-intro pricing-intro-large">Vyberte kurz, do kterého chcete své dítě přihlásit.</p>
+      <div class="course-grid course-grid-2">
+        <a href="kurz-intenzivni.html#prihlaska" class="course-card">
+          <h3>Intenzivní</h3>
+          <p class="course-card-term">leden – duben</p>
+          <p class="course-card-start">Kurz začíná 11. 1. 2027</p>
+          <span class="feature-more">Přejít k přihlášce →</span>
+        </a>
+        <a href="kurz-vikendovy.html#terminy" class="course-card">
+          <h3>Víkendový</h3>
+          <p class="course-card-term">leden – duben</p>
+          <p class="course-card-start">První termín 17. 1. 2027</p>
+          <span class="feature-more">Přejít k přihlášce →</span>
+        </a>
+      </div>
+      <p class="pricing-intro section-cta-link">Ještě se rozmýšlíte? <a href="uvodni-hodina-zdarma.html">Přijďte na úvodní setkání zdarma, 5. 1. nebo 10. 1. 2027</a></p>
     </div>
   </section>
 </main>
@@ -242,8 +118,7 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=25"></script>
-<script src="js/kapacita.js?v=9"></script>
+<script src="js/script.js?v=37"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59c64e8c221041169a8c36f78ec50ab4"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

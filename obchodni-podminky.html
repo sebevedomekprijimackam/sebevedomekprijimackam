@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=178">
+<link rel="stylesheet" href="css/styles.css?v=214">
 </head>
 <body>
 
@@ -18,13 +18,18 @@
     </a>
 
     <nav class="main-nav" id="main-nav">
-      <a href="index.html#o-projektu">O kurzu</a>
-      <a href="o-nas.html">O nás</a>
-      <a href="cenik.html">Ceník</a>
-      <a href="rozvrh.html">Rozvrh</a>
+      <a href="index.html">Domů</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Kurzy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="kurz-komplexni.html">Komplexní</a>
+          <a href="kurz-intenzivni.html">Intenzivní</a>
+          <a href="kurz-vikendovy.html">Víkendový</a>
+        </div>
+      </div>
+      <a href="odkazy.html">Odkazy</a>
       <a href="faq.html">FAQ</a>
-      <a href="index.html#odkazy">Odkazy</a>
-      <a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html">Kontakty</a>
     </nav>
 
     <div class="header-social">
@@ -216,6 +221,15 @@
         <li>Zaplacenou Cenu poníženou o storno poplatek vrátí Poskytovatel Uživateli do 14 dnů od oznámení zrušení účasti, a to na stejný účet, ze kterého byla zaplacena, nedohodnou-li se smluvní strany výslovně jinak.</li>
         <li>Nemůže-li se Uživatel dané akce zúčastnit, je oprávněn (namísto zrušení účasti) nahradit svou účast jinou osobou, která na výzvu Poskytovatele předloží platnou vstupenku či potvrzení o zaplacení Ceny za tuto akci. Jakékoli náklady spojené s touto změnou nese Uživatel. Tento odstavec se neuplatní v případě, že se jedná o kurz sestávající z více lekcí a Uživatel se nemůže zúčastnit některé z lekcí. V takovém případě nevyužité lekce bez náhrady propadají, nedomluví-li se smluvní strany výslovně jinak.</li>
         <li>Pokud Poskytovatel u konkrétního kurzu na Webu prodlouží termín přihlašování a Uživatel se v důsledku toho zapojí do kurzu později než v jeho původním termínu zahájení, sníží se Cena o částku odpovídající lekcím, které se konaly ještě před zahájením účasti Uživatele a kterých se tak Uživatel nezúčastnil.</li>
+      </ol>
+
+      <h3>Podmínky Víkendového kurzu</h3>
+      <ol>
+        <li>Víkendový kurz se skládá z jednotlivých termínů. Uživatel si v Objednávce vybere termíny a u každého z nich celý den, nebo jednotlivé části programu. Cena se hradí předem, a to v termínu uvedeném v e-mailu potvrzujícím přijetí Objednávky. Platbu ve splátkách nelze u tohoto kurzu využít.</li>
+        <li>Nemůže-li se žák termínu zúčastnit z důvodu nemoci a Uživatel to oznámí Poskytovateli e-mailem nebo telefonicky před začátkem termínu, může si vybrat jiný termín Víkendového kurzu, je-li v něm volné místo. Pokud žádný jiný termín nevyužije, vrátí mu Poskytovatel do 14 dnů částku, kterou za daný termín zaplatil. Při koupi 3 a více dnů se touto částkou rozumí zvýhodněná cena za jeden den.</li>
+        <li>Neoznámí-li Uživatel nemoc před začátkem termínu, náhrada ani vrácení Ceny se neposkytuje.</li>
+        <li>Storno poplatky uvedené v Podmínkách hromadných akcí se na postup při nemoci podle této části nepoužijí. Při zrušení účasti z jiného důvodu než pro nemoc se postupuje podle Podmínek hromadných akcí.</li>
+        <li>14denní garance vrácení peněz uvedená v části IX. se na Víkendový kurz nevztahuje.</li>
       </ol>
 
       <h3>Výhrada změn</h3>
@@ -447,7 +461,7 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=25"></script>
+<script src="js/script.js?v=37"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59c64e8c221041169a8c36f78ec50ab4"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

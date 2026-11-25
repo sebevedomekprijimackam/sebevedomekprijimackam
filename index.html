@@ -7,14 +7,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Pacifico&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=178">
+<link rel="stylesheet" href="css/styles.css?v=214">
 </head>
 <body>
 
-<div class="event-banner event-timed">
+<div class="event-banner">
   <div class="container event-banner-inner">
-    <p class="event-banner-text"><strong>Zbývá už jen <span class="day-counter"><span class="day-counter-band"></span><span class="day-counter-window"><span class="day-counter-strip" id="days-left-strip"></span></span></span> dní na přihlášení!</strong> Termín jsme prodloužili do 8. 10. 2026.</p>
-    <a href="prihlasit.html" class="event-banner-btn">Přihlásit se →</a>
+    <p class="event-banner-text"><strong>Je nejvyšší čas začít s přípravou!</strong> Úvodní setkání zdarma 5. 1. nebo 10. 1. 2027.</p>
+    <a href="uvodni-hodina-zdarma.html" class="event-banner-btn">Přihlásit se →</a>
   </div>
 </div>
 
@@ -25,13 +25,18 @@
     </a>
 
     <nav class="main-nav" id="main-nav">
-      <a href="#o-projektu">O kurzu</a>
-      <a href="o-nas.html">O nás</a>
-      <a href="cenik.html">Ceník</a>
-      <a href="rozvrh.html">Rozvrh</a>
+      <a href="index.html" class="active-link">Domů</a>
+      <div class="nav-dropdown">
+        <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Kurzy <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+        <div class="nav-dropdown-menu">
+          <a href="kurz-komplexni.html">Komplexní</a>
+          <a href="kurz-intenzivni.html">Intenzivní</a>
+          <a href="kurz-vikendovy.html">Víkendový</a>
+        </div>
+      </div>
+      <a href="odkazy.html">Odkazy</a>
       <a href="faq.html">FAQ</a>
-      <a href="#odkazy">Odkazy</a>
-      <a href="kontakt.html">Kontakt</a>
+      <a href="kontakt.html">Kontakty</a>
     </nav>
 
     <div class="header-social">
@@ -59,28 +64,118 @@
       <img src="assets/images/hero-bg-tree.png" alt="" class="hero-bg-tree">
       <div class="hero-text">
         <p class="hero-brand">Sebevědomě<br>k přijímačkám</p>
-        <p class="hero-live-badge hero-live-badge-green">Prezenční kurz v Ostravě!!!</p>
-        <p class="tagline">Matematika. Český jazyk. Seberozvoj.<br><span class="tagline-green">Vše na jednom místě. V jednom kurzu.</span></p>
-        <p class="hero-desc">Připravujeme žáky 9. tříd na přijímací zkoušky s jistotou, klidem a podporou na každém kroku.</p>
+        <p class="hero-live-badge hero-live-badge-green">Prezenční kurzy v Ostravě!!!</p>
+        <p class="tagline">Matematika. Český jazyk. Seberozvoj.</p>
+        <p class="hero-desc">Připravujeme žáky 9. tříd na přijímací zkoušky s klidem, jistotou a podporou na každém kroku.</p>
+        <p class="tagline"><span class="tagline-green">Vše na jednom místě. V jednom kurzu.</span></p>
         <div class="hero-actions">
-          <a href="#priprava" class="btn btn-outline-green">Chci zjistit více</a>
+          <a href="#kurzy" class="btn btn-outline-green">Vybrat kurz</a>
           <a href="prihlasit.html" class="btn btn-navy">Přihlásit dítě</a>
         </div>
       </div>
       <div class="hero-media">
-        <div class="hero-start-circle"><span class="hero-start-circle-label">Kurz běží od</span><span class="hero-start-circle-date">14. 9. 2026</span></div>
+        <div class="hero-start-circle"><span class="hero-start-circle-date">Otevíráme<br>nové<br>kurzy</span></div>
         <img src="assets/images/hero-photo.jpg" alt="Studenti při přípravě na přijímačky" class="hero-photo">
       </div>
     </div>
   </section>
 
-  <!-- STATISTIKY -->
-  <section class="stats-strip">
-    <div class="container stats-strip-inner">
-      <div class="stats-item"><strong>20+</strong> let zkušeností</div>
-      <div class="stats-item"><strong>3</strong> lektorky</div>
-      <div class="stats-item"><strong>8</strong> měsíců přípravy a podpory</div>
-      <div class="stats-item"><strong>100+</strong> hodin péče o vás a vaše děti</div>
+  <!-- PROČ PRÁVĚ MY -->
+  <section class="trust-strip">
+    <div class="container trust-strip-inner">
+      <h2>Proč právě my?</h2>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-2.5 5 2.5-1.5-7"/></svg>
+          <p>20+ let <br>zkušeností</p>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M2 20c0-3 2.7-5 6-5s6 2 6 5"/><path d="M14.5 15.2c2.8.3 4.5 2 4.5 4.8"/></svg>
+          <p>Stovky spokojených <br>žáků a rodičů</p>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="10" r="6"/><circle cx="15" cy="10" r="6"/><circle cx="12" cy="15.5" r="6"/></svg>
+          <p>Jediný komplexní <br>kurz na trhu</p>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3.5h6v2H9z"/><path d="m8.5 12 2 2 4-4.5"/></svg>
+          <p>Jasný plán bez starostí <br>pro rodiče</p>
+        </div>
+        <div class="trust-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.5-9-9c-1.3-3 1-6 4-6 2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3 0 5.3 3 4 6-2 4.5-9 9-9 9Z"/></svg>
+          <p>Individuální přístup <br>a podpora</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NAŠE KURZY -->
+  <section class="section courses" id="kurzy">
+    <div class="container">
+      <h2 class="section-title center">Naše kurzy</h2>
+      <div class="course-grid">
+        <a href="kurz-komplexni.html" class="course-card">
+          <h3>Komplexní</h3>
+          <p class="course-card-term">září – duben</p>
+          <p class="course-card-start">Kurz běží od 14. 9. 2026</p>
+          <p class="course-card-closed">Do kurzu se již nelze přihlásit</p>
+          <p class="course-card-for">Pro ty, kdo chtějí přípravu v klidu a bez spěchu, krok za krokem od září až k přijímačkám.</p>
+          <span class="feature-more">Zjistit více →</span>
+        </a>
+        <a href="kurz-intenzivni.html" class="course-card">
+          <h3>Intenzivní</h3>
+          <p class="course-card-term">leden – duben</p>
+          <p class="course-card-start">Začínáme 11. 1. 2027</p>
+          <p class="course-card-for">Pro ty, kdo začínají v lednu a chtějí za čtyři měsíce stihnout vše podstatné s jasným plánem a podporou.</p>
+          <span class="feature-more">Zjistit více →</span>
+        </a>
+        <a href="kurz-vikendovy.html" class="course-card">
+          <h3>Víkendový</h3>
+          <p class="course-card-term">leden – duben</p>
+          <p class="course-card-start">Začínáme 17. 1. 2027</p>
+          <p class="course-card-for">Pro ty, kdo si chtějí procvičit jen vybraná témata a přijít, kdy se jim to hodí.</p>
+          <span class="feature-more">Zjistit více →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÚVODNÍ SETKÁNÍ -->
+  <section class="section event-promo" id="uvodni-setkani">
+    <div class="container event-promo-inner">
+      <div class="event-promo-text">
+        <span class="event-promo-eyebrow">Zdarma pro rodiče i žáky</span>
+        <h2 class="section-title">Pozvánka na úvodní setkání</h2>
+        <ul class="event-promo-list">
+          <li>Chcete, aby vaše dítě šlo k přijímačkám s klidem a jistotou?</li>
+          <li>Chcete zjistit, jestli je náš kurz pro vaše dítě ten pravý?</li>
+          <li>Chcete poznat lektorky a prostory centra ANTALA naživo?</li>
+          <li>Chcete se zeptat na cokoli jiného? Přijďte.</li>
+        </ul>
+        <a href="uvodni-hodina-zdarma.html" class="btn btn-navy">Přihlásit se na setkání</a>
+      </div>
+      <div class="event-promo-dates">
+        <div class="event-date-card" data-event-end="2027-01-05T18:00:00+01:00">
+          <span class="event-date-day">Úterý 5. 1. 2027</span>
+          <span class="event-date-time">17:00–18:00</span>
+          <span class="event-date-format">Osobně v centru ANTALA</span>
+        </div>
+        <div class="event-date-card" data-event-end="2027-01-05T19:30:00+01:00">
+          <span class="event-date-day">Úterý 5. 1. 2027</span>
+          <span class="event-date-time">18:30–19:30</span>
+          <span class="event-date-format event-date-format-online">Online</span>
+        </div>
+        <div class="event-date-card" data-event-end="2027-01-10T18:00:00+01:00">
+          <span class="event-date-day">Neděle 10. 1. 2027</span>
+          <span class="event-date-time">17:00–18:00</span>
+          <span class="event-date-format event-date-format-online">Online</span>
+        </div>
+        <div class="event-date-card" data-event-end="2027-01-10T19:30:00+01:00">
+          <span class="event-date-day">Neděle 10. 1. 2027</span>
+          <span class="event-date-time">18:30–19:30</span>
+          <span class="event-date-format">Osobně v centru ANTALA</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -111,7 +206,7 @@
             <img src="assets/images/how-icon-people.png" alt="" class="how-icon">
             <div>
               <h4>Živá výuka v malých skupinách</h4>
-              <p>Skupinky 4–10 žáků vytvářejí prostor pro aktivní zapojení, otázky i společné hledání řešení.</p>
+              <p>Skupinky 4–8 žáků vytvářejí prostor pro aktivní zapojení, otázky i společné hledání řešení.</p>
             </div>
           </li>
           <li>
@@ -224,137 +319,6 @@
         <button type="button" class="feature-back" id="feature-back">↑ Zpět nahoru</button>
       </div>
 
-    </div>
-  </section>
-
-  <!-- CENA A ROZVRH -->
-  <section class="section quick-facts">
-    <div class="container">
-      <h2 class="section-title center">Cena a rozvrh v kostce</h2>
-      <div class="quick-facts-grid">
-
-        <div class="quick-facts-col">
-          <h3>Kolik kurz stojí?</h3>
-          <p class="quick-facts-intro">Stejná cena za matematiku, český jazyk i seberozvoj.</p>
-          <div class="price-anchor-box">
-            <p class="price-anchor-main">350 Kč za 60 minut</p>
-          </div>
-          <p class="pricing-perks-support-intro">Součástí ceny kurzu <strong>nejsou jen prezenční lekce</strong>. Získáváte také řadu <strong>hodnotných služeb a materiálů</strong>, které jsme do programu zařadili proto, aby děti měly <strong>co nejlepší podmínky pro úspěch</strong> u přijímacích zkoušek a abyste i vy, rodiče, <strong>zůstali v klidu</strong> díky podpůrným workshopům určeným pro vás.</p>
-          <div class="section-cta-link">
-            <a href="cenik.html" class="btn btn-outline-navy">Celý ceník a co je v ceně →</a>
-          </div>
-        </div>
-
-        <div class="quick-facts-col">
-          <h3>Kdy se učí?</h3>
-          <p class="quick-facts-intro">U každého předmětu si vyberete jeden pevný termín, který platí po celou dobu kurzu.</p>
-          <table class="pricing-table pricing-table-static">
-            <thead>
-              <tr>
-                <th>Předmět</th>
-                <th>Den</th>
-                <th>Čas</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><i class="dot dot-mat"></i> Matematika</td>
-                <td>Úterý</td>
-                <td>14:30–15:30 nebo 16:50–17:50</td>
-              </tr>
-              <tr>
-                <td><i class="dot dot-cesky"></i> Český jazyk</td>
-                <td>Úterý</td>
-                <td>15:40–16:40 nebo 18:00–19:00</td>
-              </tr>
-              <tr>
-                <td><i class="dot dot-sebe"></i> Seberozvoj</td>
-                <td>Pátek, 1× měsíčně</td>
-                <td>14:30–16:30 nebo 16:45–18:45</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="section-cta-link">
-            <a href="rozvrh.html" class="btn btn-outline-navy">Celý rozvrh a kalendář →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- PROČ PRÁVĚ MY -->
-  <section class="trust-strip">
-    <div class="container trust-strip-inner">
-      <h2>Proč <br>právě my?</h2>
-      <div class="trust-grid">
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="8" cy="9" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M2 20c0-3 2.7-5 6-5s6 2 6 5"/><path d="M14.5 15.2c2.8.3 4.5 2 4.5 4.8"/></svg>
-          <p>Stovky spokojených<br>žáků a rodičů</p>
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="10" r="6"/><circle cx="15" cy="10" r="6"/><circle cx="12" cy="15.5" r="6"/></svg>
-          <p>Jediný komplexní<br>kurz na trhu</p>
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3.5h6v2H9z"/><path d="m8.5 12 2 2 4-4.5"/></svg>
-          <p>Jasný plán bez starostí<br>pro rodiče</p>
-        </div>
-        <div class="trust-item">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20s-7-4.5-9-9c-1.3-3 1-6 4-6 2 0 3.5 1.2 5 3 1.5-1.8 3-3 5-3 3 0 5.3 3 4 6-2 4.5-9 9-9 9Z"/></svg>
-          <p>Individuální přístup<br>a podpora</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- UŽITEČNÉ ODKAZY PRO RODIČE -->
-  <section class="section quick-facts" id="odkazy">
-    <div class="container">
-      <h2 class="section-title center">Užitečné odkazy pro rodiče</h2>
-      <div class="quick-facts-grid">
-
-        <div class="quick-facts-col" style="grid-column: 1 / -1;">
-          <h3>Jak vybrat střední školu – průvodce krok za krokem</h3>
-          <p class="quick-facts-intro" style="max-width: 720px; margin-left: auto; margin-right: auto;">Nevíte, kde začít? Přehledný návod pro rodiče a deváťáky: jaký typ školy zvolit, na co se ptát na dnech otevřených dveří, jak funguje přijímací řízení, všechny důležité termíny a jak sestavit přihlášky.</p>
-          <div class="section-cta-link">
-            <a href="https://www.prijimackynaskolu.cz/jak-vybrat-skolu" class="btn btn-outline-navy" target="_blank" rel="noopener">Průvodce výběrem školy →</a>
-          </div>
-        </div>
-
-        <div class="quick-facts-col">
-          <h3>Seznam středních škol</h3>
-          <p class="quick-facts-intro">Všechny střední školy v Moravskoslezském kraji a obory, které nabízejí – gymnázia, odborné školy s maturitou i učební obory.</p>
-          <div class="section-cta-link">
-            <a href="https://www.stredniskoly.cz/obory/moravskoslezsky-kraj/" class="btn btn-outline-navy" target="_blank" rel="noopener">Školy a obory v kraji →</a>
-          </div>
-        </div>
-
-        <div class="quick-facts-col">
-          <h3>Dny otevřených dveří</h3>
-          <p class="quick-facts-intro">Kalendář termínů, kdy se můžete se svým dítětem podívat přímo do středních škol v Ostravě.</p>
-          <div class="section-cta-link">
-            <a href="https://www.stredniskoly.cz/dny-otevrenych-dveri/moravskoslezsky-kraj/ostrava-mesto/" class="btn btn-outline-navy" target="_blank" rel="noopener">Termíny dnů otevřených dveří →</a>
-          </div>
-        </div>
-
-        <div class="quick-facts-col">
-          <h3>Jak těžké je se dostat</h3>
-          <p class="quick-facts-intro">U každé školy v kraji uvidíte, jak náročné bylo přijetí v posledních přijímačkách, kolik má míst a jestli si ji uchazeči dávají jako první volbu.</p>
-          <div class="section-cta-link">
-            <a href="https://www.prijimackynaskolu.cz/regiony/moravskoslezsky" class="btn btn-outline-navy" target="_blank" rel="noopener">Obtížnost přijetí na školy →</a>
-          </div>
-        </div>
-
-        <div class="quick-facts-col">
-          <h3>Oficiální data CERMAT</h3>
-          <p class="quick-facts-intro">Přehledy od organizace, která přijímačky připravuje: kapacity škol, počty přihlášek a výsledky přijímacích zkoušek podle oborů.</p>
-          <div class="section-cta-link">
-            <a href="https://data.cermat.gov.cz/data-a-analyticke-vystupy-jednotna-prijimaci-zkouska/vizualizace-dat.html#skoly-obory" class="btn btn-outline-navy" target="_blank" rel="noopener">Kapacity, přihlášky a výsledky →</a>
-          </div>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -503,8 +467,7 @@
   </div>
 </footer>
 
-<script src="js/script.js?v=35"></script>
-<script src="js/kapacita.js?v=7"></script>
+<script src="js/script.js?v=37"></script>
     <!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "59c64e8c221041169a8c36f78ec50ab4"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
 </html>

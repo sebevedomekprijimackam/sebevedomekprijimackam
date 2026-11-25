@@ -13,6 +13,36 @@ mainNav.querySelectorAll('a').forEach((link) => {
   });
 });
 
+// Rozbalovací nabídka Kurzy v menu
+const navDropdown = mainNav.querySelector('.nav-dropdown');
+
+if (navDropdown) {
+  const navDropdownToggle = navDropdown.querySelector('.nav-dropdown-toggle');
+  const setDropdown = (isOpen) => {
+    navDropdown.classList.toggle('open', isOpen);
+    navDropdownToggle.setAttribute('aria-expanded', isOpen);
+  };
+
+  navDropdownToggle.addEventListener('click', () => {
+    setDropdown(!navDropdown.classList.contains('open'));
+  });
+  document.addEventListener('click', (e) => {
+    if (!navDropdown.contains(e.target)) setDropdown(false);
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setDropdown(false);
+  });
+}
+
+// Odkaz na část jiné stránky (např. kurz-komplexni.html#rozvrh) –
+// po načtení stránka doskočí na správné místo, i když se kalendář vykresluje až skriptem.
+window.addEventListener('load', () => {
+  const target = window.location.hash && document.getElementById(window.location.hash.slice(1));
+  if (target) scrollWithHeaderOffset(target, false);
+  // Výběr kurzu a přihlášky se otevřou vždy od začátku, ať se na ně přijde odkudkoli.
+  else if (document.querySelector('[data-od-zacatku]')) window.scrollTo({ top: 0, behavior: 'instant' });
+});
+
 // Testimonial carousel
 const slides = document.querySelectorAll('.testimonial-slide');
 const dots = document.querySelectorAll('.testimonial-dots .dot');

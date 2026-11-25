@@ -8,32 +8,35 @@
 (function () {
   var MAX = 10;
 
-  var DATA = [
-    {
-      predmet: "Matematika",
-      den: "úterky",
-      skupiny: [
-        { label: "úterky 14:30–15:30", volno: 6 },
-        { label: "úterky 16:50–17:50", volno: 8 }
-      ]
-    },
-    {
-      predmet: "Český jazyk",
-      den: "úterky",
-      skupiny: [
-        { label: "úterky 15:40–16:40", volno: 5 },
-        { label: "úterky 18:00–19:00", volno: 9 }
-      ]
-    },
-    {
-      predmet: "Seberozvoj",
-      den: "pátky",
-      skupiny: [
-        { label: "pátky 14:30–16:30", volno: 8 },
-        { label: "pátky 16:45–18:45", volno: 6 }
-      ]
-    }
-  ];
+  // Každý kurz má vlastní seznam skupin; stránka si ho vybere přes data-kapacita="název".
+  var DATA = {
+    intenzivni: [
+      {
+        predmet: "Matematika",
+        den: "pondělky a čtvrtky",
+        skupiny: [
+        { label: "pondělky 16:50–17:50", volno: 10 },
+        { label: "čtvrtky 14:30–15:30", volno: 10 }
+        ]
+      },
+      {
+        predmet: "Český jazyk",
+        den: "pondělky a čtvrtky",
+        skupiny: [
+        { label: "pondělky 18:00–19:00", volno: 10 },
+        { label: "čtvrtky 15:40–16:40", volno: 10 }
+        ]
+      },
+      {
+        predmet: "Seberozvoj",
+        den: "pátky a soboty",
+        skupiny: [
+        { label: "pátky 14:45–16:45", volno: 10 },
+        { label: "soboty 10:00–12:00", volno: 10 }
+        ]
+      }
+    ]
+  };
 
   function statusFor(volno) {
     var v = Math.max(0, Math.min(MAX, volno));
@@ -72,8 +75,10 @@
   function render() {
     var containers = document.querySelectorAll("[data-kapacita]");
     if (!containers.length) return;
-    var grid = '<div class="capacity-grid">' + DATA.map(cardHTML).join("") + '</div>';
-    containers.forEach(function (el) { el.innerHTML = grid; });
+    containers.forEach(function (el) {
+      var kurz = DATA[el.getAttribute("data-kapacita")];
+      if (kurz) el.innerHTML = '<div class="capacity-grid">' + kurz.map(cardHTML).join("") + '</div>';
+    });
   }
 
   if (document.readyState === "loading") {
