@@ -10,8 +10,8 @@ window.KAPACITA_VIKENDOVY = {
   terminy: {
     "17. 1. 2027": { matematika: 8, cestina: 8 },
     "24. 1. 2027": { matematika: 8, cestina: 8 },
-    "7. 2. 2027": { matematika: 8, cestina: 8 },
-    "28. 2. 2027": { matematika: 8, cestina: 8, seberozvoj: 8 },
+    "7. 2. 2027": { matematika: 8, cestina: 8, seberozvoj: 8 },
+    "28. 2. 2027": { matematika: 8, cestina: 8 },
     "14. 3. 2027": { matematika: 8, cestina: 8, seberozvoj: 8 },
     "21. 3. 2027": { matematika: 8, cestina: 8 },
     "4. 4. 2027": { matematika: 8, cestina: 8, seberozvoj: 8 }
